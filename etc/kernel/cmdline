@@ -1,0 +1,12 @@
+# ensure that the unified kernel image can find the root partition
+root=PARTUUID=
+
+# https://wiki.gentoo.org/wiki/Zswap
+zswap.enabled=1
+zswap.compression=lz4
+
+# hide boot messages
+quiet
+
+# show splash screen
+splash
