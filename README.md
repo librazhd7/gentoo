@@ -10,9 +10,10 @@ kernel_cmdline="zswap.enabled=1 zswap.compression=lz4 quiet splash"
 /dev/nvme0n1p1 1G EFI vfat umask=0077 0 2 \
 /dev/nvme0n1p2 24G Linux Swap swap 0 0 \
 /dev/nvmeon1p3 Linux root (x86-64) xfs defaults,noatime 0 1 \
-tmpfs /tmp tmpfs rw,nosuid,nodev,size=8G,mode=1777 0 0 \
+tmpfs /tmp tmpfs rw,nosuid,nodev,size=8G,mode=1777 0 0
 
 ### qlist
+- __acpid__
 - __dunst__
 - __fastfetch__
 - __firefox-bin__
@@ -24,9 +25,11 @@ tmpfs /tmp tmpfs rw,nosuid,nodev,size=8G,mode=1777 0 0 \
 - __minecraft-launcher__
 - __networkmanager__
 - __nvidia-driver__
+- __powertop__
 - __ranger__
 - __steam-launcher__
 - __ranger__
+- __thermald__
 - __vim__
 - __waybar__
 - __wine-staging__
