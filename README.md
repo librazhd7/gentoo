@@ -7,7 +7,7 @@
 tmpfs /tmp tmpfs rw,nosuid,nodev,size=8G,mode=1777 0 0
 
 ### wiki
-- [__acpid__][url-acpi]
+- [__acpi__][url-acpi]
 - [__gentoo handbook__][url-handbook-amd64]
 - [__hybrid graphics__][url-hybrid-graphics]
 - [__intel microcode__][url-intel-microcode]
@@ -18,6 +18,9 @@ tmpfs /tmp tmpfs rw,nosuid,nodev,size=8G,mode=1777 0 0
 - [__power management__][url-power-management]
 - [__tmpfs__][url-portage-tmpdir-tmpfs]
 - [__systemd-boot__][url-systemd-boot]
+- [__swap__][url-swap]
+- [__zsh__][url-zsh]
+- [__zswap__][url-zswap]
 
 <!-- etc -->
 [url-]: <https://github.com/librazhd7/gentoo/tree/main/src/etc/>
@@ -33,3 +36,6 @@ tmpfs /tmp tmpfs rw,nosuid,nodev,size=8G,mode=1777 0 0
 [url-power-management]: <https://wiki.gentoo.org/wiki/Power_management>
 [url-portage-tmpdir-tmpfs]: <https://wiki.gentoo.org/wiki/Portage_TMPDIR_on_tmpfs>
 [url-systemd-boot]: <https://wiki.gentoo.org/wiki/Systemd/systemd-boot>
+[url-swap]: <https://wiki.gentoo.org/wiki/Swap>
+[url-zsh]: <https://wiki.gentoo.org/wiki/Zsh>
+[url-zswap]: <https://wiki.gentoo.org/wiki/Zswap>
