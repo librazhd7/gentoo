@@ -1,3 +1,4 @@
+# cpuid2cpuflags
 */* CPU_FLAGS_X86: aes avx avx2 f16c fma3 mmx mmxext pclmul popcnt rdrand sha sse sse2 sse3 sse4_1 sse4_2 ssse3 vpclmulqdq
 */* VIDEO_CARDS: intel nvidia
 
@@ -35,13 +36,18 @@ dev-libs/wayland                abi_x86_32
 dev-util/spirv-tools            abi_x86_32
 dev-util/sysprof-capture        abi_x86_32
 gnome-base/librsvg              abi_x86_32
+gui-libs/egl-gbm                abi_x86_32
+gui-libs/egl-wayland            abi_x86_32
+gui-libs/egl-x11                abi_x86_32
 gui-libs/libdecor               abi_x86_32
 llvm-core/llvm                  abi_x86_32
 media-gfx/graphite2             abi_x86_32
 media-libs/alsa-lib             abi_x86_32
+media-libs/babl                 introspection
 media-libs/flac                 abi_x86_32
 media-libs/fontconfig           abi_x86_32
 media-libs/freetype             abi_x86_32
+media-libs/gegl                 introspection
 media-libs/glu                  abi_x86_32
 media-libs/harfbuzz             abi_x86_32
 media-libs/lcms                 abi_x86_32
@@ -73,11 +79,13 @@ net-libs/nghttp3                abi_x86_32
 net-misc/curl                   abi_x86_32
 net-misc/networkmanager         abi_x86_32
 net-print/cups                  abi_x86_32
+net-wireless/wpa_supplicant     dbus
 sys-apps/dbus                   abi_x86_32
-sys-apps/systemd                abi_x86_32
+sys-apps/systemd                abi_x86_32 boot
 sys-apps/systemd-utils          abi_x86_32
 sys-apps/util-linux             abi_x86_32
 sys-devel/clang                 abi_x86_32
+sys-kernel/installkernel        dracut systemd systemd-boot uki
 sys-libs/gdbm                   abi_x86_32
 sys-libs/gpm                    abi_x86_32
 sys-libs/libcap                 abi_x86_32
@@ -86,7 +94,6 @@ sys-libs/ncurses                abi_x86_32
 sys-libs/pam                    abi_x86_32
 sys-libs/readline               abi_x86_32
 sys-libs/zlib                   abi_x86_32
-
 virtual/glu                     abi_x86_32
 virtual/libelf                  abi_x86_32
 virtual/libiconv                abi_x86_32
@@ -95,8 +102,7 @@ virtual/libudev                 abi_x86_32
 virtual/libusb                  abi_x86_32
 virtual/opengl                  abi_x86_32
 virtual/rust                    abi_x86_32
-
-x11-drivers/nvidia-drivers      abi_x86_32
+x11-drivers/nvidia-drivers      abi_x86_32 kernel-open
 x11-libs/cairo                  abi_x86_32
 x11-libs/extest                 abi_x86_32
 x11-libs/gdk-pixbuf             abi_x86_32
@@ -130,5 +136,3 @@ x11-libs/pango                  abi_x86_32
 x11-libs/pixman                 abi_x86_32
 x11-libs/xcb-util-keysyms       abi_x86_32
 x11-misc/colord                 abi_x86_32
-
-sys-libs/glibc hash-sysv-compat
