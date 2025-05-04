@@ -8,7 +8,8 @@ tmpfs /tmp tmpfs rw,nosuid,nodev,size=8G,mode=1777 0 0
 
 ### wiki
 - [__acpi__][url-acpi]
-- [__gentoo handbook__][url-handbook-amd64]
+- [__guru__][url-guru]
+- [__handbook__][url-handbook-amd64]
 - [__hybrid graphics__][url-hybrid-graphics]
 - [__intel microcode__][url-intel-microcode]
 - [__networkmanager__][url-networkmanager]
@@ -26,6 +27,7 @@ tmpfs /tmp tmpfs rw,nosuid,nodev,size=8G,mode=1777 0 0
 [url-]: <https://github.com/librazhd7/gentoo/tree/main/src/etc/>
 
 [url-acpi]: <https://wiki.gentoo.org/wiki/ACPI>
+[url-guru]: <https://wiki.gentoo.org/wiki/Project:GURU>
 [url-handbook-amd64]: <https://wiki.gentoo.org/wiki/Handbook:AMD64>
 [url-hybrid-graphics]: <https://wiki.gentoo.org/wiki/Hybrid_graphics>
 [url-intel-microcode]: <https://wiki.gentoo.org/wiki/Intel_microcode>
