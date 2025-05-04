@@ -6,30 +6,30 @@
 /dev/nvmeon1p3 Linux root (x86-64) xfs defaults,noatime 0 1 \
 tmpfs /tmp tmpfs rw,nosuid,nodev,size=8G,mode=1777 0 0
 
-### qlist
-- __acpid__
-- __dunst__
-- __fastfetch__
-- __firefox-bin__
-- __gimp__
-- __gstreamer__
-- __hyprland__
-- __intel-microcode__
-- __kitty__
-- __libreoffice-bin__
-- __minecraft-launcher__
-- __networkmanager__
-- __nvidia-driver__
-- __pipewire__
-- __powertop__
-- __ranger__
-- __sof-firmware__
-- __steam-launcher__
-- __ranger__
-- __thermald__
-- __vim__
-- __vscode__
-- __waybar__
-- __wine-staging__
-- __wireplumber__
-- __zsh__
+### wiki
+- [__acpid__][url-acpi]
+- [__gentoo handbook__][url-handbook-amd64]
+- [__hybrid graphics__][url-hybrid-graphics]
+- [__intel microcode__][url-intel-microcode]
+- [__networkmanager__][url-networkmanager]
+- [__nvidia-drivers__][url-nvidia-drivers]
+- [__pipewire__][url-pipewire]
+- [__powertop__][url-powertop]
+- [__power management__][url-power-management]
+- [__tmpfs__][url-portage-tmpdir-tmpfs]
+- [__systemd-boot__][url-systemd-boot]
+
+<!-- etc -->
+[url-]: <https://github.com/librazhd7/gentoo/tree/main/src/etc/>
+
+[url-acpi]: <https://wiki.gentoo.org/wiki/ACPI>
+[url-handbook-amd64]: <https://wiki.gentoo.org/wiki/Handbook:AMD64>
+[url-hybrid-graphics]: <https://wiki.gentoo.org/wiki/Hybrid_graphics>
+[url-intel-microcode]: <https://wiki.gentoo.org/wiki/Intel_microcode>
+[url-networkmanager]: <https://wiki.gentoo.org/wiki/NetworkManager>
+[url-nvidia-drivers]: <https://wiki.gentoo.org/wiki/NVIDIA/nvidia-drivers>
+[url-pipewire]: <https://wiki.gentoo.org/wiki/PipeWire>
+[url-powertop]: <https://wiki.gentoo.org/wiki/PowerTOP>
+[url-power-management]: <https://wiki.gentoo.org/wiki/Power_management>
+[url-portage-tmpdir-tmpfs]: <https://wiki.gentoo.org/wiki/Portage_TMPDIR_on_tmpfs>
+[url-systemd-boot]: <https://wiki.gentoo.org/wiki/Systemd/systemd-boot>
