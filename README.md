@@ -25,6 +25,7 @@ tmpfs /tmp tmpfs rw,nosuid,nodev,size=8G,mode=1777 0 0
 - __minecraft-launcher__
 - __networkmanager__
 - __nvidia-driver__
+- __pipewire__
 - __powertop__
 - __ranger__
 - __sof-firmware__
@@ -35,3 +36,4 @@ tmpfs /tmp tmpfs rw,nosuid,nodev,size=8G,mode=1777 0 0
 - __vscode__
 - __waybar__
 - __wine-staging__
+- __wireplumber__
