@@ -27,9 +27,11 @@ tmpfs /tmp tmpfs rw,nosuid,nodev,size=8G,mode=1777 0 0
 - __nvidia-driver__
 - __powertop__
 - __ranger__
+- __sof-firmware__
 - __steam-launcher__
 - __ranger__
 - __thermald__
 - __vim__
+- __vscode__
 - __waybar__
 - __wine-staging__
