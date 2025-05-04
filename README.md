@@ -1,11 +1,5 @@
 # gentoo [![](https://img.shields.io/badge/version-0.0.1-green.svg)]()
 
-### dracut.conf.d/
-early_microcode="yes" \
-omit_drivers+="nvidia nvidia-drm nvidia-modeset nvidia-uvm" \
-uefi="yes" \
-kernel_cmdline="zswap.enabled=1 zswap.compression=lz4 quiet splash"
-
 ### fstub
 /dev/nvme0n1p1 1G EFI vfat umask=0077 0 2 \
 /dev/nvme0n1p2 24G Linux Swap swap 0 0 \
