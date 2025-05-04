@@ -20,7 +20,8 @@ tmpfs /tmp tmpfs rw,nosuid,nodev,size=8G,mode=1777 0 0 \
 - __gstreamer__
 - __hyprland__
 - __intel-microcode__
-- __libreoffice__
+- __libreoffice-bin__
+- __minecraft-launcher__
 - __networkmanager__
 - __nvidia-driver__
 - __ranger__
