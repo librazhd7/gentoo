@@ -38,3 +38,4 @@ tmpfs /tmp tmpfs rw,nosuid,nodev,size=8G,mode=1777 0 0
 - __waybar__
 - __wine-staging__
 - __wireplumber__
+- __zsh__
