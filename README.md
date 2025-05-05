@@ -1,4 +1,5 @@
 # gentoo [![](https://img.shields.io/badge/version-0.0.1-green.svg)]()
+`emerge -avuDN --with-bdeps=y @world`
 ### docs
 - [__acpi__][url-acpi]
 - [__cheat sheet__][url-cheat-sheet]
@@ -25,9 +26,6 @@
 - [__xdg-desktop-portal__][url-xdg-desktop-portal]
 - [__zsh__][url-zsh]
 - [__zswap__][url-zswap]
-
-<!-- modules -->
-[url-acpi-module]: <https://github.com/librazhd7/gentoo/tree/main/etc/acpi/>
 
 <!-- docs -->
 [url-acpi]: <https://wiki.gentoo.org/wiki/ACPI>
