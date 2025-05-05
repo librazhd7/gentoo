@@ -1,11 +1,4 @@
 # gentoo [![](https://img.shields.io/badge/version-0.0.1-green.svg)]()
-
-### fstub
-/dev/nvme0n1p1 1G EFI vfat umask=0077 0 2 \
-/dev/nvme0n1p2 24G Linux Swap swap 0 0 \
-/dev/nvmeon1p3 Linux root (x86-64) xfs defaults,noatime 0 1 \
-tmpfs /tmp tmpfs rw,nosuid,nodev,size=8G,mode=1777 0 0
-
 ### wiki
 - [__acpi__][url-acpi]
 - [__guru__][url-guru]
@@ -25,9 +18,10 @@ tmpfs /tmp tmpfs rw,nosuid,nodev,size=8G,mode=1777 0 0
 - [__zsh__][url-zsh]
 - [__zswap__][url-zswap]
 
-<!-- etc -->
-[url-]: <https://github.com/librazhd7/gentoo/tree/main/src/etc/>
+<!-- modules -->
+[url-acpi-module]: <https://github.com/librazhd7/gentoo/tree/main/etc/acpi/>
 
+<!-- docs -->
 [url-acpi]: <https://wiki.gentoo.org/wiki/ACPI>
 [url-guru]: <https://wiki.gentoo.org/wiki/Project:GURU>
 [url-handbook-amd64]: <https://wiki.gentoo.org/wiki/Handbook:AMD64>
