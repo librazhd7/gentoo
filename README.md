@@ -1,6 +1,8 @@
 # gentoo [![](https://img.shields.io/badge/version-0.0.1-green.svg)]()
+`dispatch-conf` \
 `emerge --sync` \
-`emerge -avuDN --with-bdeps=y @world`
+`emerge -avuDN --with-bdeps=y @world` \
+`emerge --ask --depclean`
 ### docs
 - [__acpi__][url-acpi]
 - [__cheat sheet__][url-cheat-sheet]
