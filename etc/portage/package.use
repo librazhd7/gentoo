@@ -96,7 +96,8 @@ media-plugins/gst-plugins-x264        abi_x86_32
 media-sound/cdparanoia                abi_x86_32
 media-sound/lame                      abi_x86_32
 media-sound/mpg123-base               abi_x86_32
-media-video/pipewire                  abi_x86_32
+media-video/obs-studio                lua nvenc pulseaudio vdpau # speex v4l
+media-video/pipewire                  abi_x86_32 dbus
 net-dns/c-ares                        abi_x86_32
 net-dns/libidn2                       abi_x86_32
 net-libs/gnutls                       abi_x86_32
