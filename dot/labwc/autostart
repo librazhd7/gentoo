@@ -1,6 +1,6 @@
 /usr/libexec/xdg-desktop-portal-gtk -r &
 
-nm-applet &
+nm-applet --indicator &
 sfwbar &
 swww-daemon &
 
