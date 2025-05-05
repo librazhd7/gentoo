@@ -16,7 +16,6 @@
 - [__nvidia-drivers__][url-nvidia-drivers]
 - [__optimus__][url-optimus]
 - [__pipewire__][url-pipewire]
-- [__powertop__][url-powertop]
 - [__power management__][url-power-management]
 - [__qemu__][url-qemu]
 - [__tmpfs__][url-portage-tmpdir-tmpfs]
@@ -47,7 +46,6 @@
 [url-nvidia-drivers]: <https://wiki.gentoo.org/wiki/NVIDIA/nvidia-drivers>
 [url-optimus]: <https://wiki.gentoo.org/wiki/NVIDIA/Optimus>
 [url-pipewire]: <https://wiki.gentoo.org/wiki/PipeWire>
-[url-powertop]: <https://wiki.gentoo.org/wiki/PowerTOP>
 [url-power-management]: <https://wiki.gentoo.org/wiki/Power_management>
 [url-portage-tmpdir-tmpfs]: <https://wiki.gentoo.org/wiki/Portage_TMPDIR_on_tmpfs>
 [url-qemu]: <https://wiki.gentoo.org/wiki/QEMU>
