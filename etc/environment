@@ -1,3 +1,9 @@
+#
+# This file is parsed by pam_env module
+#
+# Syntax: simple "KEY=VAL" pairs on separate lines
+#
+
 _JAVA_AWT_WM_NONREPARENTING=1
 __GLX_VENDOR_LIBRARY_NAME=nvidia
 __NV_PRIME_RENDER_OFFLOAD=1
