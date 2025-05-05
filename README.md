@@ -1,6 +1,7 @@
 # gentoo [![](https://img.shields.io/badge/version-0.0.1-green.svg)]()
 ### wiki
 - [__acpi__][url-acpi]
+- [__dispatch-conf__][url-dispatch-conf]
 - [__guru__][url-guru]
 - [__handbook__][url-handbook-amd64]
 - [__hybrid graphics__][url-hybrid-graphics]
@@ -23,6 +24,7 @@
 
 <!-- docs -->
 [url-acpi]: <https://wiki.gentoo.org/wiki/ACPI>
+[url-dispatch-conf]: <https://wiki.gentoo.org/wiki/Dispatch-conf>
 [url-guru]: <https://wiki.gentoo.org/wiki/Project:GURU>
 [url-handbook-amd64]: <https://wiki.gentoo.org/wiki/Handbook:AMD64>
 [url-hybrid-graphics]: <https://wiki.gentoo.org/wiki/Hybrid_graphics>
