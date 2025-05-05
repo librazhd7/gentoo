@@ -1,6 +1,7 @@
 # gentoo [![](https://img.shields.io/badge/version-0.0.1-green.svg)]()
 ### wiki
 - [__acpi__][url-acpi]
+- [__cheat sheet__][url-cheat-sheet]
 - [__dispatch-conf__][url-dispatch-conf]
 - [__guru__][url-guru]
 - [__handbook__][url-handbook-amd64]
@@ -24,6 +25,7 @@
 
 <!-- docs -->
 [url-acpi]: <https://wiki.gentoo.org/wiki/ACPI>
+[url-cheat-sheet]: <https://wiki.gentoo.org/wiki/Gentoo_Cheat_Sheet>
 [url-dispatch-conf]: <https://wiki.gentoo.org/wiki/Dispatch-conf>
 [url-guru]: <https://wiki.gentoo.org/wiki/Project:GURU>
 [url-handbook-amd64]: <https://wiki.gentoo.org/wiki/Handbook:AMD64>
