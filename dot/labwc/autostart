@@ -1,8 +1,0 @@
-/usr/libexec/xdg-desktop-portal-gtk -r &
-
-nm-applet --indicator &
-sfwbar &
-swww-daemon &
-
-xhost +SI:localuser:$(id -un) &
-xhost +SI:localuser:root &
