@@ -1,10 +1,10 @@
-/usr/libexec/xdg-desktop-portal-wlr -r &
+if [ -z "$DISPLAY" ] && [ "$XDG_VTNR" = 1 ]; then
+  exec dbus-run-session labwc
+fi
 
-nm-applet --indicator &
-sfwbar &
-swww-daemon &
-
-dbus-run-session labwc
-
-xhost +SI:localuser:$(id -un) &
-xhost +SI:localuser:root &
+exec /usr/libexec/xdg-desktop-portal-wlr -r &
+exec nm-applet --indicator &
+exec sfwbar &
+exec swww-daemon &
+exec xhost +SI:localuser:$(id -un) &
+exec xhost +SI:localuser:root &
