@@ -17,6 +17,7 @@
 - [__tmpfs__][url-portage-tmpdir-tmpfs]
 - [__systemd-boot__][url-systemd-boot]
 - [__swap__][url-swap]
+- [__xdg-desktop-portal__][url-xdg-desktop-portal]
 - [__zsh__][url-zsh]
 - [__zswap__][url-zswap]
 
@@ -41,5 +42,6 @@
 [url-portage-tmpdir-tmpfs]: <https://wiki.gentoo.org/wiki/Portage_TMPDIR_on_tmpfs>
 [url-systemd-boot]: <https://wiki.gentoo.org/wiki/Systemd/systemd-boot>
 [url-swap]: <https://wiki.gentoo.org/wiki/Swap>
+[url-xdg-desktop-portal]: <https://wiki.gentoo.org/wiki/XDG/xdg-desktop-portal>
 [url-zsh]: <https://wiki.gentoo.org/wiki/Zsh>
 [url-zswap]: <https://wiki.gentoo.org/wiki/Zswap>
