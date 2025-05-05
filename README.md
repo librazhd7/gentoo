@@ -1,4 +1,5 @@
 # gentoo [![](https://img.shields.io/badge/version-0.0.1-green.svg)]()
+`emerge --sync` \
 `emerge -avuDN --with-bdeps=y @world`
 ### docs
 - [__acpi__][url-acpi]
