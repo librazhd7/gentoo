@@ -14,7 +14,7 @@
 #       the blkid(8) command.
 
 # <fs>			                                  <mountpoint>     <type>	<opts>		                               <dump> <pass>
-PARTUUID=169e7906-d1b1-49ac-bc06-6a96983f753f /efi		         vfat		umask=0077		                           0      2
-PARTUUID=877e6cda-7f6b-4041-ad60-62b6c6a15e94	none		         swap		sw		                                   0      0
-PARTUUID=02a600ab-a03b-486f-a09b-b2838ae3f652	/		             xfs		defaults,noatime		                     0      1
+PARTUUID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx /efi		         vfat		umask=0077		                           0      2
+PARTUUID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx	none		         swap		sw		                                   0      0
+PARTUUID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx	/		             xfs		defaults,noatime		                     0      1
 tmpfs		                                      /var/tmp/portage tmpfs	size=8G,uid=portage,gid=portage,mode=775 0      0
