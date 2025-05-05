@@ -1,8 +1,9 @@
 # gentoo [![](https://img.shields.io/badge/version-0.0.1-green.svg)]()
-### wiki
+### docs
 - [__acpi__][url-acpi]
 - [__cheat sheet__][url-cheat-sheet]
 - [__dispatch-conf__][url-dispatch-conf]
+- [__dxvk__][url-dxvk]
 - [__guru__][url-guru]
 - [__handbook__][url-handbook-amd64]
 - [__hybrid graphics__][url-hybrid-graphics]
@@ -28,6 +29,7 @@
 [url-acpi]: <https://wiki.gentoo.org/wiki/ACPI>
 [url-cheat-sheet]: <https://wiki.gentoo.org/wiki/Gentoo_Cheat_Sheet>
 [url-dispatch-conf]: <https://wiki.gentoo.org/wiki/Dispatch-conf>
+[url-dxvk]: <https://github.com/doitsujin/dxvk>
 [url-guru]: <https://wiki.gentoo.org/wiki/Project:GURU>
 [url-handbook-amd64]: <https://wiki.gentoo.org/wiki/Handbook:AMD64>
 [url-hybrid-graphics]: <https://wiki.gentoo.org/wiki/Hybrid_graphics>
