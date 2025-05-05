@@ -12,6 +12,7 @@ tmpfs /tmp tmpfs rw,nosuid,nodev,size=8G,mode=1777 0 0
 - [__handbook__][url-handbook-amd64]
 - [__hybrid graphics__][url-hybrid-graphics]
 - [__intel microcode__][url-intel-microcode]
+- [__microcode__][url-microcode]
 - [__networkmanager__][url-networkmanager]
 - [__nvidia-drivers__][url-nvidia-drivers]
 - [__pipewire__][url-pipewire]
@@ -31,6 +32,7 @@ tmpfs /tmp tmpfs rw,nosuid,nodev,size=8G,mode=1777 0 0
 [url-handbook-amd64]: <https://wiki.gentoo.org/wiki/Handbook:AMD64>
 [url-hybrid-graphics]: <https://wiki.gentoo.org/wiki/Hybrid_graphics>
 [url-intel-microcode]: <https://wiki.gentoo.org/wiki/Intel_microcode>
+[url-microcode]: <https://wiki.gentoo.org/wiki/Microcode>
 [url-networkmanager]: <https://wiki.gentoo.org/wiki/NetworkManager>
 [url-nvidia-drivers]: <https://wiki.gentoo.org/wiki/NVIDIA/nvidia-drivers>
 [url-pipewire]: <https://wiki.gentoo.org/wiki/PipeWire>
