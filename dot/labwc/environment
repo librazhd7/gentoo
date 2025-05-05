@@ -1,14 +1,40 @@
+##
+## Use the XKB_DEFAULT_LAYOUT variable to set the keyboard layout. For example
+## to start with Swedish keyboard layout set it to 'se'. If you are unsure what
+## your country code is, refer to the layout section of:
+## /usr/share/X11/xkb/rules/evdev.lst
+##
+## Multiple keyboard layouts can be set by comma-separating the country codes.
+## If a variant layout is needed, the syntax is layout(variant)
+## If multiple layouts are used, specify the toggle-keybind using
+## XKB_DEFAULT_OPTIONS as show below.
+##
+## For further details, see xkeyboard-config(7)
+##
 XKB_DEFAULT_LAYOUT=se
 
-QT_WAYLAND_DISABLE_WINDOWDECORATION=1
-QT_AUTO_SCREEN_SCALE_FACTOR=1
-QT_QPA_PLATFORMTHEME=qt6ct
-QT_QPA_PLATFORM=wayland;xcb
-
+##
+## In order for labwc to work out of the box, the environment variable below
+## is set to "1" by default to avoid menus with incorrect offset and blank
+## windows with Java applications such as JetBrains and Intellij Idea.
+## See https://github.com/swaywm/sway/issues/595
+## labwc will not override any already set environment variables, so if you for
+## some reason do not want this, then just set it to "0" (not recommended, but
+## mentioned here for completeness).
+##
 _JAVA_AWT_WM_NONREPARENTING=1
-NO_AT_BRIDGE=1
-GTK_USE_PORTAL=0
+
+##
+## This allows xdg-desktop-portal-wlr to function (e.g. for screen-recording).
+## It is automatically set to "labwc:wlroots" by labwc though, so it is only
+## included here for completeness. Again, labwc will not over-write an
+## already set environment variable, so if you need it set to something else,
+## then uncomment and adjust.
+##
+XDG_CURRENT_DESKTOP=labwc:wlroots
 
 CLUTTER_BACKEND=wayland
-SDL_VIDEODRIVER=wayland,x11
 SDL_AUDIODRIVER=pipewire
+SDL_VIDEODRIVER=wayland,x11
+QT_QPA_PLATFORM=wayland;xcb
+QT_QPA_PLATFORMTHEME=qt6ct
