@@ -116,7 +116,7 @@ sys-apps/util-linux                   abi_x86_32
 sys-devel/clang                       abi_x86_32
 sys-kernel/installkernel              dracut systemd systemd-boot uki
 sys-libs/gdbm                         abi_x86_32
-sys-libs/glibc                        hash-sysv-compat
+sys-libs/glibc                        hash-sysv-compat stack-realign
 sys-libs/gpm                          abi_x86_32
 sys-libs/libcap                       abi_x86_32
 sys-libs/libudev-compat               abi_x86_32
