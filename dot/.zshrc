@@ -1,4 +1,3 @@
-#!/bin/zsh
 ##
 ## enabling portage completions, corrections and gentoo prompt for zsh
 ##
