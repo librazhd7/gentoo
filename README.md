@@ -4,6 +4,7 @@
 - [__cheat sheet__][url-cheat-sheet]
 - [__dispatch-conf__][url-dispatch-conf]
 - [__dxvk__][url-dxvk]
+- [__fonts__][url-fonts]
 - [__guru__][url-guru]
 - [__handbook__][url-handbook-amd64]
 - [__hybrid graphics__][url-hybrid-graphics]
@@ -30,6 +31,7 @@
 [url-cheat-sheet]: <https://wiki.gentoo.org/wiki/Gentoo_Cheat_Sheet>
 [url-dispatch-conf]: <https://wiki.gentoo.org/wiki/Dispatch-conf>
 [url-dxvk]: <https://github.com/doitsujin/dxvk>
+[url-fonts]: <https://wiki.gentoo.org/wiki/Fonts>
 [url-guru]: <https://wiki.gentoo.org/wiki/Project:GURU>
 [url-handbook-amd64]: <https://wiki.gentoo.org/wiki/Handbook:AMD64>
 [url-hybrid-graphics]: <https://wiki.gentoo.org/wiki/Hybrid_graphics>
