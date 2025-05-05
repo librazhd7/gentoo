@@ -15,6 +15,7 @@ tmpfs /tmp tmpfs rw,nosuid,nodev,size=8G,mode=1777 0 0
 - [__microcode__][url-microcode]
 - [__networkmanager__][url-networkmanager]
 - [__nvidia-drivers__][url-nvidia-drivers]
+- [__optimus__][url-optimus]
 - [__pipewire__][url-pipewire]
 - [__powertop__][url-powertop]
 - [__power management__][url-power-management]
@@ -35,6 +36,7 @@ tmpfs /tmp tmpfs rw,nosuid,nodev,size=8G,mode=1777 0 0
 [url-microcode]: <https://wiki.gentoo.org/wiki/Microcode>
 [url-networkmanager]: <https://wiki.gentoo.org/wiki/NetworkManager>
 [url-nvidia-drivers]: <https://wiki.gentoo.org/wiki/NVIDIA/nvidia-drivers>
+[url-optimus]: <https://wiki.gentoo.org/wiki/NVIDIA/Optimus>
 [url-pipewire]: <https://wiki.gentoo.org/wiki/PipeWire>
 [url-powertop]: <https://wiki.gentoo.org/wiki/PowerTOP>
 [url-power-management]: <https://wiki.gentoo.org/wiki/Power_management>
