@@ -97,10 +97,12 @@ media-sound/cdparanoia                abi_x86_32
 media-sound/lame                      abi_x86_32
 media-sound/mpg123-base               abi_x86_32
 media-video/ffmpeg                    nvenc opus vdpau
-media-video/obs-studio                lua nvenc pulseaudio vdpau # speex v4l
+# media-video/obs-studio              speex v4l
+media-video/obs-studio                lua nvenc pulseaudio vdpau
 media-video/pipewire                  abi_x86_32 dbus sound-server
 net-dns/c-ares                        abi_x86_32
 net-dns/libidn2                       abi_x86_32
+net-fs/samba                          cups pam
 net-libs/gnutls                       abi_x86_32
 net-libs/libasyncns                   abi_x86_32
 net-libs/libndp                       abi_x86_32
