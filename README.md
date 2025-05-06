@@ -1,8 +1,17 @@
 # gentoo [![](https://img.shields.io/badge/version-0.0.1-green.svg)]()
-`dispatch-conf` \
-`emerge --sync / emerge-webrsync` \
-`emerge -avuDN --with-bdeps=y @world` \
-`emerge --ask --depclean`
+
+### emerge
+| command | functionality |
+|---------|---------------|
+| `dispatch-conf` | manage configuration changes after an emerge completes |
+| `getuto` | get portage to set up the necessary keyring for verification, when using binaries |
+| `emerge --sync` | sync all repositories that are set to auto-sync including the gentoo ebuild repository |
+| `emerge-webrsync` | sync the gentoo ebuild repository using the mirrors by obtaining a snapshot that is (at most) a day old |
+| `emerge -avuDN --with-bdeps=y @world` | |
+| `emerge --ask --depclean` | |
+| `emerge --ask @module-rebuild` | after installing a new kernel |
+| `emerge --ask @preserved-rebuild` | for using new libraries |
+
 ### docs
 - [__acpi__][url-acpi]
 - [__bluetooth__][url-bluetooth]
