@@ -20,5 +20,6 @@ GDK_BACKEND="wayland,x11"
 SDL_AUDIODRIVER="pipewire"
 SDL_VIDEODRIVER="wayland,x11"
 QT_QPA_PLATFORM="wayland;xcb"
+#WLR_DRM_NO_ATOMIC=1
 XDG_CURRENT_DESKTOP="labwc:wlroots"
 XKB_DEFAULT_LAYOUT="se"
