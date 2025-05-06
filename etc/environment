@@ -4,7 +4,7 @@
 # Syntax: simple "KEY=VAL" pairs on separate lines
 #
 
-# ---
+# https://wiki.gentoo.org/wiki/Handbook:AMD64/Working/EnvVar
 PATH="/bin:/usr/bin:/usr/local/bin:/opt/bin:/usr/games/bin"
 ROOTPATH="/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin"
 MANPATH="/usr/share/man:/usr/local/share/man"
