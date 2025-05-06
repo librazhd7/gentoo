@@ -5,6 +5,7 @@
 `emerge --ask --depclean`
 ### docs
 - [__acpi__][url-acpi]
+- [__bluetooth__][url-bluetooth]
 - [__cheat sheet__][url-cheat-sheet]
 - [__dispatch-conf__][url-dispatch-conf]
 - [__dxvk__][url-dxvk]
@@ -32,6 +33,7 @@
 
 <!-- docs -->
 [url-acpi]: <https://wiki.gentoo.org/wiki/ACPI>
+[url-bluetooth]: <https://wiki.gentoo.org/wiki/Bluetooth>
 [url-cheat-sheet]: <https://wiki.gentoo.org/wiki/Gentoo_Cheat_Sheet>
 [url-dispatch-conf]: <https://wiki.gentoo.org/wiki/Dispatch-conf>
 [url-dxvk]: <https://github.com/doitsujin/dxvk>
