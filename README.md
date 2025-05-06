@@ -21,6 +21,7 @@
 - [__power management__][url-power-management]
 - [__qemu__][url-qemu]
 - [__tmpfs__][url-portage-tmpdir-tmpfs]
+- [__samba__][url-samba]
 - [__systemd-boot__][url-systemd-boot]
 - [__swap__][url-swap]
 - [__xdg-desktop-portal__][url-xdg-desktop-portal]
@@ -45,6 +46,7 @@
 [url-power-management]: <https://wiki.gentoo.org/wiki/Power_management>
 [url-portage-tmpdir-tmpfs]: <https://wiki.gentoo.org/wiki/Portage_TMPDIR_on_tmpfs>
 [url-qemu]: <https://wiki.gentoo.org/wiki/QEMU>
+[url-samba]: <https://wiki.gentoo.org/wiki/Samba>
 [url-systemd-boot]: <https://wiki.gentoo.org/wiki/Systemd/systemd-boot>
 [url-swap]: <https://wiki.gentoo.org/wiki/Swap>
 [url-xdg-desktop-portal]: <https://wiki.gentoo.org/wiki/XDG/xdg-desktop-portal>
