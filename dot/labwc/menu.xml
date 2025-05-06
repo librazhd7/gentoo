@@ -3,146 +3,79 @@
 <openbox_menu>
 <!-- Note: for localization support of menu items "client-menu" has to be removed here -->
 <menu id="client-menu">
-  <item label="Minimize">
-    <action name="Iconify" />
-  </item>
-  <item label="Maximize">
-    <action name="ToggleMaximize" />
-  </item>
-  <item label="Fullscreen">
-    <action name="ToggleFullscreen" />
-  </item>
-  <item label="Roll Up/Down">
-    <action name="ToggleShade" />
-  </item>
-  <item label="Decorations">
-    <action name="ToggleDecorations" />
-  </item>
-  <item label="Always on Top">
-    <action name="ToggleAlwaysOnTop" />
-  </item>
+  <separator label="gentoo" />
   <!--
     Any menu with the id "workspaces" will be hidden
     if there is only a single workspace available.
   -->
-  <menu id="workspaces" label="Workspace">
-    <item label="Move Left">
-      <action name="SendToDesktop" to="left" />
-    </item>
-    <item label="Move Right">
-      <action name="SendToDesktop" to="right" />
-    </item>
+  <menu id="workspaces" label="workspace">
+    <item label="left"><action name="SendToDesktop" to="left" /></item>
+    <item label="right"><action name="SendToDesktop" to="right" /></item>
     <separator />
-    <item label="Always on Visible Workspace">
-      <action name="ToggleOmnipresent" />
-    </item>
+    <item label="always on visible workspace"><action name="ToggleOmnipresent" /></item>
   </menu>
   <!--
-    openbox default workspace selector
-    to use replace above workspace menu with the example below
-    the label is required, but you can change the text.
-
-    <menu id="client-send-to-menu" label="Send to..." />
-  -->
-  <item label="Close">
-    <action name="Close" />
+  <item label="fullscreen">
+    <action name="ToggleFullscreen" />
   </item>
+  <item label="decorations">
+    <action name="ToggleDecorations" />
+  </item>
+  -->
+  <item label="always on top"><action name="ToggleAlwaysOnTop" /></item>
+  <item label="shade"><action name="ToggleShade" /></item>
+  <item label="minimize"><action name="Iconify" /></item>
+  <item label="maximize"><action name="ToggleMaximize" /></item>
+  <item label="close"><action name="Close" /></item>
 </menu>
 
 <menu id="root-menu">
   <separator label="gentoo" />
-  <item label="chrome">
-    <action name="Execute" command="google-chrome-stable" />
-  </item>
-  <item label="kitty">
-    <action name="Execute" command="kitty" />
-  </item>
-  <item label="ranger">
-    <action name="Execute" command="kitty ranger" />
-  </item>
+  <item label="chrome" icon="google-chrome"><action name="Execute" command="google-chrome-stable" /></item>
+  <item label="kitty" icon="kitty"><action name="Execute" command="kitty" /></item>
+  <item label="ranger"><action name="Execute" command="kitty ranger" /></item>
   <separator label="apps" />
   <menu id="editing-menu" label="editing">
-    <item label="gimp">
-      <action name="Execute" command="gimp" />
-    </item>
-    <item label="libreoffice">
-      <action name="Execute" command="libreoffice25.2" />
-    </item>
-    <item label="vscode">
-      <action name="Execute" command="vscode" />
-    </item>
+    <item label="gimp" icon="gimp"><action name="Execute" command="gimp" /></item>
+    <item label="libreoffice" icon="libreoffice.25.2-base"><action name="Execute" command="libreoffice25.2" /></item>
+    <item label="vscode"><action name="Execute" command="vscode" /></item>
   </menu>
   <menu id="multimedia-menu" label="multimedia">
     <menu id="grim-menu" label="grim">
-      <item label="full">
-        <action name="Execute" command="grim" />
-      </item>
-      <item label="region">
-        <action name="Execute" command="grim -g $(slurp)" />
-      </item>
+      <item label="full"><action name="Execute" command="grim" /></item>
+      <item label="region"><action name="Execute" command="grim -g $(slurp)" /></item>
     </menu>
-    <item label="obs">
-      <action name="Execute" command="obs" />
-    </item>
+    <item label="obs"><action name="Execute" command="obs" /></item>
   </menu>
   <menu id="games-menu" label="games">
-    <item label="minecraft">
-      <action name="Execute" command="minecraft-launcher" />
-    </item>
-    <item label="steam">
-      <action name="Execute" command="steam" />
-    </item>
-        <item label="supertux2">
-      <action name="Execute" command="supertux2" />
-    </item>
+    <item label="minecraft" icon="minecraft-launcher"><action name="Execute" command="minecraft-launcher" /></item>
+    <item label="steam"><action name="Execute" command="steam" /></item>
+    <item label="supertux2" icon="supertux2"><action name="Execute" command="supertux2" /></item>
   </menu>
   <separator label="system" />
-  <item label="nmtui">
-    <action name="Execute" command="kitty nmtui" />
-  </item>
-  <item label="nvidia">
-    <action name="Execute" command="nvidia-settings" />
-  </item>
-  <menu id="bluez-menu" label="bluez">
-    <item label="disable">
-      <action name="Execute" command="bluetooth off" />
-    </item>
-    <item label="enable">
-      <action name="Execute" command="bluetooth on" />
-    </item>
+  <item label="nmtui"><action name="Execute" command="kitty nmtui" /></item>
+  <item label="nvidia"><action name="Execute" command="nvidia-settings" /></item>
+  <menu id="bluez-menu" label="bluetooth">
+    <item label="disable"><action name="Execute" command="bluetooth off" /></item>
+    <item label="enable"><action name="Execute" command="bluetooth on" /></item>
   </menu>
   <menu id="pipewire-menu" label="pipewire">
-    <item label="raise audio [+5%]">
-      <action name="Execute" command="wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+" />
-    </item>
-    <item label="lower audio [-5%]">
-      <action name="Execute" command="wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-" />
-    </item>
-    <item label="mute audio">
-      <action name="Execute" command="wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle" />
-    </item>
-    <item label="mute microphone">
-      <action name="Execute" command="wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle" />
-    </item>
+  <!--
+    <item label="raise audio [+5%]"><action name="Execute" command="wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+" /></item>
+    <item label="lower audio [-5%]"><action name="Execute" command="wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-" /></item>
+  -->
+    <item label="mute audio"><action name="Execute" command="wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle" /></item>
+    <item label="mute microphone"><action name="Execute" command="wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle" /></item>
   </menu>
   <menu id="wine-menu" label="wine">
-    <item label="winecfg">
-      <action name="Execute" command="winecfg" />
-    </item>
-    <item label="winetricks">
-      <action name="Execute" command="winetricks" />
-    </item>
-    <item label="regedit">
-      <action name="Execute" command="regedit" />
-    </item>
+    <item label="winecfg"><action name="Execute" command="winecfg" /></item>
+    <item label="winetricks"><action name="Execute" command="winetricks" /></item>
+    <item label="regedit"><action name="Execute" command="regedit" /></item>
   </menu>
+  <separator />
   <menu id="labwc-menu" label="labwc">
-    <item label="refresh">
-      <action name="Reconfigure" />
-    </item>
-    <item label="nuke">
-      <action name="Exit" />
-    </item>
+    <item label="refresh"><action name="Reconfigure" /></item>
+    <item label="nuke"><action name="Exit" /></item>
   </menu>
 </menu>
 </openbox_menu>
