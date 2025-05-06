@@ -1,4 +1,4 @@
-# gentoo [![](https://img.shields.io/badge/version-0.0.1-green.svg)]()
+# [![](https://assets.gentoo.org/tyrian/v1/site-logo.svg)]()
 
 ### emerge
 | command | functionality |
