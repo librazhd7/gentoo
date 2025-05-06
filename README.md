@@ -40,6 +40,9 @@
 - [__zsh__][url-zsh]
 - [__zswap__][url-zswap]
 
+### media
+[![](https://github.com/librazhd7/gentoo/tree/main/media/fastfetch.jpg)]()
+
 <!-- docs -->
 [url-acpi]: <https://wiki.gentoo.org/wiki/ACPI>
 [url-bluetooth]: <https://wiki.gentoo.org/wiki/Bluetooth>
