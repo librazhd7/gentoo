@@ -23,6 +23,7 @@
 - [__guru__][url-guru]
 - [__handbook__][url-handbook-amd64]
 - [__hybrid graphics__][url-hybrid-graphics]
+- [__labwc__][url-labwc]
 - [__microcode__][url-microcode]
 - [__networkmanager__][url-networkmanager]
 - [__nvidia-drivers__][url-nvidia-drivers]
@@ -54,6 +55,7 @@
 [url-guru]: <https://wiki.gentoo.org/wiki/Project:GURU>
 [url-handbook-amd64]: <https://wiki.gentoo.org/wiki/Handbook:AMD64>
 [url-hybrid-graphics]: <https://wiki.gentoo.org/wiki/Hybrid_graphics>
+[url-labwc]: <https://labwc.github.io/manual.html>
 [url-microcode]: <https://wiki.gentoo.org/wiki/Microcode>
 [url-networkmanager]: <https://wiki.gentoo.org/wiki/NetworkManager>
 [url-nvidia-drivers]: <https://wiki.gentoo.org/wiki/NVIDIA/nvidia-drivers>
