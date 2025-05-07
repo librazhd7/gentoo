@@ -3,6 +3,7 @@
 */* VIDEO_CARDS: intel nvidia
 
 app-accessibility/at-spi2-core        abi_x86_32
+app-arch/brotli                       abi_x86_32
 app-arch/bzip2                        abi_x86_32
 app-arch/lz4                          abi_x86_32
 app-arch/zstd                         abi_x86_32
@@ -49,7 +50,7 @@ media-libs/babl                       introspection
 media-libs/faad2                      abi_x86_32
 media-libs/flac                       abi_x86_32
 media-libs/fontconfig                 abi_x86_32
-media-libs/freetype                   abi_x86_32
+media-libs/freetype                   abi_x86_32 brotli
 media-libs/gegl                       introspection
 media-libs/glu                        abi_x86_32
 media-libs/graphene                   abi_x86_32
@@ -77,6 +78,7 @@ media-libs/libva                      abi_x86_32
 media-libs/libvorbis                  abi_x86_32
 media-libs/mesa                       abi_x86_32 vulkan
 media-libs/openal                     abi_x86_32
+media-libs/opensubdiv                 tbb
 media-libs/opus                       abi_x86_32
 media-libs/tiff                       abi_x86_32
 media-libs/vulkan-loader              abi_x86_32
@@ -96,7 +98,7 @@ media-plugins/gst-plugins-x264        abi_x86_32
 media-sound/cdparanoia                abi_x86_32
 media-sound/lame                      abi_x86_32
 media-sound/mpg123-base               abi_x86_32
-media-video/ffmpeg                    nvenc opus vdpau
+media-video/ffmpeg                    lame nvenc opus theora vdpau vpx
 # media-video/obs-studio              speex v4l
 media-video/obs-studio                lua nvenc pulseaudio vdpau
 media-video/pipewire                  abi_x86_32 dbus sound-server
@@ -113,6 +115,8 @@ net-misc/curl                         abi_x86_32
 net-misc/networkmanager               abi_x86_32
 net-print/cups                        abi_x86_32
 net-wireless/wpa_supplicant           dbus
+sci-libs/fftw                         threads
+sci-physics/bullet                    double-precision
 sys-apps/dbus                         abi_x86_32
 sys-apps/systemd                      abi_x86_32 boot
 sys-apps/systemd-utils                abi_x86_32
