@@ -1,1 +1,303 @@
-#
+<?xml version="1.0"?>
+<labwc_config>
+  <core>
+    <decoration>server</decoration>
+    <gap>0</gap>
+    <adaptiveSync>no</adaptiveSync>
+    <allowTearing>no</allowTearing>
+    <autoEnableOutputs>yes</autoEnableOutputs>
+    <reuseOutputMode>no</reuseOutputMode>
+    <xwaylandPersistence>yes</xwaylandPersistence>
+  </core>
+  <placement>
+    <policy>cascade</policy>
+    <cascadeOffset x="40" y="30" />
+  </placement>
+  <windowSwitcher show="yes" preview="yes" outlines="yes" allWorkspaces="no">
+    <fields>
+      <field content="icon" width="5%" />
+      <field content="desktop_entry_name" width="30%" />
+      <field content="type" width="5%" />
+      <field content="workspace" width="5%" />
+      <field content="state" width="5%" />
+    </fields>
+  </windowSwitcher>
+  <resistance>
+    <screenEdgeStrength>20</screenEdgeStrength>
+    <windowEdgeStrength>20</windowEdgeStrength>
+    <unSnapThreshold>20</unSnapThreshold>
+    <unMaximizeThreshold>150</unMaximizeThreshold>
+  </resistance>
+  <focus>
+    <followMouse>no</followMouse>
+    <followMouseRequiresMovement>yes</followMouseRequiresMovement>
+    <raiseOnFocus>no</raiseOnFocus>
+  </focus>
+  <snapping>
+    <range>10</range>
+    <overlay enabled="yes">
+      <delay inner="500" outer="500" />
+    </overlay>
+    <topMaximize>yes</topMaximize>
+    <notifyClient>always</notifyClient>
+  </snapping>
+  <desktops number="4">
+    <popupTime>1000</popupTime>
+    <prefix>Workspace</prefix>
+  </desktops>
+  <theme>
+    <name></name>
+    <icon></icon>
+    <fallbackAppIcon>labwc</fallbackAppIcon>
+    <titlebar>
+      <layout>icon:iconify,max,close</layout>
+      <showTitle>yes</showTitle>
+    </titlebar>
+    <cornerRadius>8</cornerRadius>
+    <keepBorder>yes</keepBorder>
+    <dropShadows>no</dropShadows>
+    <font place="ActiveWindow">
+      <name>sans</name>
+      <size>10</size>
+      <slant>normal</slant>
+      <weight>normal</weight>
+    </font>
+    <font place="InactiveWindow">
+      <name>sans</name>
+      <size>10</size>
+      <slant>normal</slant>
+      <weight>normal</weight>
+    </font>
+    <font place="MenuHeader">
+      <name>sans</name>
+      <size>10</size>
+      <slant>normal</slant>
+      <weight>normal</weight>
+    </font>
+    <font place="MenuItem">
+      <name>sans</name>
+      <size>10</size>
+      <slant>normal</slant>
+      <weight>normal</weight>
+    </font>
+    <font place="OnScreenDisplay">
+      <name>sans</name>
+      <size>10</size>
+      <slant>normal</slant>
+      <weight>normal</weight>
+    </font>
+  </theme>
+  <resize>
+    <popupShow>Never</popupShow>
+    <drawContents>yes</drawContents>
+    <minimumArea>8</minimumArea>
+  </resize>
+  <keyboard>
+    <layoutScope>global</layoutScope>
+    <repeatRate>25</repeatRate>
+    <repeatDelay>600</repeatDelay>
+    <keybind key="XF86_AudioLowerVolume"><action name="Execute" command="wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-" /></keybind>
+    <keybind key="XF86_AudioRaiseVolume"><action name="Execute" command="wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+" /></keybind>
+    <keybind key="XF86_AudioMute"><action name="Execute" command="wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle" /></keybind>
+    <keybind key="XF86_AudioMicMute"><action name="Execute" command="wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle" /></keybind>
+    <keybind key="XF86_MonBrightnessUp"><action name="Execute" command=" set +10%" /></keybind>
+    <keybind key="XF86_MonBrightnessDown"><action name="Execute" command=" set 10%-" /></keybind>
+  </keybooard>
+  <mouse>
+    <doubleClickTime>500</doubleClickTime>
+    <context name="Frame">
+      <mousebind button="A-Left" action="Press">
+        <action name="Focus" />
+        <action name="Raise" />
+      </mousebind>
+      <mousebind button="A-Left" action="Drag">
+        <action name="Move" />
+      </mousebind>
+      <mousebind button="A-Right" action="Press">
+        <action name="Focus" />
+        <action name="Raise" />
+      </mousebind>
+      <mousebind button="A-Right" action="Drag">
+        <action name="Resize" />
+      </mousebind>
+    </context>
+    <context name="Top">
+      <mousebind button="Left" action="Drag">
+        <action name="Resize" />
+      </mousebind>
+    </context>
+    <context name="Left">
+      <mousebind button="Left" action="Drag">
+        <action name="Resize" />
+      </mousebind>
+    </context>
+    <context name="Right">
+      <mousebind button="Left" action="Drag">
+        <action name="Resize" />
+      </mousebind>
+    </context>
+    <context name="Bottom">
+      <mousebind button="Left" action="Drag">
+        <action name="Resize" />
+      </mousebind>
+    </context>
+    <context name="TRCorner">
+      <mousebind button="Left" action="Drag">
+        <action name="Resize" />
+      </mousebind>
+    </context>
+    <context name="BRCorner">
+      <mousebind button="Left" action="Drag">
+        <action name="Resize" />
+      </mousebind>
+    </context>
+    <context name="TLCorner">
+      <mousebind button="Left" action="Drag">
+        <action name="Resize" />
+      </mousebind>
+    </context>
+    <context name="BLCorner">
+      <mousebind button="Left" action="Drag">
+        <action name="Resize" />
+      </mousebind>
+    </context>
+    <context name="TitleBar">
+      <mousebind button="Left" action="Press">
+        <action name="Focus" />
+        <action name="Raise" />
+      </mousebind>
+      <mousebind button="Right" action="Click">
+        <action name="Focus" />
+        <action name="Raise" />
+      </mousebind>
+      <mousebind direction="Up" action="Scroll">
+        <action name="Unshade" />
+        <action name="Focus" />
+      </mousebind>
+      <mousebind direction="Down" action="Scroll">
+        <action name="Unfocus" />
+        <action name="Shade" />
+      </mousebind>
+    </context>
+    <context name="Title">
+      <mousebind button="Left" action="Drag">
+        <action name="Move" />
+      </mousebind>
+      <mousebind button="Left" action="DoubleClick">
+        <action name="ToggleMaximize" />
+      </mousebind>
+      <mousebind button="Right" action="Click">
+        <action name="ShowMenu" menu="client-menu" />
+      </mousebind>
+    </context>
+    <context name="Maximize">
+      <mousebind button="Left" action="Click">
+        <action name="ToggleMaximize" />
+      </mousebind>
+      <mousebind button="Right" action="Click">
+        <action name="ToggleMaximize" direction="horizontal" />
+      </mousebind>
+      <mousebind button="Middle" action="Click">
+        <action name="ToggleMaximize" direction="vertical" />
+      </mousebind>
+    </context>
+    <context name="WindowMenu">
+      <mousebind button="Left" action="Click">
+        <action name="ShowMenu" menu="client-menu" atCursor="no" />
+      </mousebind>
+      <mousebind button="Right" action="Click">
+        <action name="ShowMenu" menu="client-menu" atCursor="no" />
+      </mousebind>
+    </context>
+    <context name="Icon">
+      <mousebind button="Left" action="Click">
+        <action name="ShowMenu" menu="client-menu" atCursor="no" />
+      </mousebind>
+      <mousebind button="Right" action="Click">
+        <action name="ShowMenu" menu="client-menu" atCursor="no" />
+      </mousebind>
+    </context>
+    <context name="Shade">
+      <mousebind button="Left" action="Click">
+        <action name="ToggleShade" />
+      </mousebind>
+    </context>
+    <context name="AllDesktops">
+      <mousebind button="Left" action="Click">
+        <action name="ToggleOmnipresent" />
+      </mousebind>
+    </context>
+    <context name="Iconify">
+      <mousebind button="Left" action="Click">
+        <action name="Iconify" />
+      </mousebind>
+    </context>
+    <context name="Close">
+      <mousebind button="Left" action="Click">
+        <action name="Close" />
+      </mousebind>
+    </context>
+    <context name="Client">
+      <mousebind button="Left" action="Press">
+        <action name="Focus" />
+        <action name="Raise" />
+      </mousebind>
+      <mousebind button="Middle" action="Press">
+        <action name="Focus" />
+        <action name="Raise" />
+      </mousebind>
+      <mousebind button="Right" action="Press">
+        <action name="Focus" />
+        <action name="Raise" />
+      </mousebind>
+    </context>
+    <context name="Root">
+      <mousebind button="Left" action="Press">
+        <action name="ShowMenu" menu="root-menu" />
+      </mousebind>
+      <mousebind direction="Up" action="Scroll">
+        <action name="GoToDesktop" to="left" wrap="yes" />
+      </mousebind>
+      <mousebind direction="Down" action="Scroll">
+        <action name="GoToDesktop" to="right" wrap="yes" />
+      </mousebind>
+    </context>
+  </mouse>
+  <touch deviceName="" mapToOutput="" mouseEmulation="no" />
+  <tablet mapToOutput="" rotate="0" mouseEmulation="no">
+    <area top="0.0" left="0.0" width="0.0" height="0.0" />
+    <map button="Tip" to="Left" />
+    <map button="Stylus" to="Right" />
+    <map button="Stylus2" to="Middle" />
+  </tablet>
+  <tabletTool motion="absolute" relativeMotionSensitivity="1" />
+  <libinput>
+    <device category="default">
+      <naturalScroll></naturalScroll>
+      <leftHanded></leftHanded>
+      <pointerSpeed></pointerSpeed>
+      <accelProfile></accelProfile>
+      <tap>yes</tap>
+      <tapButtonMap></tapButtonMap>
+      <tapAndDrag></tapAndDrag>
+      <dragLock></dragLock>
+      <middleEmulation></middleEmulation>
+      <disableWhileTyping></disableWhileTyping>
+      <clickMethod></clickMethod>
+      <sendEventsMode></sendEventsMode>
+      <calibrationMatrix></calibrationMatrix>
+      <scrollFactor>1.0</scrollFactor>
+    </device>
+  </libinput>
+  <menu>
+    <ignoreButtonReleasePeriod>250</ignoreButtonReleasePeriod>
+    <showIcons>yes</showIcons>
+  </menu>
+  <magnifier>
+    <width>400</width>
+    <height>400</height>
+    <initScale>2</initScale>
+    <increment>0.2</increment>
+    <useFilter>true</useFilter>
+  </magnifier>
+</labwc_config>
