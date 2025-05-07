@@ -1,4 +1,5 @@
 app-editors/vscode Microsoft-vscode
+dev-util/nvidia-cuda-toolkit NVIDIA-CUDA
 games-action/minecraft-launcher Mojang
 games-util/steam-launcher ValveSteamLicense
 media-fonts/corefonts MSttfEULA
