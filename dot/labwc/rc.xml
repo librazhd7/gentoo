@@ -15,8 +15,11 @@
   </placement>
   <windowSwitcher show="yes" preview="yes" outlines="yes" allWorkspaces="no">
     <fields>
-      <field content="icon" width="5%" />
-      <field content="desktop_entry_name" width="30%" />
+      <field content="icon" width="3%" />
+      <field content="desktop_entry_name" width="33%" />
+      <field content="type" width="33%" />
+      <field content="workspace" width="3%" />
+      <field content="state" width="3%" />
     </fields>
   </windowSwitcher>
   <resistance>
@@ -93,6 +96,8 @@
     <layoutScope>global</layoutScope>
     <repeatRate>25</repeatRate>
     <repeatDelay>600</repeatDelay>
+    <keybind key="A-Tab"><action name="NextWindow" /></keybind>
+    <keybind key="A-S-Tab"><action name="PreviousWindow" /></keybind>
     <keybind key="XF86_AudioLowerVolume"><action name="Execute" command="wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-" /></keybind>
     <keybind key="XF86_AudioRaiseVolume"><action name="Execute" command="wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+" /></keybind>
     <keybind key="XF86_AudioMute"><action name="Execute" command="wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle" /></keybind>
