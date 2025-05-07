@@ -1,6 +1,6 @@
 # [![](https://assets.gentoo.org/tyrian/v1/site-logo.svg)]()
 
-### emerge
+### emerge [![](https://www.gentoo.org/assets/img/badges/gentoo-badge3.svg)]()
 | command | functionality |
 |---------|---------------|
 | `dispatch-conf` | manage configuration changes after an emerge completes |
