@@ -17,6 +17,7 @@
 - [__bluetooth__][url-bluetooth]
 - [__cheat sheet__][url-cheat-sheet]
 - [__dispatch-conf__][url-dispatch-conf]
+- [__dracut__][url-dracut]
 - [__dxvk__][url-dxvk]
 - [__fonts__][url-fonts]
 - [__gamescope__][url-gamescope] (arch)
@@ -28,7 +29,6 @@
 - [__networkmanager__][url-networkmanager]
 - [__nvidia-drivers__][url-nvidia-drivers]
 - [__optimus__][url-optimus]
-- [__p7zip__][url-p7zip]
 - [__pipewire__][url-pipewire]
 - [__power management__][url-power-management]
 - [__qemu__][url-qemu]
@@ -49,6 +49,7 @@
 [url-bluetooth]: <https://wiki.gentoo.org/wiki/Bluetooth>
 [url-cheat-sheet]: <https://wiki.gentoo.org/wiki/Gentoo_Cheat_Sheet>
 [url-dispatch-conf]: <https://wiki.gentoo.org/wiki/Dispatch-conf>
+[url-dracut]: <https://wiki.gentoo.org/wiki/Dracut>
 [url-dxvk]: <https://github.com/doitsujin/dxvk>
 [url-fonts]: <https://wiki.gentoo.org/wiki/Fonts>
 [url-gamescope]: <https://wiki.archlinux.org/title/Gamescope>
@@ -60,7 +61,6 @@
 [url-networkmanager]: <https://wiki.gentoo.org/wiki/NetworkManager>
 [url-nvidia-drivers]: <https://wiki.gentoo.org/wiki/NVIDIA/nvidia-drivers>
 [url-optimus]: <https://wiki.gentoo.org/wiki/NVIDIA/Optimus>
-[url-p7zip]: <https://wiki.gentoo.org/wiki/P7zip>
 [url-pipewire]: <https://wiki.gentoo.org/wiki/PipeWire>
 [url-power-management]: <https://wiki.gentoo.org/wiki/Power_management>
 [url-portage-tmpdir-tmpfs]: <https://wiki.gentoo.org/wiki/Portage_TMPDIR_on_tmpfs>
