@@ -17,9 +17,6 @@
     <fields>
       <field content="icon" width="5%" />
       <field content="desktop_entry_name" width="30%" />
-      <field content="type" width="5%" />
-      <field content="workspace" width="5%" />
-      <field content="state" width="5%" />
     </fields>
   </windowSwitcher>
   <resistance>
@@ -43,7 +40,7 @@
   </snapping>
   <desktops number="4">
     <popupTime>1000</popupTime>
-    <prefix>Workspace</prefix>
+    <prefix></prefix>
   </desktops>
   <theme>
     <name></name>
@@ -100,9 +97,11 @@
     <keybind key="XF86_AudioRaiseVolume"><action name="Execute" command="wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+" /></keybind>
     <keybind key="XF86_AudioMute"><action name="Execute" command="wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle" /></keybind>
     <keybind key="XF86_AudioMicMute"><action name="Execute" command="wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle" /></keybind>
+    <!--
     <keybind key="XF86_MonBrightnessUp"><action name="Execute" command=" set +10%" /></keybind>
     <keybind key="XF86_MonBrightnessDown"><action name="Execute" command=" set 10%-" /></keybind>
-  </keybooard>
+    -->
+  </keyboard>
   <mouse>
     <doubleClickTime>500</doubleClickTime>
     <context name="Frame">
