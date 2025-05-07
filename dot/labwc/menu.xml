@@ -22,7 +22,7 @@
     <item label="ranger"><action name="Execute" command="kitty ranger" /></item>
     <separator label="apps" />
     <menu id="editor-menu" label="editor">
-      <item label="blender"><action name="Execute" command="blender" /></item>
+      <item label="blender"><action name="Execute" command="blender-4.4" /></item>
       <item label="gimp" icon="gimp"><action name="Execute" command="gimp" /></item>
       <item label="libreoffice" icon="libreoffice.25.2-base"><action name="Execute" command="libreoffice25.2" /></item>
       <item label="vscode"><action name="Execute" command="vscode" /></item>
@@ -32,7 +32,6 @@
         <item label="full"><action name="Execute" command="grim" /></item>
         <item label="region"><action name="Execute" command="grim -g $(slurp)" /></item>
       </menu>
-      <item label="mpv" icon="mpv"><action name="Execute" command="mpv" /></item>
       <item label="obs"><action name="Execute" command="obs" /></item>
     </menu>
     <menu id="games-menu" label="games">
