@@ -3,11 +3,11 @@
   <menu id="client-menu">
     <separator label="gentoo" />
     <menu id="workspaces" label="workspace">
+      <item label="always on visible workspace"><action name="ToggleOmnipresent" /></item>
       <item label="left"><action name="SendToDesktop" to="left" /></item>
       <item label="right"><action name="SendToDesktop" to="right" /></item>
-      <separator />
-      <item label="always on visible workspace"><action name="ToggleOmnipresent" /></item>
     </menu>
+    <separator />
     <item label="always on top"><action name="ToggleAlwaysOnTop" /></item>
     <item label="shade"><action name="ToggleShade" /></item>
     <item label="minimize"><action name="Iconify" /></item>
@@ -56,6 +56,13 @@
       <item label="winecfg"><action name="Execute" command="winecfg" /></item>
       <item label="winetricks"><action name="Execute" command="winetricks" /></item>
       <item label="regedit"><action name="Execute" command="regedit" /></item>
+    </menu>
+    <menu id="systemctl-menu" label="systemctl">
+      <item label="logout"><action name="Execute" command="systemctl exit" /></item>
+      <item label="suspend"><action name="Execute" command="systemctl suspend" /></item>
+      <item label="hibernate"><action name="Execute" command="systemctl hibernate" /></item>
+      <item label="reboot"><action name="Execute" command="systemctl reboot" /></item>
+      <item label="poweroff"><action name="Execute" command="systemctl poweroff" /></item>
     </menu>
     <separator />
     <menu id="labwc-menu" label="labwc">
