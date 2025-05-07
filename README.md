@@ -4,7 +4,7 @@
 | command | functionality |
 |---------|---------------|
 | `dispatch-conf` | manage configuration changes after an emerge completes |
-| `getuto` | get portage to set up the necessary keyring for verification, when using binaries |
+| `getuto` | get portage to set up the necessary keyring for verification when using binaries |
 | `emerge --sync` | sync all repositories that are set to auto-sync including the gentoo ebuild repository |
 | `emerge-webrsync` | sync the gentoo ebuild repository using the mirrors by obtaining a snapshot that is (at most) a day old |
 | `emerge -avuDN --with-bdeps=y @world` | |
@@ -23,7 +23,7 @@
 - [__guru__][url-guru]
 - [__handbook__][url-handbook-amd64]
 - [__hybrid graphics__][url-hybrid-graphics]
-- [__labwc__][url-labwc]
+- [__labwc__][url-labwc] (man)
 - [__microcode__][url-microcode]
 - [__networkmanager__][url-networkmanager]
 - [__nvidia-drivers__][url-nvidia-drivers]
