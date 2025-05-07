@@ -2,12 +2,13 @@
 <openbox_menu>
   <menu id="client-menu">
     <separator label="gentoo" />
+    <!--
     <menu id="workspaces" label="workspace">
       <item label="always on visible workspace"><action name="ToggleOmnipresent" /></item>
       <item label="left"><action name="SendToDesktop" to="left" /></item>
       <item label="right"><action name="SendToDesktop" to="right" /></item>
     </menu>
-    <separator />
+    -->
     <item label="always on top"><action name="ToggleAlwaysOnTop" /></item>
     <item label="shade"><action name="ToggleShade" /></item>
     <item label="minimize"><action name="Iconify" /></item>
@@ -20,7 +21,8 @@
     <item label="kitty" icon="kitty"><action name="Execute" command="kitty" /></item>
     <item label="ranger"><action name="Execute" command="kitty ranger" /></item>
     <separator label="apps" />
-    <menu id="editing-menu" label="editing">
+    <menu id="editor-menu" label="editor">
+      <item label="blender"><action name="Execute" command="blender" /></item>
       <item label="gimp" icon="gimp"><action name="Execute" command="gimp" /></item>
       <item label="libreoffice" icon="libreoffice.25.2-base"><action name="Execute" command="libreoffice25.2" /></item>
       <item label="vscode"><action name="Execute" command="vscode" /></item>
@@ -30,11 +32,12 @@
         <item label="full"><action name="Execute" command="grim" /></item>
         <item label="region"><action name="Execute" command="grim -g $(slurp)" /></item>
       </menu>
+      <item label="mpv" icon="mpv"><action name="Execute" command="mpv" /></item>
       <item label="obs"><action name="Execute" command="obs" /></item>
     </menu>
     <menu id="games-menu" label="games">
       <item label="minecraft" icon="minecraft-launcher"><action name="Execute" command="minecraft-launcher" /></item>
-      <item label="steam"><action name="Execute" command="steam" /></item>
+      <item label="steam" icon="steam"><action name="Execute" command="steam" /></item>
       <item label="supertux2" icon="supertux2"><action name="Execute" command="supertux2" /></item>
     </menu>
     <separator label="system" />
@@ -53,8 +56,8 @@
       <item label="mute microphone"><action name="Execute" command="wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle" /></item>
     </menu>
     <menu id="wine-menu" label="wine">
-      <item label="winecfg"><action name="Execute" command="winecfg" /></item>
-      <item label="winetricks"><action name="Execute" command="winetricks" /></item>
+      <item label="winecfg" icon="wine-winecfg"><action name="Execute" command="winecfg" /></item>
+      <item label="winetricks" icon="winetricks"><action name="Execute" command="winetricks" /></item>
       <item label="regedit"><action name="Execute" command="regedit" /></item>
     </menu>
     <menu id="systemctl-menu" label="systemctl">
@@ -65,7 +68,7 @@
       <item label="poweroff"><action name="Execute" command="systemctl poweroff" /></item>
     </menu>
     <separator />
-    <menu id="labwc-menu" label="labwc">
+    <menu id="labwc-menu" label="labwc" icon="labwc">
       <item label="refresh"><action name="Reconfigure" /></item>
       <item label="nuke"><action name="Exit" /></item>
     </menu>
