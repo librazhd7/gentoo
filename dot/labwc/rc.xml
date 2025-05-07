@@ -252,7 +252,7 @@
       </mousebind>
     </context>
     <context name="Root">
-      <mousebind button="Left" action="Press">
+      <mousebind button="Right" action="Press">
         <action name="ShowMenu" menu="root-menu" />
       </mousebind>
       <mousebind direction="Up" action="Scroll">
