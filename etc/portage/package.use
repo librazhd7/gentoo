@@ -122,7 +122,7 @@ sys-apps/systemd                      abi_x86_32 boot cryptsetup
 sys-apps/systemd-utils                abi_x86_32
 sys-apps/util-linux                   abi_x86_32
 sys-devel/clang                       abi_x86_32
-sys-fs/lvm2                           lvm
+sys-fs/lvm2                           lvm thin
 sys-kernel/gentoo-sources             symlink
 sys-kernel/installkernel              dracut systemd systemd-boot uki
 sys-libs/gdbm                         abi_x86_32
