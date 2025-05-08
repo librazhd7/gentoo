@@ -8,6 +8,8 @@ app-arch/brotli                       abi_x86_32
 app-arch/bzip2                        abi_x86_32
 app-arch/lz4                          abi_x86_32
 app-arch/zstd                         abi_x86_32
+app-emulation/libvirt                 fuse macvtap numa pcap vepa virt-network qemu
+app-emulation/qemu                    spice usbredir
 dev-db/sqlite                         abi_x86_32
 dev-lang/orc                          abi_x86_32
 dev-lang/rust-bin                     abi_x86_32
