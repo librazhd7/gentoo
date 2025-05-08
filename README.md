@@ -49,9 +49,9 @@
 
 ### to do
 - gentoo =>> minimal packages by use flags
-- gentoo-sources =>> minimal kernel
-- security =>> enabling secure boot & luks w/ lvm
-- wayland =>> icewm-like compositor
+- gentoo-sources =>> ditch gentoo-kernel-bin
+- security =>> enabling secure boot & luks w/ lvm thin?
+- wayland =>> icewm-like compositor, maybe port it myself?
   
 ### media
 ![](https://github.com/librazhd7/gentoo/blob/3ae7d1e23eea3f7f360a67fa39f140a2dfb9833a/media/grim.jpg)
