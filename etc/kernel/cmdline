@@ -1,7 +1,7 @@
 # ensure that the unified kernel image can find the root partition
 root=PARTUUID=
 
-# https://wiki.gentoo.org/wiki/Zswap
+# provide a compressed ram cache for swap memory pages
 zswap.enabled=1
 zswap.compression=lz4
 
