@@ -25,6 +25,7 @@
 - [__handbook__][url-handbook-amd64]
 - [__hybrid graphics__][url-hybrid-graphics]
 - [__kernel__][url-kernel]
+- [__libinput__][url-libinput]
 - [__microcode__][url-microcode]
 - [__networkmanager__][url-networkmanager]
 - [__nvidia-drivers__][url-nvidia-drivers]
@@ -57,6 +58,7 @@
 [url-handbook-amd64]: <https://wiki.gentoo.org/wiki/Handbook:AMD64>
 [url-hybrid-graphics]: <https://wiki.gentoo.org/wiki/Hybrid_graphics>
 [url-kernel]: <https://wiki.gentoo.org/wiki/Kernel>
+[url-libinput]: <https://wiki.gentoo.org/wiki/Libinput>
 [url-microcode]: <https://wiki.gentoo.org/wiki/Microcode>
 [url-networkmanager]: <https://wiki.gentoo.org/wiki/NetworkManager>
 [url-nvidia-drivers]: <https://wiki.gentoo.org/wiki/NVIDIA/nvidia-drivers>
