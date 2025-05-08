@@ -105,7 +105,6 @@ media-video/obs-studio                lua nvenc pulseaudio vdpau
 media-video/pipewire                  abi_x86_32 dbus sound-server
 net-dns/c-ares                        abi_x86_32
 net-dns/libidn2                       abi_x86_32
-net-fs/samba                          cups pam
 net-libs/gnutls                       abi_x86_32
 net-libs/libasyncns                   abi_x86_32
 net-libs/libndp                       abi_x86_32
@@ -114,7 +113,6 @@ net-libs/nghttp2                      abi_x86_32
 net-libs/nghttp3                      abi_x86_32
 net-misc/curl                         abi_x86_32
 net-misc/networkmanager               abi_x86_32
-net-print/cups                        abi_x86_32
 net-wireless/wpa_supplicant           dbus
 sci-libs/fftw                         threads
 sci-physics/bullet                    double-precision
@@ -132,7 +130,6 @@ sys-libs/libcap                       abi_x86_32
 sys-libs/libudev-compat               abi_x86_32
 sys-libs/libunwind                    abi_x86_32
 sys-libs/ncurses                      abi_x86_32
-sys-libs/pam                          abi_x86_32
 sys-libs/readline                     abi_x86_32
 sys-libs/zlib                         abi_x86_32
 virtual/glu                           abi_x86_32
