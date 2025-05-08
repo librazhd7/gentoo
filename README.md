@@ -38,6 +38,7 @@
 - [__systemd__][url-systemd]
 - [__systemd-boot__][url-systemd-boot]
 - [__swap__][url-swap]
+- [__udev__][url-udev]
 - [__xdg-desktop-portal__][url-xdg-desktop-portal]
 - [__zsh__][url-zsh]
 - [__zswap__][url-zswap]
@@ -71,6 +72,7 @@
 [url-systemd]: <https://wiki.gentoo.org/wiki/Systemd>
 [url-systemd-boot]: <https://wiki.gentoo.org/wiki/Systemd/systemd-boot>
 [url-swap]: <https://wiki.gentoo.org/wiki/Swap>
+[url-udev]: <https://wiki.gentoo.org/wiki/Udev>
 [url-xdg-desktop-portal]: <https://wiki.gentoo.org/wiki/XDG/xdg-desktop-portal>
 [url-zsh]: <https://wiki.gentoo.org/wiki/Zsh>
 [url-zswap]: <https://wiki.gentoo.org/wiki/Zswap>
