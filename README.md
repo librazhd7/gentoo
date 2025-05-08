@@ -52,7 +52,7 @@
 - wayland =>> icewm-like compositor
   
 ### media
-[![]()]()
+[![](https://github.com/librazhd7/gentoo/blob/main/media/grim.jpg)]()
 
 <!-- docs -->
 [url-acpi]: <https://wiki.gentoo.org/wiki/ACPI>
