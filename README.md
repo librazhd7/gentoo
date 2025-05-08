@@ -18,6 +18,7 @@
 - [__dispatch-conf__][url-dispatch-conf]
 - [__dracut__][url-dracut]
 - [__dxvk__][url-dxvk]
+- [__eselect__][url-eselect]
 - [__fonts__][url-fonts]
 - [__gamescope__][url-gamescope] (arch)
 - [__gentoolkit__][url-gentoolkit]
@@ -51,6 +52,7 @@
 [url-dispatch-conf]: <https://wiki.gentoo.org/wiki/Dispatch-conf>
 [url-dracut]: <https://wiki.gentoo.org/wiki/Dracut>
 [url-dxvk]: <https://github.com/doitsujin/dxvk>
+[url-eselect]: <https://wiki.gentoo.org/wiki/Eselect>
 [url-fonts]: <https://wiki.gentoo.org/wiki/Fonts>
 [url-gamescope]: <https://wiki.archlinux.org/title/Gamescope>
 [url-gentoolkit]: <https://wiki.gentoo.org/wiki/Gentoolkit>
