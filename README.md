@@ -33,10 +33,12 @@
 - [__pipewire__][url-pipewire]
 - [__power management__][url-power-management]
 - [__qemu__][url-qemu]
-- [__tmpfs__][url-portage-tmpdir-tmpfs]
+- [__rootfs encryption__][url-rootfs-encryption]
+- [__secure boot__][url-secureboot]
 - [__systemd__][url-systemd]
 - [__systemd-boot__][url-systemd-boot]
 - [__swap__][url-swap]
+- [__tmpfs__][url-portage-tmpdir-tmpfs]
 - [__udev__][url-udev]
 - [__xdg-desktop-portal__][url-xdg-desktop-portal]
 - [__xfs__][url-xfs]
@@ -46,6 +48,7 @@
 ### to do
 - gentoo =>> minimal packages by use flags
 - gentoo-sources =>> minimal kernel
+- security =>> enabling secure boot & encryption
 - wayland =>> icewm-like compositor
   
 ### media
@@ -73,6 +76,8 @@
 [url-power-management]: <https://wiki.gentoo.org/wiki/Power_management>
 [url-portage-tmpdir-tmpfs]: <https://wiki.gentoo.org/wiki/Portage_TMPDIR_on_tmpfs>
 [url-qemu]: <https://wiki.gentoo.org/wiki/QEMU>
+[url-rootfs-encryption]: <https://wiki.gentoo.org/wiki/Rootfs_encryption>
+[url-secureboot]: <https://wiki.gentoo.org/wiki/Secure_Boot>
 [url-systemd]: <https://wiki.gentoo.org/wiki/Systemd>
 [url-systemd-boot]: <https://wiki.gentoo.org/wiki/Systemd/systemd-boot>
 [url-swap]: <https://wiki.gentoo.org/wiki/Swap>
