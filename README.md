@@ -1,6 +1,6 @@
-# [![](https://assets.gentoo.org/tyrian/v1/site-logo.svg)]()
+# ![](https://assets.gentoo.org/tyrian/v1/site-logo.svg)
 
-### emerge [![](https://www.gentoo.org/assets/img/badges/gentoo-badge3.svg)]()
+### emerge ![](https://www.gentoo.org/assets/img/badges/gentoo-badge3.svg)
 | command | functionality |
 |---------|---------------|
 | `dispatch-conf` | manage configuration changes after an emerge completes |
@@ -52,7 +52,7 @@
 - wayland =>> icewm-like compositor
   
 ### media
-[![](https://github.com/librazhd7/gentoo/blob/main/media/grim.jpg)]()
+![](https://github.com/librazhd7/gentoo/blob/3ae7d1e23eea3f7f360a67fa39f140a2dfb9833a/media/grim.jpg)
 
 <!-- docs -->
 [url-acpi]: <https://wiki.gentoo.org/wiki/ACPI>
