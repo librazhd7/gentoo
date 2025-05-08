@@ -1,5 +1,5 @@
 # ensure that the unified kernel image can find the root partition
-root=PARTUUID=
+root=PARTUUID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
 
 # enable efi runtime functions
 efi=runtime
