@@ -39,6 +39,7 @@
 - [__swap__][url-swap]
 - [__udev__][url-udev]
 - [__xdg-desktop-portal__][url-xdg-desktop-portal]
+- [__xfs__][url-xfs]
 - [__zsh__][url-zsh]
 - [__zswap__][url-zswap]
 
@@ -77,5 +78,6 @@
 [url-swap]: <https://wiki.gentoo.org/wiki/Swap>
 [url-udev]: <https://wiki.gentoo.org/wiki/Udev>
 [url-xdg-desktop-portal]: <https://wiki.gentoo.org/wiki/XDG/xdg-desktop-portal>
+[url-xfs]: <https://wiki.gentoo.org/wiki/XFS>
 [url-zsh]: <https://wiki.gentoo.org/wiki/Zsh>
 [url-zswap]: <https://wiki.gentoo.org/wiki/Zswap>
