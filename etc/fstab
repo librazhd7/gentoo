@@ -13,8 +13,8 @@
 #       documentation for details on setting a label. To obtain the UUID, use
 #       the blkid(8) command.
 
-# <fs>			                                   <mountpoint>      <type>  <opts>		                                 <dump>  <pass>
-PARTUUID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx  /efi		           vfat	   umask=0077		                             0       2
-PARTUUID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx	 none		           swap	   sw		                                     0       0
-PARTUUID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx	 /		             xfs		 defaults,noatime		                       0       1
-tmpfs		                                       /var/tmp/portage  tmpfs	 size=8G,uid=portage,gid=portage,mode=775  0       0
+# <fs>                                         <mountpoint>      <type>  <opts>                                    <dump>  <pass>
+PARTUUID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx  /efi              vfat    umask=0077                                0       2
+PARTUUID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx  none              swap    sw                                        0       0
+PARTUUID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx  /                 xfs     defaults,noatime                          0       1
+tmpfs                                          /var/tmp/portage  tmpfs   size=8G,uid=portage,gid=portage,mode=775  0       0
