@@ -42,8 +42,13 @@
 - [__zsh__][url-zsh]
 - [__zswap__][url-zswap]
 
+### to do
+- gentoo =>> minimal packages by use flags
+- gentoo-sources =>> minimal kernel
+- wayland =>> icewm-like compositor
+  
 ### media
-[![](https://github.com/librazhd7/gentoo/tree/main/media/fastfetch.jpg)]()
+[![]()]()
 
 <!-- docs -->
 [url-acpi]: <https://wiki.gentoo.org/wiki/ACPI>
