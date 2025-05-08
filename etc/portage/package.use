@@ -8,6 +8,7 @@ app-arch/brotli                       abi_x86_32
 app-arch/bzip2                        abi_x86_32
 app-arch/lz4                          abi_x86_32
 app-arch/zstd                         abi_x86_32
+app-crypt/p11-kit                     abi_x86_32
 app-emulation/libvirt                 fuse macvtap numa pcap vepa virt-network qemu
 app-emulation/qemu                    spice usbredir
 dev-db/sqlite                         abi_x86_32
@@ -106,8 +107,9 @@ media-video/ffmpeg                    lame nvenc opus theora vdpau vpx
 media-video/obs-studio                lua nvenc pulseaudio vdpau
 media-video/pipewire                  abi_x86_32 dbus sound-server
 net-dns/c-ares                        abi_x86_32
+net-dns/dnsmasq                       script
 net-dns/libidn2                       abi_x86_32
-net-libs/gnutls                       abi_x86_32
+net-libs/gnutls                       abi_x86_32 pkcs11 tools
 net-libs/libasyncns                   abi_x86_32
 net-libs/libndp                       abi_x86_32
 net-libs/libpsl                       abi_x86_32
@@ -115,6 +117,7 @@ net-libs/nghttp2                      abi_x86_32
 net-libs/nghttp3                      abi_x86_32
 net-misc/curl                         abi_x86_32
 net-misc/networkmanager               abi_x86_32
+net-misc/spice-gtk                    usbredir              
 net-print/cups                        abi_x86_32
 net-wireless/wpa_supplicant           dbus
 sci-libs/fftw                         threads
