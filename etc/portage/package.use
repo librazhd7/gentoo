@@ -118,7 +118,7 @@ net-wireless/wpa_supplicant           dbus
 sci-libs/fftw                         threads
 sci-physics/bullet                    double-precision
 sys-apps/dbus                         abi_x86_32
-sys-apps/systemd                      abi_x86_32 boot
+sys-apps/systemd                      abi_x86_32 boot cryptsetup
 sys-apps/systemd-utils                abi_x86_32
 sys-apps/util-linux                   abi_x86_32
 sys-devel/clang                       abi_x86_32
