@@ -113,6 +113,7 @@ net-libs/nghttp2                      abi_x86_32
 net-libs/nghttp3                      abi_x86_32
 net-misc/curl                         abi_x86_32
 net-misc/networkmanager               abi_x86_32
+net-print/cups                        abi_x86_32
 net-wireless/wpa_supplicant           dbus
 sci-libs/fftw                         threads
 sci-physics/bullet                    double-precision
@@ -130,6 +131,7 @@ sys-libs/libcap                       abi_x86_32
 sys-libs/libudev-compat               abi_x86_32
 sys-libs/libunwind                    abi_x86_32
 sys-libs/ncurses                      abi_x86_32
+sys-libs/pam                          abi_x86_32
 sys-libs/readline                     abi_x86_32
 sys-libs/zlib                         abi_x86_32
 virtual/glu                           abi_x86_32
