@@ -33,6 +33,7 @@
         <item label="region"><action name="Execute" command="grim -g $(slurp)" /></item>
       </menu>
       <item label="obs"><action name="Execute" command="obs" /></item>
+      <item label="vlc"><action name="Execute" command="vlc" /></item>
     </menu>
     <menu id="games-menu" label="games">
       <item label="minecraft" icon="minecraft-launcher"><action name="Execute" command="minecraft-launcher" /></item>
