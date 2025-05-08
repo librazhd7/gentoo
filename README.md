@@ -26,6 +26,7 @@
 - [__hybrid graphics__][url-hybrid-graphics]
 - [__kernel__][url-kernel]
 - [__libinput__][url-libinput]
+- [__lvm__][url-lvm]
 - [__microcode__][url-microcode]
 - [__networkmanager__][url-networkmanager]
 - [__nvidia-drivers__][url-nvidia-drivers]
@@ -48,7 +49,7 @@
 ### to do
 - gentoo =>> minimal packages by use flags
 - gentoo-sources =>> minimal kernel
-- security =>> enabling secure boot & encryption
+- security =>> enabling secure boot & luks w/ lvm
 - wayland =>> icewm-like compositor
   
 ### media
@@ -68,6 +69,7 @@
 [url-hybrid-graphics]: <https://wiki.gentoo.org/wiki/Hybrid_graphics>
 [url-kernel]: <https://wiki.gentoo.org/wiki/Kernel>
 [url-libinput]: <https://wiki.gentoo.org/wiki/Libinput>
+[url-lvm]: <https://wiki.gentoo.org/wiki/LVM>
 [url-microcode]: <https://wiki.gentoo.org/wiki/Microcode>
 [url-networkmanager]: <https://wiki.gentoo.org/wiki/NetworkManager>
 [url-nvidia-drivers]: <https://wiki.gentoo.org/wiki/NVIDIA/nvidia-drivers>
