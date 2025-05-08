@@ -26,6 +26,7 @@
 - [__hybrid graphics__][url-hybrid-graphics]
 - [__kernel__][url-kernel]
 - [__libinput__][url-libinput]
+- [__libvirt__][url-libvirt]
 - [__lvm__][url-lvm]
 - [__microcode__][url-microcode]
 - [__networkmanager__][url-networkmanager]
@@ -69,6 +70,7 @@
 [url-hybrid-graphics]: <https://wiki.gentoo.org/wiki/Hybrid_graphics>
 [url-kernel]: <https://wiki.gentoo.org/wiki/Kernel>
 [url-libinput]: <https://wiki.gentoo.org/wiki/Libinput>
+[url-libvirt]: <https://wiki.gentoo.org/wiki/Libvirt>
 [url-lvm]: <https://wiki.gentoo.org/wiki/LVM>
 [url-microcode]: <https://wiki.gentoo.org/wiki/Microcode>
 [url-networkmanager]: <https://wiki.gentoo.org/wiki/NetworkManager>
