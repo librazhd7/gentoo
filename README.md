@@ -14,6 +14,7 @@
 
 ### docs
 - [__acpi__][url-acpi]
+- [__backlight__][url-backlight] (arch)
 - [__bluetooth__][url-bluetooth]
 - [__dispatch-conf__][url-dispatch-conf]
 - [__dracut__][url-dracut]
@@ -58,6 +59,7 @@
 
 <!-- docs -->
 [url-acpi]: <https://wiki.gentoo.org/wiki/ACPI>
+[url-backlight]: <https://wiki.archlinux.org/title/Backlight>
 [url-bluetooth]: <https://wiki.gentoo.org/wiki/Bluetooth>
 [url-dispatch-conf]: <https://wiki.gentoo.org/wiki/Dispatch-conf>
 [url-dracut]: <https://wiki.gentoo.org/wiki/Dracut>
