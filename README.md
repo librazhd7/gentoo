@@ -5,6 +5,25 @@ keeping track of all the changes made to my system, and resources used along the
 besides keeping an offline copy of the repository on standby, installing a source based distribution like gentoo \
 and reading docs all day has seriously sharpened my way around linux.
 
+### features
+- [x] ~amd64
+- [x] bluetooth
+- [x] bootloader (systemd-boot)
+- [x] initramfs (dracut, unified kernel image)
+- [x] intel drivers
+- [x] luks
+- [x] lvm (thin)
+- [x] networking
+- [x] nvidia drivers (open-kernel, hybrid, optimus)
+- [x] pipewire
+- [x] power management (tls)
+- [ ] secure boot
+- [x] ssh
+- [x] systemd
+- [x] virtualization (qemu, wine)
+- [x] wayland
+- [x] zswap
+
 ### fdisk (gpt)
 | device | size | type | lvm | luks | fs |
 |--------|-----|-------|-----|------|----|
