@@ -6,11 +6,11 @@ besides keeping an offline copy of the repository on standby, installing a sourc
 and reading docs all day has seriously sharpened my way around linux.
 
 ### fdisk (gpt)
-| device | size | type | vg | lg | luks | fs |
-|--------|-----|-------|----|----|------|----|
-| `/dev/nvme0n1p1` | 1g | efi (1) | | | | fat32 |
-| `/dev/nvme0n1p2` | 24g | swap (19) | | | | |
-| `/dev/nvme0n1p3` | | lvm (44) | vg0 | thin_pool | yes | xfs |
+| device | size | type | lvm | luks | fs |
+|--------|-----|-------|-----|------|----|
+| `/dev/nvme0n1p1` | 1g | efi (1) | | | fat32 |
+| `/dev/nvme0n1p2` | 24g | swap (19) | | | |
+| `/dev/nvme0n1p3` | | lvm (44) | thin | yes | xfs |
 
 > [!TIP]
 > to list all active volume groups: `vgdisplay` \
