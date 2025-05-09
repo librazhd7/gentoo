@@ -25,7 +25,7 @@ and reading docs all day has seriously sharpened my way around linux.
 > `cryptsetup luksFormat /dev/vg0/thin_pool` \
 > `mkfs.xfs /dev/mapper/root` \
 > `lvchange -a y /dev/vg0/thin_pool` \
-> `mount /dev/vg0/thin_pool /mnt/gentoo`
+> `mount /dev/mapper/root /mnt/gentoo`
 
 ### portage
 | command | functionality |
