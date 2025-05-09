@@ -18,6 +18,10 @@ and reading docs all day has seriously sharpened my way around linux.
 > to list all logical volumes, use the `lvdisplay` command \
 > if logical volumes are missing, then the `lvscan` command can be used to scan for logical volumes on all available volume groups
 
+> [!NOTE]
+> to format the root partition `/dev/nvme0n1p3` using luks, \
+> the device mapper should be set to our lvm volume `/dev/vg0/thin_pool`
+
 ### portage
 | command | functionality |
 |---------|---------------|
