@@ -23,7 +23,7 @@ and reading docs all day has seriously sharpened my way around linux.
 > `lvcreate vg0 /dev/nvme0n1p3` \
 > `lvcreate -l 100%FREE --type thin-pool --thinpool thin_pool vg0` \
 > `cryptsetup luksFormat /dev/vg0/thin_pool` \
-> `mkfs.xfs /dev/mapper/root`
+> `mkfs.xfs /dev/mapper/root` \
 > `mount --label rootfs /mnt/gentoo`
 
 ### portage
