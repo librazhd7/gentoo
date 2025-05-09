@@ -5,6 +5,19 @@ keeping track of all the changes made to my system, and resources used along the
 besides keeping an offline copy of the repository on standby, installing a source based distribution like gentoo \
 and reading docs all day has seriously sharpened my way around linux.
 
+### fdisk (gpt)
+| device | size | type | vg | lg | luks |
+|--------|-----|-------|----|----|------|
+| `/dev/nvme0n1p1` | 1g | efi (1) |
+| `/dev/nvme0n1p2` | 24g | swap (19) |
+| `/dev/nvme0n1p3` | | lvm (44) | vg0 | thin_pool | yes |
+
+> [!TIP]
+> to list all active volume groups, use the `vgdisplay` command \
+> if volume groups are missing, use the `vgscan` command to locate volume groups \
+> to list all logical volumes, use the `lvdisplay` command \
+> if logical volumes are missing, then the `lvscan` command can be used to scan for logical volumes on all available volume groups
+
 ### portage
 | command | functionality |
 |---------|---------------|
