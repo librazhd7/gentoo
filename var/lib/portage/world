@@ -52,7 +52,6 @@ sys-firmware/sof-firmware
 sys-fs/dosfstools
 sys-fs/ntfs3g
 sys-fs/xfsprogs
-sys-kernel/gentoo-kernel-bin
 sys-kernel/gentoo-sources
 sys-kernel/installkernel
 sys-kernel/linux-firmware
@@ -62,6 +61,5 @@ sys-power/tlp
 www-client/google-chrome
 x11-apps/mesa-progs
 x11-drivers/nvidia-drivers
-x11-drivers/xf86-input-libinput
 x11-misc/prime-run
 x11-terms/kitty
