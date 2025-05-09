@@ -58,7 +58,7 @@ configuring network:
 ```
 ifconfig -a
 net-setup enp3s0/wlo1
-ping -c 3 gentoo.org
+ping -c 3 1.1.1.1
 ```
 preparing for stage3:
 ```
@@ -114,7 +114,7 @@ systemctl enable .service/.socket
 systemctl start .service/.socket
 ```
 
-### usermod
+### useradd/usermod
 | group      | permissions                                                                                   |
 |------------|-----------------------------------------------------------------------------------------------|
 | `audio`    | direct access to sound hardware, for all sessions                                             |
@@ -126,8 +126,11 @@ systemctl start .service/.socket
 | `video`    | access to video capture devices, 2d/3d hardware acceleration and framebuffer                  |
 | `wheel`    | administration group, commonly used to give privileges to perform administrative actions      |
 
+preparing user:
 ```
-usermod -aG audio, kvm, libvirt, pipewire, plugdev, users, video, wheel __user__
+emerge --ask app-admin/sudo
+useradd -mG audio, kvm, libvirt, pipewire, plugdev, users, video, wheel __user__
+passwd __user__
 ```
 
 > [!TIP]
