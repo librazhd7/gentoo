@@ -44,13 +44,13 @@ pvcreate /dev/nvme0n1p3
 vgcreate vg0 /dev/nvme0n1p3
 lvcreate -l 100%FREE --type thin-pool --thinpool thin_pool vg0
 cryptsetup luksFormat /dev/vg0/thin_pool
-mkfs.xfs /dev/mapper/root
+mkfs.xfs /dev/vg0/thin_pool
 lvchange -a y /dev/vg0/thin_pool
 ```
 mounting devices:
 ```
 mkdir -p /mnt/gentoo
-mount /dev/mapper/root /mnt/gentoo
+mount /dev/vg0/thin_pool /mnt/gentoo
 mkdir -p /mnt/gentoo/efi
 mount /dev/nvme0n1p1 /mnt/gentoo/efi
 ```
