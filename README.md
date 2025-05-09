@@ -2,7 +2,7 @@
 
 ### why
 keeping track of all the changes made to my system, and resources used along the way. \
-besides keeping an offline copy of the repository, installing a source based distribution like gentoo \
+besides keeping an offline copy of the repository on standby, installing a source based distribution like gentoo \
 and reading docs all day has seriously sharpened my way around linux.
 
 ### portage
@@ -18,29 +18,29 @@ and reading docs all day has seriously sharpened my way around linux.
 | `emerge --ask @preserved-rebuild` | for using new libraries |
 
 ### systemd
-| service | socket | functionality |
-|---------|--------|---------------|
-| `acpid.service` | `pipewire-pulse.socket` | |
-| `bluetooth.service` | `virtstoraged.socket` | |
-| `dnsmasq.service` | | |
-| ~~`getty@tty1.service`~~ | | |
-| `libvirtd.service` | | |
-| `lvm2-monitor.service` | | |
-| `NetworkManager.service` | | |
-| `sshd.service` | | |
-| `systemd-boot-update.service` | | |
-| ~~`systemd-modules-load.service`~~ | | |
-| `systemd-networkd.service` | | |
-| `systemd-timesyncd.service` | | |
-| `thermald.service` | | |
-| `tlp.service` | | |
-| `virtnetworkd.service` | | |
-| `virtqemud.service` | | |
-| `virtlogd.service` | | |
-| `wireplumber.service` | | |
+| services | sockets |
+|---------|--------|
+| `acpid.service` | `pipewire-pulse.socket` |
+| `bluetooth.service` | `virtstoraged.socket` |
+| `dnsmasq.service` | |
+| ~~`getty@tty1.service`~~ | |
+| `libvirtd.service` | |
+| `lvm2-monitor.service` | |
+| `NetworkManager.service` | |
+| `sshd.service` | |
+| `systemd-boot-update.service` | |
+| ~~`systemd-modules-load.service`~~ | |
+| `systemd-networkd.service` | |
+| `systemd-timesyncd.service` | |
+| `thermald.service` | |
+| `tlp.service` | |
+| `virtnetworkd.service` | |
+| `virtqemud.service` | |
+| `virtlogd.service` | |
+| `wireplumber.service` | |
 
 ### usermod
-| group | functionality |
+| group | permissions |
 |-------|-------------|
 | `audio` | direct access to sound hardware, for all sessions |
 | `kvm` | access to virtual machines using kvm |
@@ -52,9 +52,9 @@ and reading docs all day has seriously sharpened my way around linux.
 | `wheel` | administration group, commonly used to give privileges to perform administrative actions |
 
 > [!TIP]
-> To prevent possible threat actors from logging in as root, \
+> to prevent possible threat actors from logging in as root, \
 > deleting the password and/or disabling root login can help improve security. \
-> To delete the root password and disable login: `passwd -dl root`
+> to delete the root password and disable login: `passwd -dl root`
 
 ### to do
 - gentoo =>> minimal packages by use flags
