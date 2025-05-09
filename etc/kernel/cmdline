@@ -1,8 +1,9 @@
-# ensure that the unified kernel image can find the root partition
-root=PARTUUID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
-
 # enable efi runtime functions
 efi=runtime
+
+# ensure that the unified kernel image can find the root partition
+root=PARTUUID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+rd.luks.uuid=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
 
 # provide a compressed ram cache for swap memory pages
 zswap.enabled=1
