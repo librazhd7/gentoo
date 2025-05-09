@@ -13,14 +13,17 @@ and reading docs all day has seriously sharpened my way around linux.
 | `/dev/nvme0n1p3` | | lvm (44) | vg0 | thin_pool | yes | xfs |
 
 > [!TIP]
-> to list all active volume groups, use the `vgdisplay` command \
-> if volume groups are missing, use the `vgscan` command to locate volume groups \
-> to list all logical volumes, use the `lvdisplay` command \
-> if logical volumes are missing, then the `lvscan` command can be used to scan for logical volumes on all available volume groups
+> to list all active volume groups: `vgdisplay` \
+> if volume groups are missing:, `vgscan` \
+> to list all logical volumes: `lvdisplay` \
+> if logical volumes are missing: `lvscan`
 
 > [!NOTE]
-> to format the root partition `/dev/nvme0n1p3` using luks, \
-> the device mapper should be set to our lvm volume `/dev/vg0/thin_pool`
+> `pvcreate /dev/nvme0n1p3` \
+> `lvcreate vg0 /dev/nvme0n1p3` \
+> `lvcreate -l 100%FREE --type thin-pool --thinpool thin_pool vg0` \
+> `cryptsetup luksFormat /dev/vg0/thin_pool` \
+> `mkfs.xfs /dev/mapper/root`
 
 ### portage
 | command | functionality |
