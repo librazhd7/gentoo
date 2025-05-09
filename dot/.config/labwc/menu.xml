@@ -19,58 +19,61 @@
     <separator label="gentoo" />
     <item label="chrome" icon="google-chrome"><action name="Execute" command="google-chrome-stable" /></item>
     <item label="kitty" icon="kitty"><action name="Execute" command="kitty" /></item>
-    <item label="ranger"><action name="Execute" command="kitty ranger" /></item>
+    <item label="ranger" icon=""><action name="Execute" command="kitty ranger" /></item>
     <separator label="apps" />
-    <menu id="editor-menu" label="editor">
-      <item label="blender"><action name="Execute" command="blender-4.4" /></item>
+    <menu id="editor-menu" label="editor" icon="">
+      <item label="blender" icon=""><action name="Execute" command="blender-4.4" /></item>
       <item label="gimp" icon="gimp"><action name="Execute" command="gimp" /></item>
       <item label="libreoffice" icon="libreoffice.25.2-base"><action name="Execute" command="libreoffice25.2" /></item>
-      <item label="vscode"><action name="Execute" command="vscode" /></item>
+      <item label="vscode" icon=""><action name="Execute" command="vscode" /></item>
     </menu>
-    <menu id="multimedia-menu" label="multimedia">
-      <menu id="grim-menu" label="grim">
+    <menu id="multimedia-menu" label="multimedia" icon="">
+      <menu id="grim-menu" label="grim" icon="">
         <item label="full"><action name="Execute" command="grim" /></item>
         <item label="region"><action name="Execute" command="grim -g $(slurp)" /></item>
       </menu>
-      <item label="obs"><action name="Execute" command="obs" /></item>
-      <item label="vlc"><action name="Execute" command="vlc" /></item>
+      <item label="obs" icon=""><action name="Execute" command="obs" /></item>
+      <item label="vlc" icon=""><action name="Execute" command="vlc" /></item>
     </menu>
-    <menu id="games-menu" label="games">
+    <menu id="games-menu" label="games" icon="">
       <item label="minecraft" icon="minecraft-launcher"><action name="Execute" command="minecraft-launcher" /></item>
       <item label="steam" icon="steam"><action name="Execute" command="steam" /></item>
       <item label="supertux2" icon="supertux2"><action name="Execute" command="supertux2" /></item>
     </menu>
-    <separator label="system" />
-    <item label="nmtui"><action name="Execute" command="kitty nmtui" /></item>
-    <item label="nvidia"><action name="Execute" command="nvidia-settings" /></item>
-    <menu id="bluetooth-menu" label="bluetooth">
-      <item label="disable"><action name="Execute" command="bluetooth off" /></item>
-      <item label="enable"><action name="Execute" command="bluetooth on" /></item>
+    <menu id="emulation-menu" label="emulation" icon="">
+      <item label="virt-manager" icon=""><action name="Execute" command="virt-manager" /></item>
     </menu>
-    <menu id="pipewire-menu" label="pipewire">
+    <separator label="system" />
+    <item label="nmtui" icon=""><action name="Execute" command="kitty nmtui" /></item>
+    <item label="nvidia" icon=""><action name="Execute" command="nvidia-settings" /></item>
+    <menu id="bluetooth-menu" label="bluetooth" icon="">
+      <item label="disable" icon=""><action name="Execute" command="bluetooth off" /></item>
+      <item label="enable" icon=""><action name="Execute" command="bluetooth on" /></item>
+    </menu>
+    <menu id="pipewire-menu" label="pipewire" icon="">
       <!--
       <item label="raise audio [+5%]"><action name="Execute" command="wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+" /></item>
       <item label="lower audio [-5%]"><action name="Execute" command="wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-" /></item>
       -->
-      <item label="mute audio"><action name="Execute" command="wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle" /></item>
-      <item label="mute microphone"><action name="Execute" command="wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle" /></item>
+      <item label="mute audio" icon=""><action name="Execute" command="wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle" /></item>
+      <item label="mute microphone" icon=""><action name="Execute" command="wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle" /></item>
     </menu>
-    <menu id="wine-menu" label="wine">
+    <menu id="wine-menu" label="wine" icon="">
       <item label="winecfg" icon="wine-winecfg"><action name="Execute" command="winecfg" /></item>
       <item label="winetricks" icon="winetricks"><action name="Execute" command="winetricks" /></item>
-      <item label="regedit"><action name="Execute" command="regedit" /></item>
+      <item label="regedit" icon=""><action name="Execute" command="regedit" /></item>
     </menu>
-    <menu id="systemctl-menu" label="systemctl">
-      <item label="logout"><action name="Execute" command="systemctl exit" /></item>
-      <item label="suspend"><action name="Execute" command="systemctl suspend" /></item>
-      <item label="hibernate"><action name="Execute" command="systemctl hibernate" /></item>
-      <item label="reboot"><action name="Execute" command="systemctl reboot" /></item>
-      <item label="poweroff"><action name="Execute" command="systemctl poweroff" /></item>
+    <menu id="systemctl-menu" label="systemctl" icon="">
+      <item label="logout" icon=""><action name="Execute" command="systemctl exit" /></item>
+      <item label="suspend" icon=""><action name="Execute" command="systemctl suspend" /></item>
+      <item label="hibernate" icon=""><action name="Execute" command="systemctl hibernate" /></item>
+      <item label="reboot" icon=""><action name="Execute" command="systemctl reboot" /></item>
+      <item label="poweroff" icon=""><action name="Execute" command="systemctl poweroff" /></item>
     </menu>
     <separator />
     <menu id="labwc-menu" label="labwc" icon="labwc">
-      <item label="refresh"><action name="Reconfigure" /></item>
-      <item label="nuke"><action name="Exit" /></item>
+      <item label="refresh" icon=""><action name="Reconfigure" /></item>
+      <item label="nuke" icon=""><action name="Exit" /></item>
     </menu>
   </menu>
 </openbox_menu>
