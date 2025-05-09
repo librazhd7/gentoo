@@ -55,7 +55,7 @@
 - wayland =>> icewm-like compositor, maybe port it myself?
   
 ### media
-![](https://github.com/librazhd7/gentoo/blob/3ae7d1e23eea3f7f360a67fa39f140a2dfb9833a/media/grim.jpg)
+![](https://github.com/librazhd7/gentoo/blob/6d570189e717f56e126076e14c76d73150764ab0/media/grim.jpg)
 
 <!-- docs -->
 [url-acpi]: <https://wiki.gentoo.org/wiki/ACPI>
