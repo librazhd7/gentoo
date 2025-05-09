@@ -41,7 +41,7 @@ swapon /dev/nvme0n1p2
 lvm and luks on root partition:
 ```
 pvcreate /dev/nvme0n1p3
-lvcreate vg0 /dev/nvme0n1p3
+vgcreate vg0 /dev/nvme0n1p3
 lvcreate -l 100%FREE --type thin-pool --thinpool thin_pool vg0
 cryptsetup luksFormat /dev/vg0/thin_pool
 mkfs.xfs /dev/mapper/root
