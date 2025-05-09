@@ -8,6 +8,9 @@ efi=runtime
 zswap.enabled=1
 zswap.compression=lz4
 
+# register backlight
+acpi_backlight=nvidia_wmi_ec
+
 # hide boot messages
 quiet
 
