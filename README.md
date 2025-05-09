@@ -1,5 +1,10 @@
 # ![](https://assets.gentoo.org/tyrian/v1/site-logo.svg)
 
+### why
+keeping track of all the changes made to my system, and resources used along the way. \
+besides keeping an offline copy of the repository, installing a source based distribution like gentoo \
+and reading docs all day has seriously sharpened my way around linux.
+
 ### portage ![](https://www.gentoo.org/assets/img/badges/gentoo-badge3.svg)
 | command | functionality |
 |---------|---------------|
@@ -54,9 +59,7 @@
 - gentoo =>> minimal packages by use flags
 - gentoo-sources =>> ditch gentoo-kernel-bin
 - security =>> enabling secure boot & luks w/ lvm thin?
-- wayland =>> icewm-like compositor, maybe port it myself?
-
-### why?
+- wayland =>> icewm-like compositor, see icewl?
 
 ### docs
 - [__acpi__][url-acpi]
