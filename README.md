@@ -5,7 +5,7 @@ keeping track of all the changes made to my system, and resources used along the
 besides keeping an offline copy of the repository, installing a source based distribution like gentoo \
 and reading docs all day has seriously sharpened my way around linux.
 
-### portage ![](https://www.gentoo.org/assets/img/badges/gentoo-badge3.svg)
+### portage
 | command | functionality |
 |---------|---------------|
 | `dispatch-conf` | manage configuration changes after an emerge completes |
@@ -98,7 +98,7 @@ and reading docs all day has seriously sharpened my way around linux.
 - [__zsh__][url-zsh]
 - [__zswap__][url-zswap]
   
-### media
+### media ![](https://www.gentoo.org/assets/img/badges/gentoo-badge3.svg)
 ![](https://github.com/librazhd7/gentoo/blob/6d570189e717f56e126076e14c76d73150764ab0/media/grim.jpg)
 
 <!-- docs -->
