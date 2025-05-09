@@ -25,6 +25,7 @@
 | `sshd.service` | | |
 | `systemd-boot-update.service` | | |
 | ~~`systemd-modules-load.service`~~ | | |
+| `systemd-networkd.service` | | |
 | `systemd-timesyncd.service` | | |
 | `thermald.service` | | |
 | `tlp.service` | | |
@@ -32,6 +33,22 @@
 | `virtqemud.service` | | |
 | `virtlogd.service` | | |
 | `wireplumber.service` | | |
+
+### usermod
+| group | functionality |
+|-------|-------------|
+| `audio` | |
+| `libvirt` | |
+| `pipewire` | |
+| `plugdev` | |
+| `users` | |
+| `video` | |
+| `wheel` | |
+
+> [!TIP]
+> To prevent possible threat actors from logging in as root, \
+> deleting the password and/or disabling root login can help improve security. \
+> To delete the root password and disable login: `passwd -dl root`
 
 ### to do
 - gentoo =>> minimal packages by use flags
