@@ -42,13 +42,14 @@ and reading docs all day has seriously sharpened my way around linux.
 ### usermod
 | group | functionality |
 |-------|-------------|
-| `audio` | |
-| `libvirt` | |
+| `audio` | direct access to sound hardware, for all sessions |
+| `kvm` | access to virtual machines using kvm |
+| `libvirt` | users in this group can talk with libvirt service via dbus |
 | `pipewire` | |
-| `plugdev` | |
-| `users` | |
-| `video` | |
-| `wheel` | |
+| `plugdev` | allows members to mount and umount removable devices through pmount |
+| `users` | the primary group for users when user private groups are not used (generally not recommended) |
+| `video` | access to video capture devices, 2d/3d hardware acceleration and framebuffer |
+| `wheel` | administration group, commonly used to give privileges to perform administrative actions |
 
 > [!TIP]
 > To prevent possible threat actors from logging in as root, \
@@ -90,6 +91,7 @@ and reading docs all day has seriously sharpened my way around linux.
 - [__ssh__][url-ssh]
 - [__systemd__][url-systemd]
 - [__systemd-boot__][url-systemd-boot]
+- [__systemgroups__][url-systemgroups] (debian)
 - [__swap__][url-swap]
 - [__tmpfs__][url-portage-tmpdir-tmpfs]
 - [__udev__][url-udev]
@@ -131,6 +133,7 @@ and reading docs all day has seriously sharpened my way around linux.
 [url-ssh]: <https://wiki.gentoo.org/wiki/SSH>
 [url-systemd]: <https://wiki.gentoo.org/wiki/Systemd>
 [url-systemd-boot]: <https://wiki.gentoo.org/wiki/Systemd/systemd-boot>
+[url-systemgroups]: <https://wiki.debian.org/SystemGroups>
 [url-swap]: <https://wiki.gentoo.org/wiki/Swap>
 [url-udev]: <https://wiki.gentoo.org/wiki/Udev>
 [url-xdg-desktop-portal]: <https://wiki.gentoo.org/wiki/XDG/xdg-desktop-portal>
