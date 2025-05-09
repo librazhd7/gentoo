@@ -1,6 +1,6 @@
 # ![](https://assets.gentoo.org/tyrian/v1/site-logo.svg)
 
-### emerge ![](https://www.gentoo.org/assets/img/badges/gentoo-badge3.svg)
+### portage ![](https://www.gentoo.org/assets/img/badges/gentoo-badge3.svg)
 | command | functionality |
 |---------|---------------|
 | `dispatch-conf` | manage configuration changes after an emerge completes |
@@ -12,13 +12,42 @@
 | `emerge --ask @module-rebuild` | after installing a new kernel |
 | `emerge --ask @preserved-rebuild` | for using new libraries |
 
+### systemd
+| service | socket | functionality |
+|---------|--------|---------------|
+| `acpid.service` | `pipewire-pulse.socket` | |
+| `bluetooth.service` | `virtstoraged.socket` | |
+| `dnsmasq.service` | | |
+| ~~`getty@tty1.service`~~ | | |
+| `libvirtd.service` | | |
+| `lvm2-monitor.service` | | |
+| `NetworkManager.service` | | |
+| `sshd.service` | | |
+| `systemd-boot-update.service` | | |
+| ~~`systemd-modules-load.service`~~ | | |
+| `systemd-timesyncd.service` | | |
+| `thermald.service` | | |
+| `tlp.service` | | |
+| `virtnetworkd.service` | | |
+| `virtqemud.service` | | |
+| `virtlogd.service` | | |
+| `wireplumber.service` | | |
+
+### to do
+- gentoo =>> minimal packages by use flags
+- gentoo-sources =>> ditch gentoo-kernel-bin
+- security =>> enabling secure boot & luks w/ lvm thin?
+- wayland =>> icewm-like compositor, maybe port it myself?
+
+### why?
+
 ### docs
 - [__acpi__][url-acpi]
 - [__backlight__][url-backlight] (arch)
 - [__bluetooth__][url-bluetooth]
 - [__dispatch-conf__][url-dispatch-conf]
 - [__dracut__][url-dracut]
-- [__dxvk__][url-dxvk]
+- [__dxvk__][url-dxvk] (github)
 - [__eselect__][url-eselect]
 - [__fonts__][url-fonts]
 - [__gamescope__][url-gamescope] (arch)
@@ -38,6 +67,7 @@
 - [__qemu__][url-qemu]
 - [__rootfs encryption__][url-rootfs-encryption]
 - [__secure boot__][url-secureboot]
+- [__ssh__][url-ssh]
 - [__systemd__][url-systemd]
 - [__systemd-boot__][url-systemd-boot]
 - [__swap__][url-swap]
@@ -47,12 +77,6 @@
 - [__xfs__][url-xfs]
 - [__zsh__][url-zsh]
 - [__zswap__][url-zswap]
-
-### to do
-- gentoo =>> minimal packages by use flags
-- gentoo-sources =>> ditch gentoo-kernel-bin
-- security =>> enabling secure boot & luks w/ lvm thin?
-- wayland =>> icewm-like compositor, maybe port it myself?
   
 ### media
 ![](https://github.com/librazhd7/gentoo/blob/6d570189e717f56e126076e14c76d73150764ab0/media/grim.jpg)
@@ -84,6 +108,7 @@
 [url-qemu]: <https://wiki.gentoo.org/wiki/QEMU>
 [url-rootfs-encryption]: <https://wiki.gentoo.org/wiki/Rootfs_encryption>
 [url-secureboot]: <https://wiki.gentoo.org/wiki/Secure_Boot>
+[url-ssh]: <https://wiki.gentoo.org/wiki/SSH>
 [url-systemd]: <https://wiki.gentoo.org/wiki/Systemd>
 [url-systemd-boot]: <https://wiki.gentoo.org/wiki/Systemd/systemd-boot>
 [url-swap]: <https://wiki.gentoo.org/wiki/Swap>
