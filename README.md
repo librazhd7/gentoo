@@ -11,6 +11,7 @@ and reading docs all day has seriously sharpened my way around linux.
 - [x] bootloader (systemd-boot)
 - [x] initramfs (dracut, unified kernel image)
 - [x] intel drivers
+- [ ] kernel (gentoo-sources)
 - [x] luks
 - [x] lvm (thin)
 - [x] networking
@@ -19,7 +20,7 @@ and reading docs all day has seriously sharpened my way around linux.
 - [x] power management (tls)
 - [ ] secure boot
 - [x] ssh
-- [x] systemd
+- [x] systemd (dbus, udev)
 - [x] virtualization (qemu, wine)
 - [x] wayland
 - [x] zswap
