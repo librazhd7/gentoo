@@ -27,13 +27,10 @@ games-action/minecraft-launcher
 games-arcade/supertux
 games-util/steam-launcher
 gui-apps/grim
-gui-apps/sfwbar
 gui-apps/slurp
 gui-apps/swww
-gui-libs/egl-wayland
 gui-libs/xdg-desktop-portal-wlr
 gui-wm/gamescope
-gui-wm/labwc
 media-fonts/corefonts
 media-fonts/noto-emoji
 media-gfx/blender
@@ -46,7 +43,6 @@ media-video/wireplumber
 net-misc/networkmanager
 net-wireless/bluez
 sys-apps/mlocate
-sys-apps/systemd
 sys-apps/xdg-desktop-portal
 sys-apps/xdg-desktop-portal-gtk
 sys-auth/rtkit
@@ -60,7 +56,6 @@ sys-kernel/gentoo-kernel-bin
 sys-kernel/gentoo-sources
 sys-kernel/installkernel
 sys-kernel/linux-firmware
-sys-libs/glibc
 sys-power/acpid
 sys-power/thermald
 sys-power/tlp
