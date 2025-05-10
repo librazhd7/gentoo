@@ -9,7 +9,6 @@ and reading docs all day has seriously sharpened my way around linux.
 - [x] ~amd64
 - [x] bluetooth
 - [x] bootloader (systemd-boot)
-- [x] initramfs (unified kernel image)?
 - [x] intel microcode (iucode_tool)
 - [ ] kernel (gentoo-sources)
 - [x] luks
@@ -150,7 +149,6 @@ passwd __user__
 ### to do
 - gentoo =>> minimal packages by use flags
 - gentoo-sources =>> ditch gentoo-kernel-bin
-- initramfs =>> ditch dracut?
 - wayland =>> icewm-like compositor, see icewl?
 
 ### docs
