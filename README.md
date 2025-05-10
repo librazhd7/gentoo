@@ -181,12 +181,15 @@ passwd __user__
 - [__rootfs encryption__][url-rootfs-encryption]
 - [__secure boot__][url-secureboot]
 - [__ssh__][url-ssh]
+- [__steam__][url-steam]
 - [__systemd__][url-systemd]
 - [__systemd-boot__][url-systemd-boot]
 - [__systemgroups__][url-systemgroups] (debian)
 - [__swap__][url-swap]
 - [__tmpfs__][url-portage-tmpdir-tmpfs]
 - [__udev__][url-udev]
+- [__unified kernel image__][url-unified-kernel-image]
+- [__wine__][url-wine]
 - [__xdg-desktop-portal__][url-xdg-desktop-portal]
 - [__xfs__][url-xfs]
 - [__zsh__][url-zsh]
@@ -222,11 +225,14 @@ passwd __user__
 [url-rootfs-encryption]:     <https://wiki.gentoo.org/wiki/Rootfs_encryption>
 [url-secureboot]:            <https://wiki.gentoo.org/wiki/Secure_Boot>
 [url-ssh]:                   <https://wiki.gentoo.org/wiki/SSH>
+[url-steam]:                 <https://wiki.gentoo.org/wiki/Steam>
 [url-systemd]:               <https://wiki.gentoo.org/wiki/Systemd>
 [url-systemd-boot]:          <https://wiki.gentoo.org/wiki/Systemd/systemd-boot>
 [url-systemgroups]:          <https://wiki.debian.org/SystemGroups>
 [url-swap]:                  <https://wiki.gentoo.org/wiki/Swap>
 [url-udev]:                  <https://wiki.gentoo.org/wiki/Udev>
+[url-unified-kernel-image]:  <https://wiki.gentoo.org/wiki/Unified_kernel_image>
+[url-wine]:                  <https://wiki.gentoo.org/wiki/Wine>
 [url-xdg-desktop-portal]:    <https://wiki.gentoo.org/wiki/XDG/xdg-desktop-portal>
 [url-xfs]:                   <https://wiki.gentoo.org/wiki/XFS>
 [url-zsh]:                   <https://wiki.gentoo.org/wiki/Zsh>
