@@ -1,9 +1,9 @@
 # ![](https://assets.gentoo.org/tyrian/v1/site-logo.svg)
 
 ### why
-keeping track of all the changes made to my system, and resources used along the way.                            \
-besides keeping an offline copy of the repository on standby, installing a source based distribution like gentoo \
-and reading docs all day has seriously sharpened my way around linux.
+* keep track of all changes made to my system and resources used along the way
+* keep an offline copy of the repository on standby as reference
+* installing a source based distribution like gentoo and reading docs all day has seriously sharpened my way around linux
 
 ### features
 - [x] ~amd64
@@ -63,7 +63,6 @@ cp --dereference /etc/resolv.conf /mnt/gentoo/etc/
 stage3:
 ```
 cd /mnt/gentoo
-wget https://ftp.lysator.liu.se/gentoo/releases/amd64/autobuilds/current-stage3-amd64-systemd/stage3-amd64-systemd-xxxxxxxxxxxxxxxx.tar.xz
 tar xpvf stage3-*.tar.xz --xattrs-include='*.*' --numeric-owner -C /mnt/gentoo
 arch-chroot /mnt/gentoo
 ```
@@ -87,9 +86,23 @@ arch-chroot /mnt/gentoo
 | `emerge --ask @module-rebuild`                                               | after installing a new kernel                                                                           |
 | `emerge --ask @preserved-rebuild`                                            | for using new libraries                                                                                 |
 
+> [!WARNING]  
+> guide is specifically tailored towards the hardware and preferences of mine \
+> you should follow the official gentoo installation handbook instead:
+> 
+> ```
+> links https://wiki.gentoo.org/wiki/Handbook:AMD64
+> ```
+
 > [!CAUTION]
-> procedural methods as stated below should only be executed, \
-> assuming system-wide configurations have been applied, as can be found in /etc/ and /efi/
+> procedural methods as stated below should only be executed \
+> assuming system-wide configurations have been applied beforehand:
+> ```
+> git clone https://github.com/librazhd7/gentoo.git
+> ```
+> ```
+> wget https://github.com/librazhd7/gentoo/archive/refs/heads/main.zip
+> ```
 
 preparing gentoo:
 ```
@@ -132,7 +145,6 @@ maintaining gentoo:
 ```
 eclean-dist -d
 eclean-pkg
-links https://wiki.gentoo.org/wiki/Handbook:AMD64
 ```
 
 ### systemd
@@ -195,6 +207,7 @@ visudo
 > to delete the root password and disable login: `passwd -dl root`
 
 ### to do
+- alot
 - gentoo =>> minimal packages by use flags
 - gentoo-sources =>> ditch gentoo-kernel-bin
 - wayland =>> icewm-like compositor, see icewl?
