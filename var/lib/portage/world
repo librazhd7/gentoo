@@ -28,10 +28,13 @@ games-action/minecraft-launcher
 games-arcade/supertux
 games-util/steam-launcher
 gui-apps/grim
+gui-apps/sfwbar
 gui-apps/slurp
 gui-apps/swww
+gui-libs/wlroots
 gui-libs/xdg-desktop-portal-wlr
 gui-wm/gamescope
+gui-wm/labwc
 media-fonts/corefonts
 media-fonts/noto-emoji
 media-gfx/blender
