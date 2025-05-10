@@ -114,6 +114,21 @@ make nconfig
 bootctl install
 ```
 
+polishing gentoo:
+```
+emerge --ask x11-apps/mesa-progs x11-drivers/nvidia-drivers x11-misc/prime-run
+emerge --ask app-portage/gentoolkit sys-apps/mlocate
+emerge --ask app-shells/bash-completion app-shells/zsh app-shells/zsh-completions app-shells/gentoo-zsh-completions
+emerge --ask app-emulation/libvirt app-emulation/qemu app-emulation/virt-manager app-emulation/wine-staging app-emulation/winetricks
+```
+
+maintaining gentoo:
+```
+eclean-dist -d
+eclean-pkg
+links https://wiki.gentoo.org/wiki/Handbook:AMD64
+```
+
 ### systemd
 | services                           | sockets                 |
 |------------------------------------|-------------------------|
@@ -148,11 +163,6 @@ systemctl preset-all
 > : `systemctl enable .service/.socket` \
 > : `systemctl start .service/.socket`
 
-polishing gentoo:
-```
-emerge --ask app-shells/bash-completion sys-apps/mlocate x11-drivers/nvidia-drivers
-```
-
 ### useradd/usermod
 | group      | permissions                                                                                   |
 |------------|-----------------------------------------------------------------------------------------------|
@@ -177,13 +187,6 @@ visudo
 > to prevent possible threat actors from logging in as root,                   \
 > deleting the password and/or disabling root login can help improve security. \
 > to delete the root password and disable login: `passwd -dl root`
-
-maintaining gentoo:
-```
-eclean-dist -d
-eclean-pkg
-links https://wiki.gentoo.org/wiki/Handbook:AMD64
-```
 
 ### to do
 - gentoo =>> minimal packages by use flags
