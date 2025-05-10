@@ -87,6 +87,15 @@ arch-chroot /mnt/gentoo
 | `emerge --ask @module-rebuild`        | after installing a new kernel                                                                           |
 | `emerge --ask @preserved-rebuild`     | for using new libraries                                                                                 |
 
+preparing for base system:
+```
+wget https://github.com/librazhd7/gentoo/archive/refs/heads/main.zip
+unzip gentoo-main.zip
+cd gentoo-main
+emerge-webrsync
+getuto
+```
+
 ### systemd
 | services                           | sockets                 |
 |------------------------------------|-------------------------|
