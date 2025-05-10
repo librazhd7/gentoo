@@ -97,6 +97,8 @@ emerge-webrsync
 getuto
 emerge --ask --verbose --update --deep --changed-use --with-bdeps=y @world
 emerge --ask --depclean
+eclean-dist -d
+eclean-pkg
 ```
 
 ### systemd
