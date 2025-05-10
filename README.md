@@ -88,6 +88,9 @@ arch-chroot /mnt/gentoo
 
 preparing for base system:
 ```
+eselect profile list
+eselect kernel list
+eselect locale list
 wget https://github.com/librazhd7/gentoo/archive/refs/heads/main.zip
 unzip gentoo-main.zip
 cd gentoo-main
