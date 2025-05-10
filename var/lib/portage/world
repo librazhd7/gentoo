@@ -14,7 +14,6 @@ app-misc/resolve-march-native
 app-office/libreoffice-bin
 app-portage/cpuid2cpuflags
 app-portage/gentoolkit
-app-shells/bash
 app-shells/bash-completion
 app-shells/gentoo-zsh-completions
 app-shells/zsh
@@ -46,13 +45,9 @@ media-video/vlc
 media-video/wireplumber
 net-misc/networkmanager
 net-wireless/bluez
-sys-apps/coreutils
-sys-apps/dbus
-sys-apps/grep
 sys-apps/keyutils
 sys-apps/mlocate
 sys-apps/systemd
-sys-apps/util-linux
 sys-apps/xdg-desktop-portal
 sys-apps/xdg-desktop-portal-gtk
 sys-auth/rtkit
