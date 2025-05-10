@@ -184,7 +184,7 @@ systemctl preset-all
 > : `systemctl enable .service/.socket` \
 > : `systemctl start .service/.socket`
 
-### useradd/usermod
+### system groups[^16]
 | group      | permissions                                                                                   |
 |------------|-----------------------------------------------------------------------------------------------|
 | `audio`    | direct access to sound hardware, for all sessions                                             |
@@ -300,8 +300,9 @@ visudo
 [url-zsh]:                   <https://wiki.gentoo.org/wiki/Zsh>
 [url-zswap]:                 <https://wiki.gentoo.org/wiki/Zswap>
 
-[^1]: <https://wiki.gentoo.org/wiki/Fdisk>
-[^2]: <https://wiki.gentoo.org/wiki/GUID_Partition_Table>
+### references
+[^1]: <https://linux.die.net/man/8/fdisk>
+[^2]: <https://en.wikipedia.org/wiki/GUID_Partition_Table>
 [^3]: <https://wiki.gentoo.org/wiki/UEFI>
 [^4]: <https://wiki.gentoo.org/wiki/EFI_System_Partition>
 [^5]: <https://wiki.gentoo.org/wiki/Swap>
@@ -315,3 +316,4 @@ visudo
 [^13]: <https://wiki.gentoo.org/wiki/Kernel>
 [^14]: <https://wiki.gentoo.org/wiki/Eclean>
 [^15]: <https://wiki.gentoo.org/wiki/Systemd>
+[^16]: <https://wiki.debian.org/SystemGroups>
