@@ -109,12 +109,14 @@ env-update && source /etc/profile
 configuring gentoo:
 ```
 emerge --ask sys-kernel/linux-firmware sys-firmware/intel-microcode sys-firmware/sof-firmware
-emerge --ask sys-apps/pciutils sys-apps/systemd sys-kernel/gentoo-sources sys-kernel/installkernel
+emerge --ask app-crypt/sbsigntools sys-apps/pciutils sys-apps/systemd sys-kernel/gentoo-sources sys-kernel/installkernel
 emerge --ask sys-block/io-scheduler-udev-rules sys-fs/cryptsetup sys-fs/dosfstools sys-fs/e2fsprogs sys-fs/lvm2 sys-fs/ntfs3g sys-fs/xfsprogs
 eselect kernel list
 cd /usr/src/linux
 make localmodconfig
 make nconfig
+make && make modules_install
+make install
 bootctl install
 ```
 
