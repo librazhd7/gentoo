@@ -1,4 +1,5 @@
 app-admin/sudo
+app-crypt/sbsigntools
 app-editors/nano
 app-editors/vim
 app-editors/vscode
@@ -47,6 +48,7 @@ net-misc/networkmanager
 net-wireless/bluez
 sys-apps/keyutils
 sys-apps/mlocate
+sys-apps/pciutils
 sys-apps/systemd
 sys-apps/xdg-desktop-portal
 sys-apps/xdg-desktop-portal-gtk
