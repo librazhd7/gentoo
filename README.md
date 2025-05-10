@@ -24,20 +24,21 @@
 - [x] wayland
 - [x] zswap
 
-### fdisk (gpt)
+### fdisk[^1] (gpt)[^2]
 | device           | size       | type      | lvm | luks | fs    |
 |------------------|------------|-----------|------|-----|-------|
 | `/dev/nvme0n1p1` | 1g         | efi (1)   |      |     | fat32 |
 | `/dev/nvme0n1p2` | 24g        | swap (19) |      |     |       |
 | `/dev/nvme0n1p3` |            | lvm (44)  | thin | yes | xfs   |
 
-esp and swap:
+### esp[^3][^4] and swap[^5]
 ```
 mkfs.vfat -F 32 /dev/nvme0n1p1
 mkswap /dev/nvme0n1p2
 swapon /dev/nvme0n1p2
 ```
-lvm and luks on root partition:
+
+### lvm[^6] and luks[^7] on root partition
 ```
 pvcreate /dev/nvme0n1p3
 vgcreate vg0 /dev/nvme0n1p3
@@ -46,25 +47,13 @@ cryptsetup luksFormat /dev/vg0/thin_pool
 mkfs.xfs /dev/vg0/thin_pool
 lvchange -a y /dev/vg0/thin_pool
 ```
-mounting devices:
+
+### mounting devices
 ```
 mkdir -p /mnt/gentoo
 mount /dev/vg0/thin_pool /mnt/gentoo
 mkdir -p /mnt/gentoo/efi
 mount /dev/nvme0n1p1 /mnt/gentoo/efi
-```
-configuring network:
-```
-ifconfig -a
-net-setup enp3s0/wlo1
-ping -c 3 1.1.1.1
-cp --dereference /etc/resolv.conf /mnt/gentoo/etc/
-```
-stage3:
-```
-cd /mnt/gentoo
-tar xpvf stage3-*.tar.xz --xattrs-include='*.*' --numeric-owner -C /mnt/gentoo
-arch-chroot /mnt/gentoo
 ```
 
 > [!TIP]
@@ -73,7 +62,7 @@ arch-chroot /mnt/gentoo
 > to list all logical volumes: `lvdisplay`      \
 > if logical volumes are missing: `lvscan`
 
-### portage
+### portage[^8]
 | command                                                                      | functionality                                                                                           |
 |------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | `dispatch-conf`                                                              | manage configuration changes after an emerge completes                                                  |
@@ -87,16 +76,14 @@ arch-chroot /mnt/gentoo
 | `emerge --ask @preserved-rebuild`                                            | for using new libraries                                                                                 |
 
 > [!WARNING]  
-> guide is specifically tailored towards the hardware and preferences of mine \
-> you should follow the official gentoo installation handbook instead:
-> 
+> guide is specifically tailored towards hardware and preferences of mine \
+> you should adjust accordingly and follow the official gentoo installation handbook instead
 > ```
 > links https://wiki.gentoo.org/wiki/Handbook:AMD64
 > ```
 
 > [!CAUTION]
-> procedural methods as stated below should only be executed \
-> assuming system-wide configurations have been applied beforehand:
+> procedural methods as stated below should only be executed assuming system-wide configurations have been applied beforehand
 > ```
 > git clone https://github.com/librazhd7/gentoo.git
 > ```
@@ -104,7 +91,22 @@ arch-chroot /mnt/gentoo
 > wget https://github.com/librazhd7/gentoo/archive/refs/heads/main.zip
 > ```
 
-preparing gentoo:
+### configuring network
+```
+ifconfig -a
+net-setup enp3s0/wlo1
+ping -c 3 1.1.1.1
+cp --dereference /etc/resolv.conf /mnt/gentoo/etc/
+```
+
+### stage3
+```
+cd /mnt/gentoo
+tar xpvf stage3-*.tar.xz --xattrs-include='*.*' --numeric-owner -C /mnt/gentoo
+arch-chroot /mnt/gentoo
+```
+
+### installing base system
 ```
 eselect profile list
 eselect locale list
@@ -119,7 +121,7 @@ env-update && source /etc/profile
 > to generate all locales specified in the /etc/locale.gen file: `locale-gen` \
 > to select the timezone for the system: `timedatectl set-timezone Europe/Stockholm`
 
-configuring gentoo:
+### installing firmware[^9][^10][^11], bootloader[^12] and kernel[^13]
 ```
 emerge --ask sys-kernel/linux-firmware sys-firmware/intel-microcode sys-firmware/sof-firmware
 emerge --ask app-crypt/sbsigntools sys-apps/pciutils sys-apps/systemd sys-kernel/gentoo-sources sys-kernel/installkernel
@@ -133,21 +135,22 @@ make install
 bootctl install
 ```
 
-polishing gentoo:
+### configuring system
 ```
-emerge --ask app-portage/gentoolkit sys-apps/mlocate
+emerge --ask sys-apps/mlocate
 emerge --ask x11-apps/mesa-progs x11-drivers/nvidia-drivers x11-misc/prime-run
 emerge --ask app-shells/bash-completion app-shells/zsh app-shells/zsh-completions app-shells/gentoo-zsh-completions
 emerge --ask app-emulation/libvirt app-emulation/qemu app-emulation/virt-manager app-emulation/wine-staging app-emulation/winetricks
 ```
 
-maintaining gentoo:
+### eclean[^14]
 ```
+emerge --ask app-portage/gentoolkit
 eclean-dist -d
 eclean-pkg
 ```
 
-### systemd
+### systemd[^15]
 | services                           | sockets                 |
 |------------------------------------|-------------------------|
 | `acpid.service`                    | `pipewire-pulse.socket` |
@@ -169,7 +172,7 @@ eclean-pkg
 | `virtlogd.service`                 | |
 | `wireplumber.service`              | |
 
-preparing systemd:
+### configuring systemd
 ```
 systemd-machine-id-setup
 systemd-firstboot --prompt
@@ -193,11 +196,11 @@ systemctl preset-all
 | `video`    | access to video capture devices, 2d/3d hardware acceleration and framebuffer                  |
 | `wheel`    | administration group, commonly used to give privileges to perform administrative actions      |
 
-creating user:
+### creating user
 ```
 emerge --ask app-admin/sudo
-useradd -mG audio, kvm, libvirt, pipewire, plugdev, users, video, wheel __user__
-passwd __user__
+useradd -mG audio, kvm, libvirt, pipewire, plugdev, users, video, wheel <user>
+passwd <user>
 visudo
 ```
 
@@ -296,3 +299,19 @@ visudo
 [url-xfs]:                   <https://wiki.gentoo.org/wiki/XFS>
 [url-zsh]:                   <https://wiki.gentoo.org/wiki/Zsh>
 [url-zswap]:                 <https://wiki.gentoo.org/wiki/Zswap>
+
+[^1]: <https://wiki.gentoo.org/wiki/Fdisk>
+[^2]: <https://wiki.gentoo.org/wiki/GUID_Partition_Table>
+[^3]: <https://wiki.gentoo.org/wiki/UEFI>
+[^4]: <https://wiki.gentoo.org/wiki/EFI_System_Partition>
+[^5]: <https://wiki.gentoo.org/wiki/Swap>
+[^6]: <https://wiki.gentoo.org/wiki/LVM>
+[^7]: <https://wiki.gentoo.org/wiki/Rootfs_encryption>
+[^8]: <https://wiki.gentoo.org/wiki/Portage>
+[^9]: <https://wiki.gentoo.org/wiki/Linux_firmware>
+[^10]: <https://wiki.gentoo.org/wiki/Microcode>
+[^11]: <https://wiki.gentoo.org/wiki/Intel>
+[^12]: <https://wiki.gentoo.org/wiki/Systemd/systemd-boot>
+[^13]: <https://wiki.gentoo.org/wiki/Kernel>
+[^14]: <https://wiki.gentoo.org/wiki/Eclean>
+[^15]: <https://wiki.gentoo.org/wiki/Systemd>
