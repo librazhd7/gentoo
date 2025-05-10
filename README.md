@@ -60,7 +60,7 @@ net-setup enp3s0/wlo1
 ping -c 3 1.1.1.1
 cp --dereference /etc/resolv.conf /mnt/gentoo/etc/
 ```
-preparing for stage3:
+stage3:
 ```
 cd /mnt/gentoo
 wget https://ftp.lysator.liu.se/gentoo/releases/amd64/autobuilds/current-stage3-amd64-systemd/stage3-amd64-systemd-xxxxxxxxxxxxxxxx.tar.xz
@@ -87,18 +87,31 @@ arch-chroot /mnt/gentoo
 | `emerge --ask @module-rebuild`                                               | after installing a new kernel                                                                           |
 | `emerge --ask @preserved-rebuild`                                            | for using new libraries                                                                                 |
 
-preparing for base system:
+preparing gentoo:
 ```
-links https://wiki.gentoo.org/wiki/Handbook:AMD64
 eselect profile list
-eselect kernel list
 eselect locale list
-emerge-webrsync
+emerge --sync
 getuto
 emerge --ask --verbose --update --deep --changed-use --with-bdeps=y @world
 emerge --ask --depclean
-eclean-dist -d
-eclean-pkg
+env-update && source /etc/profile
+```
+
+> [!TIP]
+> to generate all locales specified in the /etc/locale.gen file: `locale-gen` \
+> to select the timezone for the system: `timedatectl set-timezone Europe/Stockholm`
+
+configuring gentoo:
+```
+emerge --ask sys-kernel/linux-firmware sys-firmware/intel-microcode sys-firmware/sof-firmware
+emerge --ask sys-apps/pciutils sys-apps/systemd sys-kernel/gentoo-sources sys-kernel/installkernel
+emerge --ask sys-block/io-scheduler-udev-rules sys-fs/cryptsetup sys-fs/dosfstools sys-fs/e2fsprogs sys-fs/lvm2 sys-fs/ntfs3g sys-fs/xfsprogs
+eselect kernel list
+cd /usr/src/linux
+make localmodconfig
+make nconfig
+bootctl install
 ```
 
 ### systemd
@@ -123,9 +136,21 @@ eclean-pkg
 | `virtlogd.service`                 | |
 | `wireplumber.service`              | |
 
+preparing systemd:
 ```
-systemctl enable .service/.socket
-systemctl start .service/.socket
+systemd-machine-id-setup
+systemd-firstboot --prompt
+systemctl preset-all --preset-mode=enable-only
+systemctl preset-all
+```
+
+> [!TIP]
+> : `systemctl enable .service/.socket` \
+> : `systemctl start .service/.socket`
+
+polishing gentoo:
+```
+emerge --ask app-shells/bash-completion sys-apps/mlocate x11-drivers/nvidia-drivers
 ```
 
 ### useradd/usermod
@@ -140,7 +165,7 @@ systemctl start .service/.socket
 | `video`    | access to video capture devices, 2d/3d hardware acceleration and framebuffer                  |
 | `wheel`    | administration group, commonly used to give privileges to perform administrative actions      |
 
-preparing user:
+creating user:
 ```
 emerge --ask app-admin/sudo
 useradd -mG audio, kvm, libvirt, pipewire, plugdev, users, video, wheel __user__
@@ -152,6 +177,13 @@ passwd __user__
 > deleting the password and/or disabling root login can help improve security. \
 > to delete the root password and disable login: `passwd -dl root`
 
+maintaining gentoo:
+```
+eclean-dist -d
+eclean-pkg
+links https://wiki.gentoo.org/wiki/Handbook:AMD64
+```
+
 ### to do
 - gentoo =>> minimal packages by use flags
 - gentoo-sources =>> ditch gentoo-kernel-bin
@@ -160,6 +192,7 @@ passwd __user__
 ### docs
 - [__acpi__][url-acpi]
 - [__backlight__][url-backlight] (arch)
+- [__bash__][url-bash]
 - [__bluetooth__][url-bluetooth]
 - [__dispatch-conf__][url-dispatch-conf]
 - [__dxvk__][url-dxvk] (github)
@@ -203,6 +236,7 @@ passwd __user__
 <!-- docs -->
 [url-acpi]:                  <https://wiki.gentoo.org/wiki/ACPI>
 [url-backlight]:             <https://wiki.archlinux.org/title/Backlight>
+[url-bash]:                  <https://wiki.gentoo.org/wiki/Bash>
 [url-bluetooth]:             <https://wiki.gentoo.org/wiki/Bluetooth>
 [url-dispatch-conf]:         <https://wiki.gentoo.org/wiki/Dispatch-conf>
 [url-dxvk]:                  <https://github.com/doitsujin/dxvk>
