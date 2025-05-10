@@ -2,8 +2,8 @@
 
 ### why
 * keep track of all changes made to my system and resources used along the way
-* keep an offline copy of the repository on standby as reference
-* installing a source based distribution like gentoo and reading docs all day has seriously sharpened my way around linux
+* keep an online/offline copy of the repository on standby as reference
+* installing a source based distribution like gentoo and reading docs all day sounded fun
 
 ### features
 - [x] ~amd64
@@ -21,7 +21,6 @@
 - [x] ssh
 - [x] systemd (dbus, udev)
 - [x] virtualization (qemu, wine)
-- [x] wayland
 - [x] zswap
 
 ### fdisk[^1] (gpt)[^2]
@@ -31,7 +30,7 @@
 | `/dev/nvme0n1p2` | 24g        | swap (19) |      |     |       |
 | `/dev/nvme0n1p3` |            | lvm (44)  | thin | yes | xfs   |
 
-### esp[^3][^4] and swap[^5]
+### esp[^3] [^4] and swap[^5]
 ```
 mkfs.vfat -F 32 /dev/nvme0n1p1
 mkswap /dev/nvme0n1p2
@@ -121,7 +120,7 @@ env-update && source /etc/profile
 > to generate all locales specified in the /etc/locale.gen file: `locale-gen` \
 > to select the timezone for the system: `timedatectl set-timezone Europe/Stockholm`
 
-### installing firmware[^9][^10][^11], bootloader[^12] and kernel[^13]
+### installing firmware[^9] [^10] [^11], bootloader[^12] and kernel[^13]
 ```
 emerge --ask sys-kernel/linux-firmware sys-firmware/intel-microcode sys-firmware/sof-firmware
 emerge --ask app-crypt/sbsigntools sys-apps/pciutils sys-apps/systemd sys-kernel/gentoo-sources sys-kernel/installkernel
@@ -133,14 +132,6 @@ make nconfig
 make && make modules_install
 make install
 bootctl install
-```
-
-### configuring system
-```
-emerge --ask sys-apps/mlocate
-emerge --ask x11-apps/mesa-progs x11-drivers/nvidia-drivers x11-misc/prime-run
-emerge --ask app-shells/bash-completion app-shells/zsh app-shells/zsh-completions app-shells/gentoo-zsh-completions
-emerge --ask app-emulation/libvirt app-emulation/qemu app-emulation/virt-manager app-emulation/wine-staging app-emulation/winetricks
 ```
 
 ### eclean[^14]
@@ -210,10 +201,11 @@ visudo
 > to delete the root password and disable login: `passwd -dl root`
 
 ### to do
-- alot
+- proper referencing to docs and make an index
+- script to automatically apply system-wide configurations
+- more insight into the meaning of all the commands
 - gentoo =>> minimal packages by use flags
 - gentoo-sources =>> ditch gentoo-kernel-bin
-- wayland =>> icewm-like compositor, see icewl?
 
 ### docs
 - [__acpi__][url-acpi]
