@@ -117,7 +117,7 @@ net-libs/nghttp2                      abi_x86_32
 net-libs/nghttp3                      abi_x86_32
 net-misc/curl                         abi_x86_32
 net-misc/networkmanager               abi_x86_32
-net-misc/spice-gtk                    usbredir              
+net-misc/spice-gtk                    usbredir
 net-print/cups                        abi_x86_32
 net-wireless/wpa_supplicant           dbus
 sci-libs/fftw                         threads
@@ -127,9 +127,12 @@ sys-apps/systemd                      abi_x86_32 boot cryptsetup
 sys-apps/systemd-utils                abi_x86_32
 sys-apps/util-linux                   abi_x86_32
 sys-devel/clang                       abi_x86_32
+#sys-firmware/intel-microcode         initramfs
 sys-fs/lvm2                           lvm thin
 sys-kernel/gentoo-sources             symlink
-sys-kernel/installkernel              dracut systemd systemd-boot uki
+#sys-kernel/installkernel             dracut uki
+sys-kernel/installkernel              systemd systemd-boot
+#sys-kernel/linux-firmware            initramfs
 sys-libs/gdbm                         abi_x86_32
 sys-libs/glibc                        hash-sysv-compat stack-realign
 sys-libs/gpm                          abi_x86_32
