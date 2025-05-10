@@ -89,6 +89,7 @@ arch-chroot /mnt/gentoo
 
 preparing for base system:
 ```
+links https://wiki.gentoo.org/wiki/Handbook:AMD64
 eselect profile list
 eselect kernel list
 eselect locale list
