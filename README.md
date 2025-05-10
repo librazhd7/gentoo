@@ -150,6 +150,7 @@ passwd __user__
 ### to do
 - gentoo =>> minimal packages by use flags
 - gentoo-sources =>> ditch gentoo-kernel-bin
+- initramfs =>> ditch dracut?
 - wayland =>> icewm-like compositor, see icewl?
 
 ### docs
