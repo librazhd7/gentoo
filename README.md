@@ -87,6 +87,10 @@ arch-chroot /mnt/gentoo
 | `emerge --ask @module-rebuild`                                               | after installing a new kernel                                                                           |
 | `emerge --ask @preserved-rebuild`                                            | for using new libraries                                                                                 |
 
+> [!CAUTION]
+> procedural methods as stated below should only be executed, \
+> assuming system-wide configurations have been applied, as can be found in /etc/ and /efi/
+
 preparing gentoo:
 ```
 eselect profile list
@@ -116,8 +120,8 @@ bootctl install
 
 polishing gentoo:
 ```
-emerge --ask x11-apps/mesa-progs x11-drivers/nvidia-drivers x11-misc/prime-run
 emerge --ask app-portage/gentoolkit sys-apps/mlocate
+emerge --ask x11-apps/mesa-progs x11-drivers/nvidia-drivers x11-misc/prime-run
 emerge --ask app-shells/bash-completion app-shells/zsh app-shells/zsh-completions app-shells/gentoo-zsh-completions
 emerge --ask app-emulation/libvirt app-emulation/qemu app-emulation/virt-manager app-emulation/wine-staging app-emulation/winetricks
 ```
