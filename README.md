@@ -9,13 +9,13 @@ and reading docs all day has seriously sharpened my way around linux.
 - [x] ~amd64
 - [x] bluetooth
 - [x] bootloader (systemd-boot)
-- [x] initramfs (dracut, unified kernel image)
-- [x] intel drivers
+- [x] initramfs (unified kernel image)?
+- [x] intel microcode (iucode_tool)
 - [ ] kernel (gentoo-sources)
 - [x] luks
 - [x] lvm (thin)
 - [x] networking
-- [x] nvidia drivers (open-kernel, hybrid, optimus)
+- [x] nvidia drivers (open-kernel, optimus)
 - [x] pipewire
 - [x] power management (tls)
 - [ ] secure boot
@@ -158,7 +158,6 @@ passwd __user__
 - [__backlight__][url-backlight] (arch)
 - [__bluetooth__][url-bluetooth]
 - [__dispatch-conf__][url-dispatch-conf]
-- [__dracut__][url-dracut]
 - [__dxvk__][url-dxvk] (github)
 - [__eselect__][url-eselect]
 - [__fonts__][url-fonts]
@@ -199,7 +198,6 @@ passwd __user__
 [url-backlight]:             <https://wiki.archlinux.org/title/Backlight>
 [url-bluetooth]:             <https://wiki.gentoo.org/wiki/Bluetooth>
 [url-dispatch-conf]:         <https://wiki.gentoo.org/wiki/Dispatch-conf>
-[url-dracut]:                <https://wiki.gentoo.org/wiki/Dracut>
 [url-dxvk]:                  <https://github.com/doitsujin/dxvk>
 [url-eselect]:               <https://wiki.gentoo.org/wiki/Eselect>
 [url-fonts]:                 <https://wiki.gentoo.org/wiki/Fonts>
