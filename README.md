@@ -170,6 +170,7 @@ creating user:
 emerge --ask app-admin/sudo
 useradd -mG audio, kvm, libvirt, pipewire, plugdev, users, video, wheel __user__
 passwd __user__
+visudo
 ```
 
 > [!TIP]
