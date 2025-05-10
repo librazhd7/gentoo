@@ -91,11 +91,10 @@ preparing for base system:
 eselect profile list
 eselect kernel list
 eselect locale list
-wget https://github.com/librazhd7/gentoo/archive/refs/heads/main.zip
-unzip gentoo-main.zip
-cd gentoo-main
 emerge-webrsync
 getuto
+emerge --ask --verbose --update --deep --changed-use --with-bdeps=y @world
+emerge --ask --depclean
 ```
 
 ### systemd
