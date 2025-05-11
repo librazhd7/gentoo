@@ -201,7 +201,7 @@ visudo
 > to delete the root password and disable login: `passwd -dl root`
 
 ### to do
-- proper referencing to docs and make an index
+- proper referencing to docs but also files in the repository, make an index to navigate the readme too
 - script to automatically apply system-wide configurations
 - more insight into the meaning of all the commands
 - gentoo =>> minimal packages by use flags
