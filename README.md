@@ -75,14 +75,14 @@ mount /dev/nvme0n1p1 /mnt/gentoo/efi
 | `emerge --ask @preserved-rebuild`                                            | for using new libraries                                                                                 |
 
 > [!WARNING]  
-> guide is specifically tailored towards hardware and preferences of mine \
-> you should adjust accordingly and follow the official gentoo installation handbook instead
+> repository is specifically tailored towards hardware and preferences of mine \
+> you should follow the official gentoo installatin handbook and adjust accordingly
 > ```
 > links https://wiki.gentoo.org/wiki/Handbook:AMD64
 > ```
 
 > [!CAUTION]
-> procedural methods as stated below should only be executed assuming system-wide configurations have been applied beforehand
+> assuming system-wide configurations have been applied beforehand by using following urls, feel free to follow the guide and the docs highlighted for additional information
 > ```
 > git clone https://github.com/librazhd7/gentoo.git
 > ```
@@ -98,11 +98,32 @@ ping -c 3 1.1.1.1
 cp --dereference /etc/resolv.conf /mnt/gentoo/etc/
 ```
 
+> [!TIP]
+> for automatic ip, network mask, routes, dns and ntp servers when using wired connection: `dhcpcd enp3s0`
+
 ### stage3
 ```
 cd /mnt/gentoo
 tar xpvf stage3-*.tar.xz --xattrs-include='*.*' --numeric-owner -C /mnt/gentoo
 arch-chroot /mnt/gentoo
+```
+
+> [!NOTE]
+> using `arch-chroot` simplifies mounting the necessary filesystems for when using the installation media gentoo provides \
+> if you prefer the traditional mounting process and manually chrooting into the new environment:
+```
+mount --types proc /proc /mnt/gentoo/proc
+mount --rbind /sys /mnt/gentoo/sys
+mount --make-rslave /mnt/gentoo/sys
+mount --rbind /dev /mnt/gentoo/dev
+mount --make-rslave /mnt/gentoo/dev
+mount --bind /run /mnt/gentoo/run
+mount --make-slave /mnt/gentoo/run
+```
+```
+chroot /mnt/gentoo /bin/bash
+source /etc/profile
+export PS1="(chroot) ${PS1}"
 ```
 
 ### installing base system
@@ -194,6 +215,13 @@ useradd -mG audio, kvm, libvirt, pipewire, plugdev, users, video, wheel <user>
 passwd <user>
 visudo
 ```
+
+> [!NOTE]
+> `/etc/sudoers` should always be edited with `visudo`      \
+> allow members of group wheel sudo access by uncommenting: \
+> ```
+> %wheel ALL=(ALL:ALL) ALL
+> ```
 
 > [!TIP]
 > to prevent possible threat actors from logging in as root,                   \
