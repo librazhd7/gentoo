@@ -9,7 +9,7 @@
 - [x] ~amd64
 - [x] bluetooth
 - [x] bootloader (systemd-boot)
-- [x] intel microcode (iucode_tool)
+- [x] intel microcode
 - [ ] kernel (gentoo-sources)
 - [x] luks
 - [x] lvm (thin)
@@ -19,7 +19,7 @@
 - [x] power management (tls)
 - [ ] secure boot
 - [x] ssh
-- [x] systemd (dbus, udev)
+- [x] systemd
 - [x] tmpfs
 - [x] virtualization (qemu, wine)
 - [x] zswap
@@ -77,13 +77,13 @@ mount /dev/nvme0n1p1 /mnt/gentoo/efi
 
 > [!WARNING]  
 > repository is specifically tailored towards hardware and preferences of mine \
-> you should follow the official gentoo installatin handbook and adjust accordingly
+> you should follow the official gentoo installation handbook and adjust accordingly
 > ```
 > links https://wiki.gentoo.org/wiki/Handbook:AMD64
 > ```
 
 > [!CAUTION]
-> assuming system-wide configurations have been applied beforehand by using urls stated below, freely follow the guide and docs highlighted for additional information
+> assuming repository system-wide configurations have been applied beforehand, freely follow the guide and docs highlighted for additional information
 > ```
 > git clone https://github.com/librazhd7/gentoo.git
 > ```
@@ -243,6 +243,7 @@ visudo
 - [__bash__][url-bash]
 - [__bluetooth__][url-bluetooth]
 - [__dispatch-conf__][url-dispatch-conf]
+- [__dracut__][url-dracut]
 - [__dxvk__][url-dxvk] (github)
 - [__eselect__][url-eselect]
 - [__fonts__][url-fonts]
@@ -288,6 +289,7 @@ visudo
 [url-bash]:                  <https://wiki.gentoo.org/wiki/Bash>
 [url-bluetooth]:             <https://wiki.gentoo.org/wiki/Bluetooth>
 [url-dispatch-conf]:         <https://wiki.gentoo.org/wiki/Dispatch-conf>
+[url-dracut]:                <https://wiki.gentoo.org/wiki/Dracut>
 [url-dxvk]:                  <https://github.com/doitsujin/dxvk>
 [url-eselect]:               <https://wiki.gentoo.org/wiki/Eselect>
 [url-fonts]:                 <https://wiki.gentoo.org/wiki/Fonts>
