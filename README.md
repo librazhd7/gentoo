@@ -20,6 +20,7 @@
 - [ ] secure boot
 - [x] ssh
 - [x] systemd (dbus, udev)
+- [x] tmpfs
 - [x] virtualization (qemu, wine)
 - [x] zswap
 
@@ -232,6 +233,7 @@ visudo
 - proper referencing to docs but also files in the repository, make an index to navigate the readme too
 - script to automatically apply system-wide configurations
 - more insight into the meaning of all the commands
+- virtualization section for wine and qemu
 - gentoo =>> minimal packages by use flags
 - gentoo-sources =>> ditch gentoo-kernel-bin
 
