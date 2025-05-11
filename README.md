@@ -82,7 +82,7 @@ mount /dev/nvme0n1p1 /mnt/gentoo/efi
 > ```
 
 > [!CAUTION]
-> assuming system-wide configurations have been applied beforehand by using following urls, feel free to follow the guide and the docs highlighted for additional information
+> assuming system-wide configurations have been applied beforehand by using urls stated below, freely follow the guide and docs highlighted for additional information
 > ```
 > git clone https://github.com/librazhd7/gentoo.git
 > ```
@@ -110,7 +110,7 @@ arch-chroot /mnt/gentoo
 
 > [!NOTE]
 > using `arch-chroot` simplifies mounting the necessary filesystems for when using the installation media gentoo provides \
-> if you prefer the traditional mounting process and manually chrooting into the new environment:
+> for using the traditional mounting process and manually chrooting into the new environment
 ```
 mount --types proc /proc /mnt/gentoo/proc
 mount --rbind /sys /mnt/gentoo/sys
@@ -218,7 +218,7 @@ visudo
 
 > [!NOTE]
 > `/etc/sudoers` should always be edited with `visudo`      \
-> allow members of group wheel sudo access by uncommenting: \
+> allow members of group wheel sudo access by uncommenting
 > ```
 > %wheel ALL=(ALL:ALL) ALL
 > ```
