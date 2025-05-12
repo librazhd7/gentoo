@@ -173,6 +173,7 @@ eclean-pkg
 |------------------------------------|-------------------------|
 | `acpid.service`                    | `pipewire-pulse.socket` |
 | `bluetooth.service`                | `virtstoraged.socket`   |
+| `cups.service`                     | |
 | `dnsmasq.service`                  | |
 | ~~`getty@tty1.service`~~           | |
 | `libvirtd.service`                 | |
