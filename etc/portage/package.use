@@ -109,6 +109,7 @@ media-video/pipewire                  abi_x86_32 dbus sound-server
 net-dns/c-ares                        abi_x86_32
 net-dns/dnsmasq                       script
 net-dns/libidn2                       abi_x86_32
+net-fs/samba                          cups pam
 net-libs/gnutls                       abi_x86_32 pkcs11 tools
 net-libs/libasyncns                   abi_x86_32
 net-libs/libndp                       abi_x86_32
