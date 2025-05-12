@@ -243,6 +243,7 @@ visudo
 - [__bash__][url-bash]
 - [__bluetooth__][url-bluetooth]
 - [__dispatch-conf__][url-dispatch-conf]
+- [__dnsmasq__][url-dnsmasq]
 - [__dracut__][url-dracut]
 - [__dxvk__][url-dxvk] (github)
 - [__eselect__][url-eselect]
@@ -291,6 +292,7 @@ labwc, sfwbar, swww
 [url-bash]:                  <https://wiki.gentoo.org/wiki/Bash>
 [url-bluetooth]:             <https://wiki.gentoo.org/wiki/Bluetooth>
 [url-dispatch-conf]:         <https://wiki.gentoo.org/wiki/Dispatch-conf>
+[url-dnsmasq]:               <https://wiki.gentoo.org/wiki/Dnsmasq>
 [url-dracut]:                <https://wiki.gentoo.org/wiki/Dracut>
 [url-dxvk]:                  <https://github.com/doitsujin/dxvk>
 [url-eselect]:               <https://wiki.gentoo.org/wiki/Eselect>
