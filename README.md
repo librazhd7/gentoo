@@ -10,7 +10,7 @@
 - [x] bluetooth
 - [x] bootloader (systemd-boot)
 - [x] intel microcode
-- [ ] kernel (gentoo-sources)
+- [x] kernel (gentoo-sources)
 - [x] luks
 - [x] lvm (thin)
 - [x] networking
@@ -257,25 +257,17 @@ visudo
 - [__gentoolkit__][url-gentoolkit]
 - [__guru__][url-guru]
 - [__hybrid graphics__][url-hybrid-graphics]
-- [__kernel__][url-kernel]
 - [__libinput__][url-libinput]
 - [__libvirt__][url-libvirt]
-- [__lvm__][url-lvm]
-- [__microcode__][url-microcode]
 - [__networkmanager__][url-networkmanager]
 - [__nvidia-drivers__][url-nvidia-drivers]
 - [__optimus__][url-optimus]
 - [__pipewire__][url-pipewire]
 - [__power management__][url-power-management]
 - [__qemu__][url-qemu]
-- [__rootfs encryption__][url-rootfs-encryption]
 - [__secure boot__][url-secureboot]
 - [__ssh__][url-ssh]
 - [__steam__][url-steam]
-- [__systemd__][url-systemd]
-- [__systemd-boot__][url-systemd-boot]
-- [__systemgroups__][url-systemgroups] (debian)
-- [__swap__][url-swap]
 - [__tmpfs__][url-portage-tmpdir-tmpfs]
 - [__udev__][url-udev]
 - [__unified kernel image__][url-unified-kernel-image]
@@ -306,11 +298,8 @@ labwc, sfwbar, swww
 [url-gentoolkit]:            <https://wiki.gentoo.org/wiki/Gentoolkit>
 [url-guru]:                  <https://wiki.gentoo.org/wiki/Project:GURU>
 [url-hybrid-graphics]:       <https://wiki.gentoo.org/wiki/Hybrid_graphics>
-[url-kernel]:                <https://wiki.gentoo.org/wiki/Kernel>
 [url-libinput]:              <https://wiki.gentoo.org/wiki/Libinput>
 [url-libvirt]:               <https://wiki.gentoo.org/wiki/Libvirt>
-[url-lvm]:                   <https://wiki.gentoo.org/wiki/LVM>
-[url-microcode]:             <https://wiki.gentoo.org/wiki/Microcode>
 [url-networkmanager]:        <https://wiki.gentoo.org/wiki/NetworkManager>
 [url-nvidia-drivers]:        <https://wiki.gentoo.org/wiki/NVIDIA/nvidia-drivers>
 [url-optimus]:               <https://wiki.gentoo.org/wiki/NVIDIA/Optimus>
@@ -318,14 +307,9 @@ labwc, sfwbar, swww
 [url-power-management]:      <https://wiki.gentoo.org/wiki/Power_management>
 [url-portage-tmpdir-tmpfs]:  <https://wiki.gentoo.org/wiki/Portage_TMPDIR_on_tmpfs>
 [url-qemu]:                  <https://wiki.gentoo.org/wiki/QEMU>
-[url-rootfs-encryption]:     <https://wiki.gentoo.org/wiki/Rootfs_encryption>
 [url-secureboot]:            <https://wiki.gentoo.org/wiki/Secure_Boot>
 [url-ssh]:                   <https://wiki.gentoo.org/wiki/SSH>
 [url-steam]:                 <https://wiki.gentoo.org/wiki/Steam>
-[url-systemd]:               <https://wiki.gentoo.org/wiki/Systemd>
-[url-systemd-boot]:          <https://wiki.gentoo.org/wiki/Systemd/systemd-boot>
-[url-systemgroups]:          <https://wiki.debian.org/SystemGroups>
-[url-swap]:                  <https://wiki.gentoo.org/wiki/Swap>
 [url-udev]:                  <https://wiki.gentoo.org/wiki/Udev>
 [url-unified-kernel-image]:  <https://wiki.gentoo.org/wiki/Unified_kernel_image>
 [url-wine]:                  <https://wiki.gentoo.org/wiki/Wine>
