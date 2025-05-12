@@ -164,6 +164,10 @@ eclean-dist -d
 eclean-pkg
 ```
 
+> [!NOTE]
+> by default, source files are located in /var/cache/distfiles, while binary packages are located in /var/cache/binpkgs \
+> both locations can grow quite big if not periodically cleaned
+
 ### systemd[^15]
 | services                           | sockets                 |
 |------------------------------------|-------------------------|
@@ -195,8 +199,8 @@ systemctl preset-all
 ```
 
 > [!TIP]
-> : `systemctl enable .service/.socket` \
-> : `systemctl start .service/.socket`
+> to enable unit to start automatically at boot: `systemctl enable .service/.socket` \
+> to start unit immediately: `systemctl start .service/.socket`
 
 ### system groups[^16]
 | group      | permissions                                                                                   |
