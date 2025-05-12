@@ -280,7 +280,9 @@ visudo
 - [__zswap__][url-zswap]
   
 ### media ![](https://www.gentoo.org/assets/img/badges/gentoo-badge3.svg)
+labwc, sfwbar, swww
 ![](https://github.com/librazhd7/gentoo/blob/6d570189e717f56e126076e14c76d73150764ab0/media/grim.jpg)
+
 ![](https://github.com/librazhd7/gentoo/blob/98bddab1c09648e2d99e9558d66452588051024a/media/spectacle.jpg)
 
 <!-- docs -->
