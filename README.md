@@ -94,6 +94,12 @@ mount /dev/nvme0n1p1 /mnt/gentoo/efi
 > wget https://github.com/librazhd7/gentoo/archive/refs/heads/main.zip
 > ```
 
+### stage3
+```
+cd /mnt/gentoo
+tar xpvf stage3-*.tar.xz --xattrs-include='*.*' --numeric-owner -C /mnt/gentoo
+```
+
 ### configuring network
 ```
 ifconfig -a
@@ -106,16 +112,7 @@ cp --dereference /etc/resolv.conf /mnt/gentoo/etc/
 > for automatic ip, network mask, routes, dns and ntp servers when using wired connection: `dhcpcd enp3s0`
 > for network card activation: `ifconfig -v wlo1 up`
 
-### stage3
-```
-cd /mnt/gentoo
-tar xpvf stage3-*.tar.xz --xattrs-include='*.*' --numeric-owner -C /mnt/gentoo
-arch-chroot /mnt/gentoo
-```
-
-> [!NOTE]
-> using `arch-chroot` simplifies mounting the necessary filesystems for when using the installation media gentoo provides \
-> for using the traditional mounting process and manually chrooting into the new environment
+### chroot
 ```
 mount --types proc /proc /mnt/gentoo/proc
 mount --rbind /sys /mnt/gentoo/sys
@@ -130,6 +127,10 @@ chroot /mnt/gentoo /bin/bash
 source /etc/profile
 export PS1="(chroot) ${PS1}"
 ```
+
+> [!NOTE]
+> using `arch-chroot /mnt/gentoo` simplifies mounting the necessary filesystems for when using the installation media gentoo provides \
+> for using the traditional mounting process and manually chrooting into the new environment
 
 ### installing base system
 ```
