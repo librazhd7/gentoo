@@ -145,12 +145,11 @@ emerge --ask --depclean
 env-update && source /etc/profile
 ```
 
-> [!NOTE]
-> for detecting cpu: `resolve-march-native`
-> for displaying cpu features: `cpuid2cpuflags`
-
 > [!TIP]
+> for detecting cpu: `resolve-march-native`                                   \
+> for displaying cpu features: `cpuid2cpuflags`                               \
 > to generate all locales specified in the /etc/locale.gen file: `locale-gen` \
+> to select the hostname for the system: `echo gentoo > /etc/hostname`        \
 > to select the timezone for the system: `ln -sf ../usr/share/zoneinfo/Europe/Stockholm /etc/localtime`
 
 ### installing firmware[^9] [^10] [^11], bootloader[^12] and kernel[^13]
@@ -201,6 +200,7 @@ systemctl preset-all
 > [!TIP]
 > to enable unit to start automatically at boot: `systemctl enable .service/.socket` \
 > to start unit immediately: `systemctl start .service/.socket`                      \
+> to select the hostname for the system: `hostnamectl hostname gentoo`               \
 > to select the timezone for the system: `timedatectl set-timezone Europe/Stockholm`
 
 ### system groups[^16]
