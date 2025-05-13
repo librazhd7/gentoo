@@ -131,8 +131,10 @@ export PS1="(chroot) ${PS1}"
 ```
 
 > [!NOTE]
-> using `arch-chroot /mnt/gentoo` simplifies the mounting process of necessary filesystems when using the official gentoo installation media \
-> for using the traditional mounting process and manually chrooting into the new environment
+> using `arch-chroot /mnt/gentoo` simplifies the mounting process of necessary filesystems when using the official gentoo installation media:
+> ```
+> dd if=install-amd64-minimal-xxxxxxxxxxxxxxxx.iso of=/dev/sda bs=4096 status=progress && sync
+> ```
 
 ### installing base system
 ```
