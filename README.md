@@ -28,30 +28,33 @@
 | device           | size       | type      | lvm | luks | fs    |
 |------------------|------------|-----------|------|-----|-------|
 | `/dev/nvme0n1p1` | 1g         | efi (1)   |      |     | fat32 |
-| `/dev/nvme0n1p2` | 24g        | swap (19) |      |     |       |
+| `/dev/nvme0n1p2` | 24g        | swap (19) |      | yes |       |
 | `/dev/nvme0n1p3` |            | lvm (44)  | thin | yes | xfs   |
 
-### esp[^3] [^4] and swap[^5]
+### esp[^3] [^4] and luks[^5] on swap[^6]
 ```
 mkfs.vfat -F 32 /dev/nvme0n1p1
+cryptsetup luksFormat /dev/nvme0n1p2
+cryptsetup luksOpen /dev/nvme0n1p2 swap
 mkswap /dev/nvme0n1p2
 swapon /dev/nvme0n1p2
 ```
 
-### lvm[^6] and luks[^7] on root partition
+### lvm[^7] on luks[^5] in root partition
 ```
 pvcreate /dev/nvme0n1p3
 vgcreate vg0 /dev/nvme0n1p3
-lvcreate -l 100%FREE --type thin-pool --thinpool thin_pool vg0
-cryptsetup luksFormat /dev/vg0/thin_pool
-mkfs.xfs /dev/vg0/thin_pool
-lvchange -a y /dev/vg0/thin_pool
+lvcreate -l 100%FREE --type thin-pool --thinpool thin vg0
+cryptsetup luksFormat /dev/vg0/thin
+cryptsetup luksOpen /dev/vg0/thin root
+mkfs.xfs /dev/vg0/thin
+lvchange -a y /dev/vg0/thin
 ```
 
 ### mounting devices
 ```
 mkdir -p /mnt/gentoo
-mount /dev/vg0/thin_pool /mnt/gentoo
+mount /dev/vg0/thin /mnt/gentoo
 mkdir -p /mnt/gentoo/efi
 mount /dev/nvme0n1p1 /mnt/gentoo/efi
 ```
@@ -325,9 +328,9 @@ labwc, sfwbar, swww
 [^2]: <https://en.wikipedia.org/wiki/GUID_Partition_Table>
 [^3]: <https://wiki.gentoo.org/wiki/UEFI>
 [^4]: <https://wiki.gentoo.org/wiki/EFI_System_Partition>
-[^5]: <https://wiki.gentoo.org/wiki/Swap>
-[^6]: <https://wiki.gentoo.org/wiki/LVM>
-[^7]: <https://wiki.gentoo.org/wiki/Rootfs_encryption>
+[^5]: <https://wiki.gentoo.org/wiki/Dm-crypt>
+[^6]: <https://wiki.gentoo.org/wiki/Swap>
+[^7]: <https://wiki.gentoo.org/wiki/LVM>
 [^8]: <https://wiki.gentoo.org/wiki/Portage>
 [^9]: <https://wiki.gentoo.org/wiki/Linux_firmware>
 [^10]: <https://wiki.gentoo.org/wiki/Microcode>
