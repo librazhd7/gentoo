@@ -240,6 +240,7 @@ visudo
 - script to automatically apply system-wide configurations
 - more insight into the meaning of all the commands
 - virtualization section for wine and qemu
+- luks on swap? (etc/crypttab)
 - gentoo =>> minimal packages by use flags
 - gentoo-sources =>> ditch gentoo-kernel-bin
 
