@@ -147,7 +147,7 @@ env-update && source /etc/profile
 
 > [!TIP]
 > to generate all locales specified in the /etc/locale.gen file: `locale-gen` \
-> to select the timezone for the system: `timedatectl set-timezone Europe/Stockholm`
+> to select the timezone for the system: `ln -sf ../usr/share/zoneinfo/Europe/Stockholm /etc/localtime`
 
 ### installing firmware[^9] [^10] [^11], bootloader[^12] and kernel[^13]
 ```
@@ -208,6 +208,8 @@ systemctl preset-all
 > [!TIP]
 > to enable unit to start automatically at boot: `systemctl enable .service/.socket` \
 > to start unit immediately: `systemctl start .service/.socket`
+> > to select the timezone for the system: `timedatectl set-timezone Europe/Stockholm`
+
 
 ### system groups[^16]
 | group      | permissions                                                                                   |
