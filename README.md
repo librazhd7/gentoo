@@ -238,14 +238,22 @@ visudo
 > deleting the password and/or disabling root login can help improve security. \
 > to delete the root password and disable login: `passwd -dl root`
 
+### finishing up
+```
+cryptsetup close /dev/nvme0n1p2
+cryptsetup close /dev/nvme0n1p3
+umount -l /mnt/gentoo/dev{/shm,/pts,}
+umount -R /mnt/gentoo
+```
+
 ### to do
 - proper referencing to docs but also files in the repository, make an index to navigate the readme too
 - script to automatically apply system-wide configurations
 - more insight into the meaning of all the commands
 - virtualization section for wine and qemu
-- luks on swap? (etc/crypttab)
+- properly configured luks with best practices (etc/crypttab)
 - gentoo =>> minimal packages by use flags
-- gentoo-sources =>> ditch gentoo-kernel-bin
+- gentoo-sources =>> ditch gentoo-kernel-bin (partially tested, needs fine-tuning)
 
 ### docs
 - [__acpi__][url-acpi]
