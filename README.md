@@ -136,6 +136,15 @@ export PS1="(chroot) ${PS1}"
 > dd if=install-amd64-minimal-xxxxxxxxxxxxxxxx.iso of=/dev/sda bs=4096 status=progress && sync
 > ```
 
+> [!TIP]
+> to specify input file: `if=`                                    \
+> to specify output file: `of=` (which in this case, is a device) \
+> to speed up transfers in most cases: `bs=4096`                  \
+> to display transfers stats: `status=progress`
+
+> [!CAUTION]
+> .
+
 ### installing base system
 ```
 eselect profile list
