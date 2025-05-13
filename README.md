@@ -218,7 +218,7 @@ systemctl preset-all
 ### creating user
 ```
 emerge --ask app-admin/sudo
-useradd -mG audio, kvm, libvirt, pipewire, plugdev, users, video, wheel <user>
+useradd -mG audio,kvm,libvirt,pipewire,plugdev,users,video,wheel <user>
 passwd <user>
 visudo
 ```
