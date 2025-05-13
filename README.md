@@ -86,7 +86,7 @@ mount /dev/nvme0n1p1 /mnt/gentoo/efi
 > links https://wiki.gentoo.org/wiki/Handbook:AMD64
 > ```
 
-> [!WARNING]
+> [!IMPORTANT]
 > assuming repository system-wide configurations have been applied beforehand, freely follow the guide and docs highlighted for additional information
 > ```
 > git clone https://github.com/librazhd7/gentoo.git
@@ -131,7 +131,7 @@ export PS1="(chroot) ${PS1}"
 ```
 
 > [!NOTE]
-> using `arch-chroot /mnt/gentoo` simplifies mounting the necessary filesystems for when using the installation media gentoo provides \
+> using `arch-chroot /mnt/gentoo` simplifies the mounting process of necessary filesystems when using the official gentoo installation media \
 > for using the traditional mounting process and manually chrooting into the new environment
 
 ### installing base system
@@ -147,7 +147,7 @@ env-update && source /etc/profile
 
 > [!TIP]
 > for detecting cpu: `resolve-march-native`                                   \
-> for displaying cpu features: `cpuid2cpuflags`                               \
+> for detecting cpu features: `cpuid2cpuflags`                                \
 > to generate all locales specified in the /etc/locale.gen file: `locale-gen` \
 > to select the hostname for the system: `echo gentoo > /etc/hostname`        \
 > to select the timezone for the system: `ln -sf ../usr/share/zoneinfo/Europe/Stockholm /etc/localtime`
