@@ -27,6 +27,16 @@ games-action/minecraft-launcher
 games-arcade/supertux
 games-util/steam-launcher
 gui-wm/gamescope
+kde-apps/ark
+kde-apps/dolphin
+kde-apps/gwenview
+kde-apps/kate
+kde-apps/kcalc
+kde-apps/kfind
+kde-apps/ksystemlog
+kde-apps/kwalletmanager
+kde-plasma/discover
+kde-plasma/plasma-meta
 media-fonts/corefonts
 media-fonts/noto-emoji
 media-gfx/blender
@@ -45,6 +55,7 @@ sys-apps/systemd
 sys-apps/xdg-desktop-portal
 sys-auth/rtkit
 sys-block/io-scheduler-udev-rules
+sys-block/partitionmanager
 sys-firmware/intel-microcode
 sys-firmware/sof-firmware
 sys-fs/cryptsetup
