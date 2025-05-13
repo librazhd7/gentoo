@@ -110,7 +110,7 @@ cp --dereference /etc/resolv.conf /mnt/gentoo/etc/
 ```
 
 > [!TIP]
-> for automatic ip, network mask, routes, dns and ntp servers when using wired connection: `dhcpcd enp3s0`
+> for automatic ip, network mask, routes, dns and ntp servers: `dhcpcd enp3s0/wlo1` \
 > for network card activation: `ifconfig -v wlo1 up`
 
 ### chroot
