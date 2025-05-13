@@ -79,14 +79,14 @@ mount /dev/nvme0n1p1 /mnt/gentoo/efi
 | `emerge --ask @module-rebuild`                                               | after installing a new kernel                                                                           |
 | `emerge --ask @preserved-rebuild`                                            | for using new libraries                                                                                 |
 
-> [!WARNING]  
+> [!CAUTION]  
 > repository is specifically tailored towards hardware and preferences of mine \
 > you should follow the official gentoo installation handbook and adjust accordingly
 > ```
 > links https://wiki.gentoo.org/wiki/Handbook:AMD64
 > ```
 
-> [!CAUTION]
+> [!WARNING]
 > assuming repository system-wide configurations have been applied beforehand, freely follow the guide and docs highlighted for additional information
 > ```
 > git clone https://github.com/librazhd7/gentoo.git
@@ -109,7 +109,7 @@ ping -c 3 1.1.1.1
 ### stage3
 ```
 cd /mnt/gentoo
-wget
+wget https://ftp.lysator.liu.se/gentoo/releases/amd64/autobuilds/current-stage3-amd64-systemd/stage3-amd64-systemd-xxxxxxxxxxxxxxxx.tar.xz
 tar xpvf stage3-*.tar.xz --xattrs-include='*.*' --numeric-owner -C /mnt/gentoo
 cp --dereference /etc/resolv.conf /mnt/gentoo/etc/
 ```
@@ -145,6 +145,10 @@ emerge --ask --depclean
 env-update && source /etc/profile
 ```
 
+> [!NOTE]
+> for detecting cpu: `resolve-march-native`
+> for displaying cpu features: `cpuid2cpuflags`
+
 > [!TIP]
 > to generate all locales specified in the /etc/locale.gen file: `locale-gen` \
 > to select the timezone for the system: `ln -sf ../usr/share/zoneinfo/Europe/Stockholm /etc/localtime`
@@ -162,17 +166,6 @@ make && make modules_install
 make install
 bootctl install
 ```
-
-### eclean[^14]
-```
-emerge --ask app-portage/gentoolkit
-eclean-dist -d
-eclean-pkg
-```
-
-> [!NOTE]
-> by default, source files are located in /var/cache/distfiles, while binary packages are located in /var/cache/binpkgs \
-> both locations can grow quite big if not periodically cleaned
 
 ### systemd[^15]
 | services                           | sockets                 |
@@ -207,9 +200,8 @@ systemctl preset-all
 
 > [!TIP]
 > to enable unit to start automatically at boot: `systemctl enable .service/.socket` \
-> to start unit immediately: `systemctl start .service/.socket`
-> > to select the timezone for the system: `timedatectl set-timezone Europe/Stockholm`
-
+> to start unit immediately: `systemctl start .service/.socket`                      \
+> to select the timezone for the system: `timedatectl set-timezone Europe/Stockholm`
 
 ### system groups[^16]
 | group      | permissions                                                                                   |
@@ -245,15 +237,24 @@ visudo
 
 ### finishing up
 ```
+exit
 umount -l /mnt/gentoo/dev{/shm,/pts,}
 umount -R /mnt/gentoo
 cryptsetup close /dev/mapper/swap
 cryptsetup close /dev/mapper/root
+reboot
+```
+
+### eclean[^14]
+```
+emerge --ask app-portage/gentoolkit
+eclean-dist -d
+eclean-pkg
 ```
 
 > [!NOTE]
-> exit the chrooted environment and unmount all mounted partitions \
-> then restart the system by typing: `reboot`
+> by default, source files are located in /var/cache/distfiles, while binary packages are located in /var/cache/binpkgs \
+> both locations can grow quite big if not periodically cleaned
 
 ### to do
 - proper referencing to docs but also files in the repository, make an index to navigate the readme too
@@ -329,6 +330,7 @@ labwc, sfwbar, swww
 [url-power-management]:      <https://wiki.gentoo.org/wiki/Power_management>
 [url-portage-tmpdir-tmpfs]:  <https://wiki.gentoo.org/wiki/Portage_TMPDIR_on_tmpfs>
 [url-qemu]:                  <https://wiki.gentoo.org/wiki/QEMU>
+[url-safe-cflags]:           <https://wiki.gentoo.org/wiki/Safe_CFLAGS>
 [url-secureboot]:            <https://wiki.gentoo.org/wiki/Secure_Boot>
 [url-ssh]:                   <https://wiki.gentoo.org/wiki/SSH>
 [url-steam]:                 <https://wiki.gentoo.org/wiki/Steam>
