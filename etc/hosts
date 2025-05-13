@@ -14,5 +14,5 @@
 #
 
 # IPv4 and IPv6 localhost aliases
-127.0.0.1	 localhost gentoo
-::1		     localhost gentoo
+127.0.0.1  localhost gentoo
+::1        localhost gentoo
