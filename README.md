@@ -95,23 +95,24 @@ mount /dev/nvme0n1p1 /mnt/gentoo/efi
 > wget https://github.com/librazhd7/gentoo/archive/refs/heads/main.zip
 > ```
 
-### stage3
-```
-cd /mnt/gentoo
-tar xpvf stage3-*.tar.xz --xattrs-include='*.*' --numeric-owner -C /mnt/gentoo
-```
-
 ### configuring network
 ```
 ifconfig -a
 net-setup enp3s0/wlo1
 ping -c 3 1.1.1.1
-cp --dereference /etc/resolv.conf /mnt/gentoo/etc/
 ```
 
 > [!TIP]
 > for automatic ip, network mask, routes, dns and ntp servers: `dhcpcd enp3s0/wlo1` \
 > for network card activation: `ifconfig -v wlo1 up`
+
+### stage3
+```
+cd /mnt/gentoo
+wget
+tar xpvf stage3-*.tar.xz --xattrs-include='*.*' --numeric-owner -C /mnt/gentoo
+cp --dereference /etc/resolv.conf /mnt/gentoo/etc/
+```
 
 ### chroot
 ```
