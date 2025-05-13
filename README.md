@@ -21,6 +21,7 @@
 - [x] ssh
 - [x] systemd
 - [x] tmpfs
+- [ ] tpm
 - [x] virtualization (qemu, wine)
 - [x] zswap
 
@@ -328,6 +329,7 @@ labwc, sfwbar, swww
 [url-secureboot]:            <https://wiki.gentoo.org/wiki/Secure_Boot>
 [url-ssh]:                   <https://wiki.gentoo.org/wiki/SSH>
 [url-steam]:                 <https://wiki.gentoo.org/wiki/Steam>
+[url-tpm]:                   <https://wiki.gentoo.org/wiki/Trusted_Platform_Module>
 [url-udev]:                  <https://wiki.gentoo.org/wiki/Udev>
 [url-unified-kernel-image]:  <https://wiki.gentoo.org/wiki/Unified_kernel_image>
 [url-wine]:                  <https://wiki.gentoo.org/wiki/Wine>
