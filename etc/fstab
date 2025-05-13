@@ -15,6 +15,7 @@
 
 # <fs>                                         <mountpoint>      <type>  <opts>                                                                                  <dump>  <pass>
 PARTUUID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx  /efi              vfat    defaults,noatime,uid=0,gid=0,umask=0077,x-systemd.automount,x-systemd.idle-timeout=600  0       2
+PARTUUID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx  /boot             xfs     defaults,noatime                                                                        0       2
 PARTUUID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx  none              swap    sw                                                                                      0       0
 PARTUUID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx  /                 xfs     defaults,noatime                                                                        0       1
 tmpfs                                          /var/tmp/portage  tmpfs   size=10G,uid=portage,gid=portage,mode=775                                               0       0
