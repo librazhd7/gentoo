@@ -36,8 +36,8 @@
 mkfs.vfat -F 32 /dev/nvme0n1p1
 cryptsetup luksFormat /dev/nvme0n1p2
 cryptsetup luksOpen /dev/nvme0n1p2 swap
-mkswap /dev/nvme0n1p2
-swapon /dev/nvme0n1p2
+mkswap /dev/mapper/swap
+swapon /dev/mapper/swap
 ```
 
 ### lvm[^7] on luks[^5] in root partition
@@ -45,16 +45,16 @@ swapon /dev/nvme0n1p2
 pvcreate /dev/nvme0n1p3
 vgcreate vg0 /dev/nvme0n1p3
 lvcreate -l 100%FREE --type thin-pool --thinpool thin vg0
+lvchange -a y /dev/vg0/thin
 cryptsetup luksFormat /dev/vg0/thin
 cryptsetup luksOpen /dev/vg0/thin root
-mkfs.xfs /dev/vg0/thin
-lvchange -a y /dev/vg0/thin
+mkfs.xfs /dev/mapper/root
 ```
 
 ### mounting devices
 ```
 mkdir -p /mnt/gentoo
-mount /dev/vg0/thin /mnt/gentoo
+mount /dev/mapper/root /mnt/gentoo
 mkdir -p /mnt/gentoo/efi
 mount /dev/nvme0n1p1 /mnt/gentoo/efi
 ```
@@ -240,10 +240,10 @@ visudo
 
 ### finishing up
 ```
-cryptsetup close /dev/nvme0n1p2
-cryptsetup close /dev/nvme0n1p3
 umount -l /mnt/gentoo/dev{/shm,/pts,}
 umount -R /mnt/gentoo
+cryptsetup close /dev/mapper/swap
+cryptsetup close /dev/mapper/root
 ```
 
 ### to do
