@@ -246,6 +246,10 @@ cryptsetup close /dev/mapper/swap
 cryptsetup close /dev/mapper/root
 ```
 
+> [!NOTE]
+> exit the chrooted environment and unmount all mounted partitions \
+> then restart the system by typing: `reboot`
+
 ### to do
 - proper referencing to docs but also files in the repository, make an index to navigate the readme too
 - script to automatically apply system-wide configurations
