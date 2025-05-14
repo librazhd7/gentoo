@@ -17,6 +17,7 @@
 - [x] nvidia drivers (open-kernel, optimus)
 - [x] pipewire
 - [x] power management (tls)
+- [ ] printing
 - [ ] secure boot
 - [x] ssh
 - [x] systemd
@@ -271,7 +272,7 @@ eclean-pkg
 - proper referencing to docs but also files in the repository, make an index to navigate the readme too
 - script to automatically apply system-wide configurations
 - more insight into the meaning of all the commands
-- virtualization section for wine and qemu
+- sections for blender, qemu, steam, wine 
 - properly configured luks with best practices (etc/crypttab)
 - gentoo =>> minimal packages by use flags
 - gentoo-sources =>> ditch gentoo-kernel-bin (partially tested, needs fine-tuning)
