@@ -44,6 +44,7 @@ media-fonts/corefonts
 media-fonts/noto-emoji
 media-gfx/blender
 media-gfx/gimp
+media-gfx/krita
 media-libs/libpulse
 media-video/obs-studio
 media-video/pipewire
