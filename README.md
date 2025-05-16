@@ -289,21 +289,25 @@ eclean-pkg
 - [__eselect__][url-eselect]
 - [__fonts__][url-fonts]
 - [__gamescope__][url-gamescope] (arch)
+- [__gcc optimization__][url-gcc-optimization]
 - [__gentoolkit__][url-gentoolkit]
 - [__guru__][url-guru]
 - [__hybrid graphics__][url-hybrid-graphics]
 - [__libinput__][url-libinput]
 - [__libvirt__][url-libvirt]
+- [__lto__][url-lto]
 - [__networkmanager__][url-networkmanager]
 - [__nvidia-drivers__][url-nvidia-drivers]
 - [__optimus__][url-optimus]
 - [__pipewire__][url-pipewire]
 - [__power management__][url-power-management]
 - [__qemu__][url-qemu]
+- [__safe cflags__][url-safe-cflags]
 - [__secure boot__][url-secureboot]
 - [__ssh__][url-ssh]
 - [__steam__][url-steam]
 - [__tmpfs__][url-portage-tmpdir-tmpfs]
+- [__tpm__][url-tpm]
 - [__udev__][url-udev]
 - [__unified kernel image__][url-unified-kernel-image]
 - [__wine__][url-wine]
@@ -330,11 +334,13 @@ labwc, sfwbar, swww
 [url-eselect]:               <https://wiki.gentoo.org/wiki/Eselect>
 [url-fonts]:                 <https://wiki.gentoo.org/wiki/Fonts>
 [url-gamescope]:             <https://wiki.archlinux.org/title/Gamescope>
+[url-gcc-optimization]:      <https://wiki.gentoo.org/wiki/GCC_optimization>
 [url-gentoolkit]:            <https://wiki.gentoo.org/wiki/Gentoolkit>
 [url-guru]:                  <https://wiki.gentoo.org/wiki/Project:GURU>
 [url-hybrid-graphics]:       <https://wiki.gentoo.org/wiki/Hybrid_graphics>
 [url-libinput]:              <https://wiki.gentoo.org/wiki/Libinput>
 [url-libvirt]:               <https://wiki.gentoo.org/wiki/Libvirt>
+[url-lto]:                   <https://wiki.gentoo.org/wiki/LTO>
 [url-networkmanager]:        <https://wiki.gentoo.org/wiki/NetworkManager>
 [url-nvidia-drivers]:        <https://wiki.gentoo.org/wiki/NVIDIA/nvidia-drivers>
 [url-optimus]:               <https://wiki.gentoo.org/wiki/NVIDIA/Optimus>
