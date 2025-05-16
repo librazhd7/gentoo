@@ -16,6 +16,7 @@
 - [x] networking
 - [x] nvidia drivers (open-kernel, optimus)
 - [x] pipewire
+- [x] portage optimizations
 - [x] power management (tls)
 - [ ] printing
 - [ ] secure boot
