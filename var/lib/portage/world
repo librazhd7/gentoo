@@ -53,6 +53,7 @@ media-video/vlc
 media-video/wireplumber
 net-misc/networkmanager
 net-wireless/bluez
+sys-apps/fwupd
 sys-apps/keyutils
 sys-apps/mlocate
 sys-apps/pciutils
