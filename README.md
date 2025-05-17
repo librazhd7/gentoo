@@ -294,6 +294,7 @@ eclean-pkg
 - [__gamescope__][url-gamescope] (arch)
 - [__gcc optimization__][url-gcc-optimization]
 - [__gentoolkit__][url-gentoolkit]
+- [__git__][url-git]
 - [__guru__][url-guru]
 - [__hybrid graphics__][url-hybrid-graphics]
 - [__libinput__][url-libinput]
@@ -340,6 +341,7 @@ labwc, sfwbar, swww
 [url-gamescope]:             <https://wiki.archlinux.org/title/Gamescope>
 [url-gcc-optimization]:      <https://wiki.gentoo.org/wiki/GCC_optimization>
 [url-gentoolkit]:            <https://wiki.gentoo.org/wiki/Gentoolkit>
+[url-git]:                   <https://wiki.gentoo.org/wiki/Git>
 [url-guru]:                  <https://wiki.gentoo.org/wiki/Project:GURU>
 [url-hybrid-graphics]:       <https://wiki.gentoo.org/wiki/Hybrid_graphics>
 [url-libinput]:              <https://wiki.gentoo.org/wiki/Libinput>
