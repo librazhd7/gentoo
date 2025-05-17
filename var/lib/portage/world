@@ -53,6 +53,7 @@ media-video/vlc
 media-video/wireplumber
 net-misc/networkmanager
 net-wireless/bluez
+sys-apps/ethtool
 sys-apps/fwupd
 sys-apps/keyutils
 sys-apps/mlocate
@@ -69,6 +70,7 @@ sys-fs/dosfstools
 sys-fs/lvm2
 sys-fs/ntfs3g
 sys-fs/xfsprogs
+sys-kernel/dkms
 sys-kernel/gentoo-sources
 sys-kernel/installkernel
 sys-kernel/linux-firmware
