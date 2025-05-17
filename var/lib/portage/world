@@ -71,6 +71,7 @@ sys-fs/xfsprogs
 sys-kernel/gentoo-sources
 sys-kernel/installkernel
 sys-kernel/linux-firmware
+sys-kernel/linux-headers
 sys-power/acpid
 sys-power/thermald
 sys-power/tlp
