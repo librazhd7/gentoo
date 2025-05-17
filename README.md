@@ -17,7 +17,7 @@
 - [x] nvidia drivers (open-kernel, optimus)
 - [x] pipewire
 - [x] portage optimizations
-- [x] power management (tls)
+- [x] power management (thermald, tlp)
 - [ ] printing
 - [ ] secure boot
 - [x] ssh
