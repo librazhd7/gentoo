@@ -289,6 +289,7 @@ eclean-pkg
 - [__dxvk__][url-dxvk] (github)
 - [__eselect__][url-eselect]
 - [__fonts__][url-fonts]
+- [__fwupd__][url-fwupd]
 - [__gamescope__][url-gamescope] (arch)
 - [__gcc optimization__][url-gcc-optimization]
 - [__gentoolkit__][url-gentoolkit]
@@ -334,6 +335,7 @@ labwc, sfwbar, swww
 [url-dxvk]:                  <https://github.com/doitsujin/dxvk>
 [url-eselect]:               <https://wiki.gentoo.org/wiki/Eselect>
 [url-fonts]:                 <https://wiki.gentoo.org/wiki/Fonts>
+[url-fwupd]:                 <https://wiki.gentoo.org/wiki/Fwupd>
 [url-gamescope]:             <https://wiki.archlinux.org/title/Gamescope>
 [url-gcc-optimization]:      <https://wiki.gentoo.org/wiki/GCC_optimization>
 [url-gentoolkit]:            <https://wiki.gentoo.org/wiki/Gentoolkit>
