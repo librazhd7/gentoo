@@ -274,8 +274,9 @@ eclean-pkg
 - proper referencing to docs but also files in the repository, make an index to navigate the readme too
 - script to automatically apply system-wide configurations
 - more insight into the meaning of all the commands
-- sections for blender, qemu, steam, wine 
+- sections for blender, nvidia, qemu, steam, wine
 - properly configured luks with best practices (etc/crypttab)
+- code a retro dynamic wayland window manager written in rust?
 - gentoo =>> minimal packages by use flags
 - gentoo-sources =>> ditch gentoo-kernel-bin (partially tested, needs fine-tuning)
 
