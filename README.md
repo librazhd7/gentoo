@@ -307,6 +307,7 @@ eclean-pkg
 - [__pipewire__][url-pipewire]
 - [__power management__][url-power-management]
 - [__qemu__][url-qemu]
+- [__rust__][url-rust]
 - [__safe cflags__][url-safe-cflags]
 - [__secure boot__][url-secureboot]
 - [__ssh__][url-ssh]
@@ -355,6 +356,7 @@ labwc, sfwbar, swww
 [url-power-management]:      <https://wiki.gentoo.org/wiki/Power_management>
 [url-portage-tmpdir-tmpfs]:  <https://wiki.gentoo.org/wiki/Portage_TMPDIR_on_tmpfs>
 [url-qemu]:                  <https://wiki.gentoo.org/wiki/QEMU>
+[url-rust]:                  <https://wiki.gentoo.org/wiki/Rust>
 [url-safe-cflags]:           <https://wiki.gentoo.org/wiki/Safe_CFLAGS>
 [url-secureboot]:            <https://wiki.gentoo.org/wiki/Secure_Boot>
 [url-ssh]:                   <https://wiki.gentoo.org/wiki/SSH>
