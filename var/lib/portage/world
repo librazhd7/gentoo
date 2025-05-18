@@ -21,6 +21,7 @@ app-shells/zsh-completions
 dev-java/openjdk
 dev-libs/libinput
 dev-util/nvidia-cuda-toolkit
+dev-util/rustup
 dev-vcs/git
 dev-vcs/rcs
 games-action/minecraft-launcher
