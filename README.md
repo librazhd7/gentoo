@@ -7,6 +7,7 @@
 
 ### features
 - [x] ~amd64
+- [ ] adb
 - [x] bluetooth
 - [x] bootloader (systemd-boot)
 - [x] intel microcode
