@@ -300,6 +300,7 @@ eclean-pkg
 
 ### docs
 - [__acpi__][url-acpi]
+- [__alsa__][url-alsa]
 - [__backlight__][url-backlight] (arch)
 - [__bash__][url-bash]
 - [__bluetooth__][url-bluetooth]
@@ -336,11 +337,13 @@ eclean-pkg
 - [__wine__][url-wine]
 - [__xdg-desktop-portal__][url-xdg-desktop-portal]
 - [__xfs__][url-xfs]
+- [__xorg__][url-xorg]
 - [__zsh__][url-zsh]
 - [__zswap__][url-zswap]
 
 <!-- docs -->
 [url-acpi]:                  <https://wiki.gentoo.org/wiki/ACPI>
+[url-alsa]:                  <https://wiki.gentoo.org/wiki/ALSA>
 [url-backlight]:             <https://wiki.archlinux.org/title/Backlight>
 [url-bash]:                  <https://wiki.gentoo.org/wiki/Bash>
 [url-bluetooth]:             <https://wiki.gentoo.org/wiki/Bluetooth>
@@ -377,6 +380,7 @@ eclean-pkg
 [url-wine]:                  <https://wiki.gentoo.org/wiki/Wine>
 [url-xdg-desktop-portal]:    <https://wiki.gentoo.org/wiki/XDG/xdg-desktop-portal>
 [url-xfs]:                   <https://wiki.gentoo.org/wiki/XFS>
+[url-xorg]:                  <https://wiki.gentoo.org/wiki/Xorg>
 [url-zsh]:                   <https://wiki.gentoo.org/wiki/Zsh>
 [url-zswap]:                 <https://wiki.gentoo.org/wiki/Zswap>
 
