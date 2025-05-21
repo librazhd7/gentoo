@@ -106,7 +106,7 @@ media-sound/lame                      abi_x86_32
 media-sound/mpg123-base               abi_x86_32
 media-video/ffmpeg                    lame nvenc opus theora vdpau vpx
 media-video/obs-studio                lua nvenc pulseaudio speex v4l vdpau
-media-video/pipewire                  abi_x86_32 dbus sound-server
+media-video/pipewire                  abi_x86_32 sound-server
 net-dns/c-ares                        abi_x86_32
 net-dns/dnsmasq                       script
 net-dns/libidn2                       abi_x86_32
