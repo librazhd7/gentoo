@@ -39,6 +39,7 @@ dev-libs/nspr                         abi_x86_32
 dev-libs/nss                          abi_x86_32
 dev-libs/openssl                      abi_x86_32
 dev-libs/wayland                      abi_x86_32
+dev-util/android-tools                udev
 dev-util/spirv-tools                  abi_x86_32
 dev-util/sysprof-capture              abi_x86_32
 gnome-base/librsvg                    abi_x86_32
