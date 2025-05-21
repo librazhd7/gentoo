@@ -1,3 +1,4 @@
 /usr/libexec/xdg-desktop-portal-wlr -r &
+gentoo-pipewire-launcher &
 sfwbar &
 swww-daemon &
