@@ -49,6 +49,7 @@ media-gfx/blender
 media-gfx/gimp
 media-gfx/krita
 media-libs/libpulse
+media-sound/alsa-utils
 media-video/obs-studio
 media-video/vlc
 media-video/wireplumber
