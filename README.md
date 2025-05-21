@@ -360,6 +360,18 @@ eclean-pkg
 [url-zsh]:                   <https://wiki.gentoo.org/wiki/Zsh>
 [url-zswap]:                 <https://wiki.gentoo.org/wiki/Zswap>
 
+[url-uefi]: <https://wiki.gentoo.org/wiki/UEFI>
+[url-efi]: <https://wiki.gentoo.org/wiki/EFI_System_Partition>
+[url-dm-crypt]: <https://wiki.gentoo.org/wiki/Dm-crypt>
+[url-swap]: <https://wiki.gentoo.org/wiki/Swap>
+[url-lvm]: <https://wiki.gentoo.org/wiki/LVM>
+[url-linux-firmware]: <https://wiki.gentoo.org/wiki/Linux_firmware>
+[url-microcode]: <https://wiki.gentoo.org/wiki/Microcode>
+[url-intel]: <https://wiki.gentoo.org/wiki/Intel>
+[url-systemd-boot]: <https://wiki.gentoo.org/wiki/Systemd/systemd-boot>
+[url-kernel]: <https://wiki.gentoo.org/wiki/Kernel>
+[url-systemd]: <https://wiki.gentoo.org/wiki/Systemd>
+
 ### media ![](https://www.gentoo.org/assets/img/badges/gentoo-badge3.svg)
 labwc, sfwbar, swww
 ![](https://github.com/librazhd7/gentoo/blob/6d570189e717f56e126076e14c76d73150764ab0/media/grim.jpg)
