@@ -27,6 +27,8 @@
 - [x] virtualization
 - [x] zswap
 
+---
+
 ### fdisk[^1] (gpt)[^2]
 | device           | size       | type      | lvm | luks | fs    |
 |------------------|------------|-----------|------|-----|-------|
@@ -54,6 +56,8 @@ cryptsetup luksOpen /dev/vg0/thin root
 mkfs.xfs /dev/mapper/root
 ```
 
+---
+
 ### mounting devices
 ```
 mkdir -p /mnt/gentoo
@@ -67,6 +71,8 @@ mount /dev/nvme0n1p1 /mnt/gentoo/efi
 > if volume groups are missing: `vgscan`        \
 > to list all logical volumes: `lvdisplay`      \
 > if logical volumes are missing: `lvscan`
+
+---
 
 ### portage[^9]
 | command                                                                      | functionality                                                                                           |
@@ -97,6 +103,8 @@ mount /dev/nvme0n1p1 /mnt/gentoo/efi
 > wget https://github.com/librazhd7/gentoo/archive/refs/heads/main.zip
 > ```
 
+---
+
 ### configuring network
 ```
 ifconfig -a
@@ -115,6 +123,8 @@ wget https://ftp.lysator.liu.se/gentoo/releases/amd64/autobuilds/current-stage3-
 tar xpvf stage3-*.tar.xz --xattrs-include='*.*' --numeric-owner -C /mnt/gentoo
 cp --dereference /etc/resolv.conf /mnt/gentoo/etc/
 ```
+
+---
 
 ### chroot[^10]
 ```
@@ -143,6 +153,8 @@ export PS1="(chroot) ${PS1}"
 > to specify output file: `of=` (which in this case, is a device) \
 > to speed up transfers in most cases: `bs=4096`                  \
 > to display transfers stats: `status=progress`
+
+---
 
 ### installing base system
 ```
@@ -175,6 +187,8 @@ make && make modules_install
 make install
 bootctl install
 ```
+
+---
 
 ### systemd[^16]
 | services                           | sockets                 |
@@ -214,6 +228,8 @@ systemctl preset-all
 > to select the hostname for the system: `hostnamectl hostname gentoo`               \
 > to select the timezone for the system: `timedatectl set-timezone Europe/Stockholm`
 
+---
+
 ### system groups[^17]
 | group      | permissions                                                                                   |
 |------------|-----------------------------------------------------------------------------------------------|
@@ -247,6 +263,8 @@ visudo
 > deleting the password and/or disabling root login can help improve security. \
 > to delete the root password and disable login: `passwd -dl root`
 
+---
+
 ### finishing up
 ```
 exit
@@ -269,6 +287,8 @@ eclean-pkg
 > both locations can grow quite big if not periodically cleaned
 
 ### nvidia, pipewire, virtualization[^19]
+
+---
 
 ### to do
 - proper referencing to docs but also files in the repository, make an index to navigate the readme too
