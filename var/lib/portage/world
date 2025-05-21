@@ -50,7 +50,6 @@ media-gfx/gimp
 media-gfx/krita
 media-libs/libpulse
 media-video/obs-studio
-media-video/pipewire
 media-video/vlc
 media-video/wireplumber
 net-misc/networkmanager
