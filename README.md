@@ -7,25 +7,24 @@
 
 ### features
 - [x] ~amd64
-- [ ] adb
 - [x] bluetooth
-- [x] bootloader (systemd-boot)
+- [x] bootloader
 - [x] intel microcode
-- [x] kernel (gentoo-sources)
+- [x] kernel
 - [x] luks
-- [x] lvm (thin)
+- [x] lvm
 - [x] networking
-- [x] nvidia drivers (open-kernel, optimus)
+- [x] nvidia drivers
 - [x] pipewire
 - [x] portage optimizations
-- [x] power management (thermald, tlp)
+- [x] power management
 - [ ] printing
 - [ ] secure boot
 - [x] ssh
 - [x] systemd
 - [x] tmpfs
 - [ ] tpm
-- [x] virtualization (qemu, wine)
+- [x] virtualization
 - [x] zswap
 
 ### fdisk[^1] (gpt)[^2]
@@ -35,7 +34,7 @@
 | `/dev/nvme0n1p2` | 24g        | swap (19) |      | yes |       |
 | `/dev/nvme0n1p3` |            | lvm (44)  | thin | yes | xfs   |
 
-### esp[^3] [^4] and luks[^5] on swap[^6]
+### esp[^3] [^4] and luks[^5] [^6] on swap[^7]
 ```
 mkfs.vfat -F 32 /dev/nvme0n1p1
 cryptsetup luksFormat /dev/nvme0n1p2
@@ -44,7 +43,7 @@ mkswap /dev/mapper/swap
 swapon /dev/mapper/swap
 ```
 
-### lvm[^7] on luks[^5] in root partition
+### lvm[^8] on root
 ```
 pvcreate /dev/nvme0n1p3
 vgcreate vg0 /dev/nvme0n1p3
@@ -69,7 +68,7 @@ mount /dev/nvme0n1p1 /mnt/gentoo/efi
 > to list all logical volumes: `lvdisplay`      \
 > if logical volumes are missing: `lvscan`
 
-### portage[^8]
+### portage[^9]
 | command                                                                      | functionality                                                                                           |
 |------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | `dispatch-conf`                                                              | manage configuration changes after an emerge completes                                                  |
@@ -117,7 +116,7 @@ tar xpvf stage3-*.tar.xz --xattrs-include='*.*' --numeric-owner -C /mnt/gentoo
 cp --dereference /etc/resolv.conf /mnt/gentoo/etc/
 ```
 
-### chroot
+### chroot[^10]
 ```
 mount --types proc /proc /mnt/gentoo/proc
 mount --rbind /sys /mnt/gentoo/sys
@@ -134,7 +133,7 @@ export PS1="(chroot) ${PS1}"
 ```
 
 > [!NOTE]
-> using `arch-chroot /mnt/gentoo` simplifies the mounting process of necessary filesystems when using the official gentoo installation media:
+> using `arch-chroot` simplifies the mounting process of necessary filesystems when using the official gentoo installation media:
 > ```
 > dd if=install-amd64-minimal-xxxxxxxxxxxxxxxx.iso of=/dev/sda bs=4096 status=progress && sync
 > ```
@@ -144,9 +143,6 @@ export PS1="(chroot) ${PS1}"
 > to specify output file: `of=` (which in this case, is a device) \
 > to speed up transfers in most cases: `bs=4096`                  \
 > to display transfers stats: `status=progress`
-
-> [!CAUTION]
-> .
 
 ### installing base system
 ```
@@ -166,7 +162,7 @@ env-update && source /etc/profile
 > to select the hostname for the system: `echo gentoo > /etc/hostname`        \
 > to select the timezone for the system: `ln -sf ../usr/share/zoneinfo/Europe/Stockholm /etc/localtime`
 
-### installing firmware[^9] [^10] [^11], bootloader[^12] and kernel[^13]
+### installing firmware[^11] [^12] [^13], bootloader[^14] and kernel[^15]
 ```
 emerge --ask sys-kernel/linux-firmware sys-kernel/linux-headers sys-firmware/intel-microcode sys-firmware/sof-firmware
 emerge --ask app-crypt/sbsigntools sys-apps/fwupd sys-apps/pciutils sys-apps/systemd sys-kernel/dkms sys-kernel/gentoo-sources sys-kernel/installkernel
@@ -180,7 +176,7 @@ make install
 bootctl install
 ```
 
-### systemd[^15]
+### systemd[^16]
 | services                           | sockets                 |
 |------------------------------------|-------------------------|
 | `acpid.service`                    | `pipewire-pulse.socket` |
@@ -218,13 +214,14 @@ systemctl preset-all
 > to select the hostname for the system: `hostnamectl hostname gentoo`               \
 > to select the timezone for the system: `timedatectl set-timezone Europe/Stockholm`
 
-### system groups[^16]
+### system groups[^17]
 | group      | permissions                                                                                   |
 |------------|-----------------------------------------------------------------------------------------------|
+| `android`  | |
 | `audio`    | direct access to sound hardware, for all sessions                                             |
 | `kvm`      | access to virtual machines using kvm                                                          |
 | `libvirt`  | users in this group can talk with libvirt service via dbus                                    |
-| `pipewire` |                                                                                               |
+| `pipewire` | |
 | `plugdev`  | allows members to mount and umount removable devices through pmount                           |
 | `users`    | the primary group for users when user private groups are not used (generally not recommended) |
 | `video`    | access to video capture devices, 2d/3d hardware acceleration and framebuffer                  |
@@ -233,7 +230,7 @@ systemctl preset-all
 ### creating user
 ```
 emerge --ask app-admin/sudo
-useradd -mG audio,kvm,libvirt,pipewire,plugdev,users,video,wheel <user>
+useradd -mG android,audio,kvm,libvirt,pipewire,plugdev,users,video,wheel <user>
 passwd <user>
 visudo
 ```
@@ -260,7 +257,7 @@ cryptsetup close /dev/mapper/root
 reboot
 ```
 
-### eclean[^14]
+### eclean[^18]
 ```
 emerge --ask app-portage/gentoolkit
 eclean-dist -d
@@ -271,13 +268,13 @@ eclean-pkg
 > by default, source files are located in /var/cache/distfiles, while binary packages are located in /var/cache/binpkgs \
 > both locations can grow quite big if not periodically cleaned
 
+### nvidia, pipewire, virtualization[^19]
+
 ### to do
 - proper referencing to docs but also files in the repository, make an index to navigate the readme too
 - script to automatically apply system-wide configurations
-- more insight into the meaning of all the commands
-- sections for blender, nvidia, qemu, steam, wine
-- properly configured luks with best practices (etc/crypttab)
-- code a retro dynamic wayland window manager written in rust?
+- luks =>> properly configured w/ best practices (etc/crypttab & /etc/dracut.conf.d/)
+- fdisk =>> add /boot partition for grub support?
 - gentoo =>> minimal packages by use flags
 - gentoo-sources =>> ditch gentoo-kernel-bin (partially tested, needs fine-tuning)
 
@@ -289,7 +286,6 @@ eclean-pkg
 - [__dispatch-conf__][url-dispatch-conf]
 - [__dnsmasq__][url-dnsmasq]
 - [__dracut__][url-dracut]
-- [__dxvk__][url-dxvk] (github)
 - [__eselect__][url-eselect]
 - [__fonts__][url-fonts]
 - [__fwupd__][url-fwupd]
@@ -313,7 +309,7 @@ eclean-pkg
 - [__secure boot__][url-secureboot]
 - [__ssh__][url-ssh]
 - [__steam__][url-steam]
-- [__tmpfs__][url-portage-tmpdir-tmpfs]
+- [__tmpfs__][url-tmpfs]
 - [__tpm__][url-tpm]
 - [__udev__][url-udev]
 - [__unified kernel image__][url-unified-kernel-image]
@@ -322,12 +318,6 @@ eclean-pkg
 - [__xfs__][url-xfs]
 - [__zsh__][url-zsh]
 - [__zswap__][url-zswap]
-  
-### media ![](https://www.gentoo.org/assets/img/badges/gentoo-badge3.svg)
-labwc, sfwbar, swww
-![](https://github.com/librazhd7/gentoo/blob/6d570189e717f56e126076e14c76d73150764ab0/media/grim.jpg)
-
-![](https://github.com/librazhd7/gentoo/blob/98bddab1c09648e2d99e9558d66452588051024a/media/spectacle.jpg)
 
 <!-- docs -->
 [url-acpi]:                  <https://wiki.gentoo.org/wiki/ACPI>
@@ -337,7 +327,6 @@ labwc, sfwbar, swww
 [url-dispatch-conf]:         <https://wiki.gentoo.org/wiki/Dispatch-conf>
 [url-dnsmasq]:               <https://wiki.gentoo.org/wiki/Dnsmasq>
 [url-dracut]:                <https://wiki.gentoo.org/wiki/Dracut>
-[url-dxvk]:                  <https://github.com/doitsujin/dxvk>
 [url-eselect]:               <https://wiki.gentoo.org/wiki/Eselect>
 [url-fonts]:                 <https://wiki.gentoo.org/wiki/Fonts>
 [url-fwupd]:                 <https://wiki.gentoo.org/wiki/Fwupd>
@@ -355,13 +344,13 @@ labwc, sfwbar, swww
 [url-optimus]:               <https://wiki.gentoo.org/wiki/NVIDIA/Optimus>
 [url-pipewire]:              <https://wiki.gentoo.org/wiki/PipeWire>
 [url-power-management]:      <https://wiki.gentoo.org/wiki/Power_management>
-[url-portage-tmpdir-tmpfs]:  <https://wiki.gentoo.org/wiki/Portage_TMPDIR_on_tmpfs>
 [url-qemu]:                  <https://wiki.gentoo.org/wiki/QEMU>
 [url-rust]:                  <https://wiki.gentoo.org/wiki/Rust>
 [url-safe-cflags]:           <https://wiki.gentoo.org/wiki/Safe_CFLAGS>
 [url-secureboot]:            <https://wiki.gentoo.org/wiki/Secure_Boot>
 [url-ssh]:                   <https://wiki.gentoo.org/wiki/SSH>
 [url-steam]:                 <https://wiki.gentoo.org/wiki/Steam>
+[url-tmpfs]:                 <https://wiki.gentoo.org/wiki/Portage_TMPDIR_on_tmpfs>
 [url-tpm]:                   <https://wiki.gentoo.org/wiki/Trusted_Platform_Module>
 [url-udev]:                  <https://wiki.gentoo.org/wiki/Udev>
 [url-unified-kernel-image]:  <https://wiki.gentoo.org/wiki/Unified_kernel_image>
@@ -371,20 +360,28 @@ labwc, sfwbar, swww
 [url-zsh]:                   <https://wiki.gentoo.org/wiki/Zsh>
 [url-zswap]:                 <https://wiki.gentoo.org/wiki/Zswap>
 
+### media ![](https://www.gentoo.org/assets/img/badges/gentoo-badge3.svg)
+labwc, sfwbar, swww
+![](https://github.com/librazhd7/gentoo/blob/6d570189e717f56e126076e14c76d73150764ab0/media/grim.jpg)
+![](https://github.com/librazhd7/gentoo/blob/98bddab1c09648e2d99e9558d66452588051024a/media/spectacle.jpg)
+
 ### references
-[^1]: <https://linux.die.net/man/8/fdisk>
-[^2]: <https://en.wikipedia.org/wiki/GUID_Partition_Table>
-[^3]: <https://wiki.gentoo.org/wiki/UEFI>
-[^4]: <https://wiki.gentoo.org/wiki/EFI_System_Partition>
-[^5]: <https://wiki.gentoo.org/wiki/Dm-crypt>
-[^6]: <https://wiki.gentoo.org/wiki/Swap>
-[^7]: <https://wiki.gentoo.org/wiki/LVM>
-[^8]: <https://wiki.gentoo.org/wiki/Portage>
-[^9]: <https://wiki.gentoo.org/wiki/Linux_firmware>
-[^10]: <https://wiki.gentoo.org/wiki/Microcode>
-[^11]: <https://wiki.gentoo.org/wiki/Intel>
-[^12]: <https://wiki.gentoo.org/wiki/Systemd/systemd-boot>
-[^13]: <https://wiki.gentoo.org/wiki/Kernel>
-[^14]: <https://wiki.gentoo.org/wiki/Eclean>
-[^15]: <https://wiki.gentoo.org/wiki/Systemd>
-[^16]: <https://wiki.debian.org/SystemGroups>
+[^1]:   <https://linux.die.net/man/8/fdisk>
+[^2]:   <https://en.wikipedia.org/wiki/GUID_Partition_Table>
+[^3]:   <https://en.wikipedia.org/wiki/UEFI>
+[^4]:   <https://en.wikipedia.org/wiki/EFI_system_partition>
+[^5]:   <https://en.wikipedia.org/wiki/Linux_Unified_Key_Setup>
+[^6]:   <https://en.wikipedia.org/wiki/Dm-crypt>
+[^7]:   <https://en.wikipedia.org/wiki/Memory_paging>
+[^8]:   <https://en.wikipedia.org/wiki/Logical_Volume_Manager_(Linux)>
+[^9]:   <https://wiki.gentoo.org/wiki/Portage>
+[^10]:  <https://en.wikipedia.org/wiki/Chroot>
+[^11]:  <https://en.wikipedia.org/wiki/Firmware>
+[^12]:  <https://en.wikipedia.org/wiki/Microcode>
+[^13]:  <https://en.wikipedia.org/wiki/Intel>
+[^14]:  <https://en.wikipedia.org/wiki/Bootloader>
+[^15]:  <https://en.wikipedia.org/wiki/Kernel_(operating_system)>
+[^16]:  <https://en.wikipedia.org/wiki/Systemd>
+[^17]:  <https://wiki.debian.org/SystemGroups>
+[^18]:  <https://wiki.gentoo.org/wiki/Eclean>
+[^19]:  <https://en.wikipedia.org/wiki/Virtualization>
