@@ -9,15 +9,32 @@ PATH=/bin:/usr/bin:/usr/local/bin:/opt/bin:/usr/games/bin
 ROOTPATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin
 EDITOR=/usr/bin/vim
 
-_JAVA_AWT_WM_NONREPARENTING=1
+# run applications offloaded to the nvidia gpu,
+# with dynamic power management enabled
 __GLX_VENDOR_LIBRARY_NAME=nvidia
 __NV_PRIME_RENDER_OFFLOAD=1
+
+#
+#LIBVA_DRIVER_NAME=nvidia
+#VDPAU_DRIVER=nvidia
+
+#
+_JAVA_AWT_WM_NONREPARENTING=1
+
+# use wayland as backend for clutter and gdk [fallback to x11]
+# use nvidia-drm as backend for gbm
 CLUTTER_BACKEND=wayland
 GBM_BACKEND=nvidia-drm
 GDK_BACKEND=wayland,x11
+
+# use pipewire as audio driver for sdl
+# use wayland as video driver for sdl [fallback to x11]
 SDL_AUDIODRIVER=pipewire
 SDL_VIDEODRIVER=wayland,x11
+
+#
 QT_QPA_PLATFORM=wayland;xcb
-#WLR_DRM_NO_ATOMIC=1
+
+#
 XDG_CURRENT_DESKTOP=KDE
 XKB_DEFAULT_LAYOUT=se
