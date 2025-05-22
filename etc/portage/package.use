@@ -83,7 +83,7 @@ media-libs/libsdl2                    abi_x86_32
 media-libs/libsndfile                 abi_x86_32
 media-libs/libva                      abi_x86_32
 media-libs/libvorbis                  abi_x86_32
-media-libs/mesa                       abi_x86_32 vulkan
+media-libs/mesa                       abi_x86_32
 media-libs/openal                     abi_x86_32
 media-libs/opensubdiv                 tbb
 media-libs/opencv                     features2d
@@ -107,9 +107,9 @@ media-plugins/gst-plugins-x264        abi_x86_32
 media-sound/cdparanoia                abi_x86_32
 media-sound/lame                      abi_x86_32
 media-sound/mpg123-base               abi_x86_32
-media-video/ffmpeg                    lame nvenc opus theora vdpau vpx
-media-video/obs-studio                lua nvenc pulseaudio speex v4l vdpau
-media-video/pipewire                  abi_x86_32 sound-server
+media-video/ffmpeg                    lame nvenc opus theora vpx
+media-video/obs-studio                lua nvenc pipewire speex v4l
+media-video/pipewire                  abi_x86_32 pipewire-alsa sound-server
 net-dns/avahi                         python
 net-dns/c-ares                        abi_x86_32
 net-dns/dnsmasq                       script
@@ -125,7 +125,6 @@ net-misc/curl                         abi_x86_32
 net-misc/networkmanager               abi_x86_32
 net-misc/spice-gtk                    usbredir
 net-print/cups                        abi_x86_32
-net-wireless/wpa_supplicant           dbus
 sci-libs/fftw                         threads
 sci-physics/bullet                    double-precision
 sys-apps/dbus                         abi_x86_32
