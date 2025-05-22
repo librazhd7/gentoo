@@ -194,14 +194,15 @@ bootctl install
 | services                           | sockets                 |
 |------------------------------------|-------------------------|
 | `acpid.service`                    | `pipewire-pulse.socket` |
-| `bluetooth.service`                | `virtstoraged.socket`   |
-| `cups.service`                     | |
+| `bluetooth.service`                | ~~`pulseaudio.socket`~~ |
+| `cups.service`                     | `virtstoraged.socket`   |
 | `dkms.service`                     | |
 | `dnsmasq.service`                  | |
-| ~~`getty@tty1.service`~~           | |
+| `getty@tty1.service`               | |
 | `libvirtd.service`                 | |
 | `lvm2-monitor.service`             | |
 | `NetworkManager.service`           | |
+| ~~`pulseaudio.service`~~           | |
 | `sshd.service`                     | |
 | `systemd-boot-update.service`      | |
 | ~~`systemd-modules-load.service`~~ | |
