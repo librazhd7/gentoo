@@ -18,7 +18,8 @@
 - [x] pipewire
 - [x] portage optimizations
 - [x] power management
-- [ ] printing
+- [x] printing
+- [x] samba
 - [ ] secure boot
 - [x] ssh
 - [x] systemd
@@ -202,7 +203,9 @@ bootctl install
 | `libvirtd.service`                 | |
 | `lvm2-monitor.service`             | |
 | `NetworkManager.service`           | |
+| `nmbd.service`                     | |
 | ~~`pulseaudio.service`~~           | |
+| `smbd.service`                     | |
 | `sshd.service`                     | |
 | `systemd-boot-update.service`      | |
 | ~~`systemd-modules-load.service`~~ | |
@@ -325,9 +328,11 @@ eclean-pkg
 - [__optimus__][url-optimus]
 - [__pipewire__][url-pipewire]
 - [__power management__][url-power-management]
+- [__printing__][url-printing]
 - [__qemu__][url-qemu]
 - [__rust__][url-rust]
 - [__safe cflags__][url-safe-cflags]
+- [__samba__][url-samba]
 - [__secure boot__][url-secureboot]
 - [__ssh__][url-ssh]
 - [__steam__][url-steam]
@@ -368,9 +373,11 @@ eclean-pkg
 [url-optimus]:               <https://wiki.gentoo.org/wiki/NVIDIA/Optimus>
 [url-pipewire]:              <https://wiki.gentoo.org/wiki/PipeWire>
 [url-power-management]:      <https://wiki.gentoo.org/wiki/Power_management>
+[url-printing]:              <https://wiki.gentoo.org/wiki/Printing>
 [url-qemu]:                  <https://wiki.gentoo.org/wiki/QEMU>
 [url-rust]:                  <https://wiki.gentoo.org/wiki/Rust>
 [url-safe-cflags]:           <https://wiki.gentoo.org/wiki/Safe_CFLAGS>
+[url-samba]:                 <https://wiki.gentoo.org/wiki/Samba>
 [url-secureboot]:            <https://wiki.gentoo.org/wiki/Secure_Boot>
 [url-ssh]:                   <https://wiki.gentoo.org/wiki/SSH>
 [url-steam]:                 <https://wiki.gentoo.org/wiki/Steam>
