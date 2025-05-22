@@ -414,7 +414,7 @@ eclean-pkg
 labwc, sfwbar, swww
 ![](https://github.com/librazhd7/gentoo/blob/b20de46ab18b650c6103c41a810cd1fa0927eba3/media/adwaita.jpg)
 ![](https://github.com/librazhd7/gentoo/blob/b20de46ab18b650c6103c41a810cd1fa0927eba3/media/breeze.jpg)
-![](https://github.com/librazhd7/gentoo/blob/b20de46ab18b650c6103c41a810cd1fa0927eba3/media/oxygen.jpg)
+![](https://github.com/librazhd7/gentoo/blob/64dba2b11bd52959b0788bbfafb194f5b375c8da/media/oxygen.jpg)
 
 ---
 
