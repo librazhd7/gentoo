@@ -40,8 +40,10 @@ dev-libs/nss                          abi_x86_32
 dev-libs/openssl                      abi_x86_32
 dev-libs/wayland                      abi_x86_32
 dev-util/android-tools                udev
+dev-util/glslang                      abi_x86_32
 dev-util/spirv-tools                  abi_x86_32
 dev-util/sysprof-capture              abi_x86_32
+dev-util/vulkan-utility-libraries     abi_x86_32
 gnome-base/librsvg                    abi_x86_32
 gui-libs/egl-gbm                      abi_x86_32
 gui-libs/egl-wayland                  abi_x86_32
@@ -87,6 +89,7 @@ media-libs/opensubdiv                 tbb
 media-libs/opencv                     features2d
 media-libs/opus                       abi_x86_32
 media-libs/tiff                       abi_x86_32
+media-libs/vulkan-layers              abi_x86_32
 media-libs/vulkan-loader              abi_x86_32 layers
 media-libs/x264                       abi_x86_32
 media-plugins/gst-plugins-a52dec      abi_x86_32
