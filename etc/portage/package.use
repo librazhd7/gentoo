@@ -87,7 +87,7 @@ media-libs/opensubdiv                 tbb
 media-libs/opencv                     features2d
 media-libs/opus                       abi_x86_32
 media-libs/tiff                       abi_x86_32
-media-libs/vulkan-loader              abi_x86_32
+media-libs/vulkan-loader              abi_x86_32 layers
 media-libs/x264                       abi_x86_32
 media-plugins/gst-plugins-a52dec      abi_x86_32
 media-plugins/gst-plugins-cdparanoia  abi_x86_32
