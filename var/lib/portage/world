@@ -53,7 +53,9 @@ media-sound/alsa-utils
 media-video/obs-studio
 media-video/vlc
 media-video/wireplumber
+net-fs/samba
 net-misc/networkmanager
+net-print/hplip
 net-wireless/bluez
 sys-apps/ethtool
 sys-apps/fwupd
