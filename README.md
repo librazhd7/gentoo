@@ -408,10 +408,15 @@ eclean-pkg
 [url-kernel]: <https://wiki.gentoo.org/wiki/Kernel>
 [url-systemd]: <https://wiki.gentoo.org/wiki/Systemd>
 
+---
+
 ### media ![](https://www.gentoo.org/assets/img/badges/gentoo-badge3.svg)
 labwc, sfwbar, swww
-![](https://github.com/librazhd7/gentoo/blob/6d570189e717f56e126076e14c76d73150764ab0/media/grim.jpg)
-![](https://github.com/librazhd7/gentoo/blob/98bddab1c09648e2d99e9558d66452588051024a/media/spectacle.jpg)
+![](https://github.com/librazhd7/gentoo/blob/b20de46ab18b650c6103c41a810cd1fa0927eba3/media/adwaita.jpg)
+![](https://github.com/librazhd7/gentoo/blob/b20de46ab18b650c6103c41a810cd1fa0927eba3/media/breeze.jpg)
+![](https://github.com/librazhd7/gentoo/blob/b20de46ab18b650c6103c41a810cd1fa0927eba3/media/oxygen.jpg)
+
+---
 
 ### references
 [^1]:   <https://linux.die.net/man/8/fdisk>
