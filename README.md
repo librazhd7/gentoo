@@ -255,12 +255,16 @@ passwd <user>
 visudo
 ```
 
-> [!NOTE]
+> [!CAUTION]
 > `/etc/sudoers` should always be edited with `visudo`      \
 > allow members of group wheel sudo access by uncommenting
 > ```
 > %wheel ALL=(ALL:ALL) ALL
 > ```
+
+> [!NOTE]
+> adding pre-existing user to a group: `usermod -aG` \
+> find out more here: https://man7.org/linux/man-pages/man8/usermod.8.html
 
 > [!TIP]
 > to prevent possible threat actors from logging in as root,                   \
