@@ -9,14 +9,14 @@ PATH=/bin:/usr/bin:/usr/local/bin:/opt/bin:/usr/games/bin
 ROOTPATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin
 EDITOR=/usr/bin/vim
 
-# run applications offloaded to the nvidia gpu,
-# with dynamic power management enabled
+# use proprietary nvidia glx driver for glvnd [graphical glx applications]
+# offload applications to the nvidia gpu with dpm enabled
 __GLX_VENDOR_LIBRARY_NAME=nvidia
 __NV_PRIME_RENDER_OFFLOAD=1
 
-#
-#LIBVA_DRIVER_NAME=nvidia
-#VDPAU_DRIVER=nvidia
+# use proprietary nvidia driver for va-api and vdpau
+LIBVA_DRIVER_NAME=nvidia
+VDPAU_DRIVER=nvidia
 
 #
 _JAVA_AWT_WM_NONREPARENTING=1
@@ -32,9 +32,10 @@ GDK_BACKEND=wayland,x11
 SDL_AUDIODRIVER=pipewire
 SDL_VIDEODRIVER=wayland,x11
 
-#
+# use wayland as backend for qt [fallback to x11]
 QT_QPA_PLATFORM=wayland;xcb
 
-#
+# use kde as default desktop environment
+# use swedish as default keyboard layout
 XDG_CURRENT_DESKTOP=KDE
 XKB_DEFAULT_LAYOUT=se
