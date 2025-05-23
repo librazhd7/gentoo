@@ -232,9 +232,17 @@ systemctl preset-all
 > to select the hostname for the system: `hostnamectl hostname gentoo`               \
 > to select the timezone for the system: `timedatectl set-timezone Europe/Stockholm`
 
+### journalctl [^17]
+| command                      | functionality                                                                                          |
+|------------------------------|--------------------------------------------------------------------------------------------------------|
+| `journalctl --disk-usage`    | shows the current disk usage of all journal files                                                      |
+| `journalctl --vacuum-files=` | leaves only the specified number of separate journal files                                             |
+| `journalctl --vacuum-size=`  | removes the oldest archived journal files until the disk space they use falls below the specified size |
+| `journalctl --vacuum-time=`  | removes archived journal files older than the specified timespan                                       |
+
 ---
 
-### system groups[^17]
+### system groups[^18]
 | group      | permissions                                                                                   |
 |------------|-----------------------------------------------------------------------------------------------|
 | `android`  | |
@@ -283,7 +291,7 @@ cryptsetup close /dev/mapper/root
 reboot
 ```
 
-### eclean[^18]
+### eclean[^19]
 ```
 emerge --ask app-portage/gentoolkit
 eclean-dist -d
@@ -294,7 +302,7 @@ eclean-pkg
 > by default, source files are located in /var/cache/distfiles, while binary packages are located in /var/cache/binpkgs \
 > both locations can grow quite big if not periodically cleaned
 
-### nvidia, pipewire, virtualization[^19]
+### nvidia, pipewire, virtualization[^20]
 
 ---
 
@@ -369,9 +377,14 @@ eclean-pkg
 [url-git]:                   <https://wiki.gentoo.org/wiki/Git>
 [url-guru]:                  <https://wiki.gentoo.org/wiki/Project:GURU>
 [url-hybrid-graphics]:       <https://wiki.gentoo.org/wiki/Hybrid_graphics>
+[url-intel]:                 <https://wiki.gentoo.org/wiki/Intel>
+[url-kernel]:                <https://wiki.gentoo.org/wiki/Kernel>
 [url-libinput]:              <https://wiki.gentoo.org/wiki/Libinput>
 [url-libvirt]:               <https://wiki.gentoo.org/wiki/Libvirt>
+[url-linux-firmware]:        <https://wiki.gentoo.org/wiki/Linux_firmware>
 [url-lto]:                   <https://wiki.gentoo.org/wiki/LTO>
+[url-lvm]:                   <https://wiki.gentoo.org/wiki/LVM>
+[url-microcode]:             <https://wiki.gentoo.org/wiki/Microcode>
 [url-networkmanager]:        <https://wiki.gentoo.org/wiki/NetworkManager>
 [url-nvidia-drivers]:        <https://wiki.gentoo.org/wiki/NVIDIA/nvidia-drivers>
 [url-optimus]:               <https://wiki.gentoo.org/wiki/NVIDIA/Optimus>
@@ -385,9 +398,13 @@ eclean-pkg
 [url-secureboot]:            <https://wiki.gentoo.org/wiki/Secure_Boot>
 [url-ssh]:                   <https://wiki.gentoo.org/wiki/SSH>
 [url-steam]:                 <https://wiki.gentoo.org/wiki/Steam>
+[url-swap]:                  <https://wiki.gentoo.org/wiki/Swap>
+[url-systemd]:               <https://wiki.gentoo.org/wiki/Systemd>
+[url-systemd-boot]:          <https://wiki.gentoo.org/wiki/Systemd/systemd-boot>
 [url-tmpfs]:                 <https://wiki.gentoo.org/wiki/Portage_TMPDIR_on_tmpfs>
 [url-tpm]:                   <https://wiki.gentoo.org/wiki/Trusted_Platform_Module>
 [url-udev]:                  <https://wiki.gentoo.org/wiki/Udev>
+[url-uefi]:                  <https://wiki.gentoo.org/wiki/UEFI>
 [url-unified-kernel-image]:  <https://wiki.gentoo.org/wiki/Unified_kernel_image>
 [url-wine]:                  <https://wiki.gentoo.org/wiki/Wine>
 [url-xdg-desktop-portal]:    <https://wiki.gentoo.org/wiki/XDG/xdg-desktop-portal>
@@ -395,18 +412,6 @@ eclean-pkg
 [url-xorg]:                  <https://wiki.gentoo.org/wiki/Xorg>
 [url-zsh]:                   <https://wiki.gentoo.org/wiki/Zsh>
 [url-zswap]:                 <https://wiki.gentoo.org/wiki/Zswap>
-
-[url-uefi]: <https://wiki.gentoo.org/wiki/UEFI>
-[url-efi]: <https://wiki.gentoo.org/wiki/EFI_System_Partition>
-[url-dm-crypt]: <https://wiki.gentoo.org/wiki/Dm-crypt>
-[url-swap]: <https://wiki.gentoo.org/wiki/Swap>
-[url-lvm]: <https://wiki.gentoo.org/wiki/LVM>
-[url-linux-firmware]: <https://wiki.gentoo.org/wiki/Linux_firmware>
-[url-microcode]: <https://wiki.gentoo.org/wiki/Microcode>
-[url-intel]: <https://wiki.gentoo.org/wiki/Intel>
-[url-systemd-boot]: <https://wiki.gentoo.org/wiki/Systemd/systemd-boot>
-[url-kernel]: <https://wiki.gentoo.org/wiki/Kernel>
-[url-systemd]: <https://wiki.gentoo.org/wiki/Systemd>
 
 ---
 
@@ -435,6 +440,7 @@ labwc, sfwbar, swww
 [^14]:  <https://en.wikipedia.org/wiki/Bootloader>
 [^15]:  <https://en.wikipedia.org/wiki/Kernel_(operating_system)>
 [^16]:  <https://en.wikipedia.org/wiki/Systemd>
-[^17]:  <https://wiki.debian.org/SystemGroups>
-[^18]:  <https://wiki.gentoo.org/wiki/Eclean>
-[^19]:  <https://en.wikipedia.org/wiki/Virtualization>
+[^17]:  <https://man7.org/linux/man-pages/man1/journalctl.1.html>
+[^18]:  <https://wiki.debian.org/SystemGroups>
+[^19]:  <https://wiki.gentoo.org/wiki/Eclean>
+[^20]:  <https://en.wikipedia.org/wiki/Virtualization>
