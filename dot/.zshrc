@@ -1,3 +1,5 @@
+#!/bin/zsh
+
 # enabling portage completions and gentoo prompt for zsh
 autoload -U compinit promptinit
 compinit
