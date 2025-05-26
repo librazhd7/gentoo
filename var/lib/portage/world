@@ -10,6 +10,7 @@ app-emulation/wine-staging
 app-emulation/winetricks
 app-eselect/eselect-repository
 app-misc/fastfetch
+app-misc/ranger
 app-misc/resolve-march-native
 app-office/libreoffice-bin
 app-portage/cpuid2cpuflags
@@ -84,6 +85,7 @@ sys-power/thermald
 sys-power/tlp
 www-client/google-chrome
 x11-apps/mesa-progs
+x11-base/xorg-server
 x11-drivers/nvidia-drivers
 x11-misc/prime-run
 x11-terms/kitty
