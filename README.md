@@ -159,10 +159,10 @@ export PS1="(chroot) ${PS1}"
 
 ### installing base system
 ```
-eselect profile list
-eselect locale list
 emerge --sync
 getuto
+eselect profile list
+eselect locale list
 emerge --ask --verbose --update --deep --changed-use --with-bdeps=y @world
 emerge --ask --depclean
 env-update && source /etc/profile
