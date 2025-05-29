@@ -46,7 +46,7 @@ gui-wm/gamescope
 media-fonts/corefonts
 media-fonts/noto-emoji
 media-gfx/blender
-media-gfx/gimp
+#media-gfx/gimp
 #media-gfx/krita
 media-libs/libva-intel-media-driver
 media-sound/alsa-utils
