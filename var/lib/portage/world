@@ -87,7 +87,7 @@ x11-apps/mesa-progs
 x11-base/xorg-server
 x11-drivers/nvidia-drivers
 x11-misc/prime-run
-x11-misc/xfe
+#x11-misc/xfe
 x11-terms/kitty
-x11-themes/icewm-extra-themes
-x11-wm/icewm
+#x11-themes/icewm-extra-themes
+#x11-wm/icewm
