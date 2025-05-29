@@ -118,7 +118,7 @@ ping -c 3 1.1.1.1
 ### stage3
 ```
 cd /mnt/gentoo
-wget https://ftp.lysator.liu.se/gentoo/releases/amd64/autobuilds/current-stage3-amd64-systemd/stage3-amd64-systemd-xxxxxxxxxxxxxxxx.tar.xz
+wget https://ftp.lysator.liu.se/gentoo/releases/amd64/autobuilds/current-stage3-amd64-desktop-systemd/current-stage3-amd64-desktop-systemd-xxxxxxxxxxxxxxxx.tar.xz
 tar xpvf stage3-*.tar.xz --xattrs-include='*.*' --numeric-owner -C /mnt/gentoo
 cp --dereference /etc/resolv.conf /mnt/gentoo/etc/
 ```
