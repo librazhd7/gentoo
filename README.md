@@ -41,7 +41,7 @@
 ```
 mkfs.vfat -F 32 /dev/nvme0n1p1
 cryptsetup luksFormat /dev/nvme0n1p2
-cryptsetup luksOpen /dev/nvme0n1p2 swap
+cryptsetup open /dev/nvme0n1p2 swap
 mkswap /dev/mapper/swap
 swapon /dev/mapper/swap
 ```
@@ -49,22 +49,12 @@ swapon /dev/mapper/swap
 ### lvm[^8] on root
 ```
 pvcreate /dev/nvme0n1p3
-vgcreate vg0 /dev/nvme0n1p3
-lvcreate -l 100%FREE --type thin-pool --thinpool thin vg0
-lvchange -a y /dev/vg0/thin
-cryptsetup luksFormat /dev/vg0/thin
-cryptsetup luksOpen /dev/vg0/thin root
+vgcreate tux /dev/nvme0n1p3
+lvcreate -l 100%FREE --type thin-pool --thinpool thin tux
+lvchange -ay /dev/tux/thin
+cryptsetup luksFormat /dev/tux/thin
+cryptsetup open /dev/tux/thin root
 mkfs.xfs /dev/mapper/root
-```
-
----
-
-### mounting devices
-```
-mkdir -p /mnt/gentoo
-mount /dev/mapper/root /mnt/gentoo
-mkdir -p /mnt/gentoo/efi
-mount /dev/nvme0n1p1 /mnt/gentoo/efi
 ```
 
 > [!TIP]
@@ -106,6 +96,14 @@ mount /dev/nvme0n1p1 /mnt/gentoo/efi
 
 ---
 
+### mounting devices
+```
+mkdir -p /mnt/gentoo
+mount /dev/mapper/root /mnt/gentoo
+mkdir -p /mnt/gentoo/efi
+mount /dev/nvme0n1p1 /mnt/gentoo/efi
+```
+
 ### configuring network
 ```
 ifconfig -a
@@ -127,7 +125,7 @@ cp --dereference /etc/resolv.conf /mnt/gentoo/etc/
 
 ---
 
-### chroot[^10]
+### mounting filesystems
 ```
 mount --types proc /proc /mnt/gentoo/proc
 mount --rbind /sys /mnt/gentoo/sys
@@ -137,6 +135,8 @@ mount --make-rslave /mnt/gentoo/dev
 mount --bind /run /mnt/gentoo/run
 mount --make-slave /mnt/gentoo/run
 ```
+
+### chrooting[^10] into environment
 ```
 chroot /mnt/gentoo /bin/bash
 source /etc/profile
@@ -172,7 +172,7 @@ env-update && source /etc/profile
 > for detecting cpu: `resolve-march-native`                                   \
 > for detecting cpu features: `cpuid2cpuflags`                                \
 > to generate all locales specified in the /etc/locale.gen file: `locale-gen` \
-> to select the hostname for the system: `echo gentoo > /etc/hostname`        \
+> to select the hostname for the system: `echo tux > /etc/hostname`           \
 > to select the timezone for the system: `ln -sf ../usr/share/zoneinfo/Europe/Stockholm /etc/localtime`
 
 ### installing firmware[^11] [^12] [^13], bootloader[^14] and kernel[^15]
@@ -229,7 +229,7 @@ systemctl preset-all
 > [!TIP]
 > to enable unit to start automatically at boot: `systemctl enable .service/.socket` \
 > to start unit immediately: `systemctl start .service/.socket`                      \
-> to select the hostname for the system: `hostnamectl hostname gentoo`               \
+> to select the hostname for the system: `hostnamectl hostname tux`                  \
 > to select the timezone for the system: `timedatectl set-timezone Europe/Stockholm`
 
 ### journalctl [^17]
