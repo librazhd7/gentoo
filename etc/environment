@@ -14,10 +14,6 @@ EDITOR=/usr/bin/vim
 __GLX_VENDOR_LIBRARY_NAME=nvidia
 __NV_PRIME_RENDER_OFFLOAD=1
 
-# use proprietary nvidia driver for va-api and vdpau
-LIBVA_DRIVER_NAME=nvidia
-VDPAU_DRIVER=nvidia
-
 #
 _JAVA_AWT_WM_NONREPARENTING=1
 
@@ -26,6 +22,10 @@ _JAVA_AWT_WM_NONREPARENTING=1
 CLUTTER_BACKEND=wayland
 GBM_BACKEND=nvidia-drm
 GDK_BACKEND=wayland,x11
+
+# use proprietary nvidia driver for va-api and vdpau
+LIBVA_DRIVER_NAME=nvidia
+VDPAU_DRIVER=nvidia
 
 # use pipewire as audio driver for sdl
 # use wayland as video driver for sdl [fallback to x11]
