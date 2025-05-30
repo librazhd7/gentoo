@@ -1,4 +1,4 @@
-app-admin/sudo
+app-admin/doas
 app-crypt/sbsigntools
 app-editors/nano
 app-editors/vim
