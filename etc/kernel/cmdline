@@ -2,9 +2,8 @@
 efi=runtime
 
 # ensure that the unified kernel image can find the root partition
-root=PARTUUID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+cryptdevice=root=PARTUUID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx:root
 rd.luks.uuid=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
-#rd.lvm.vg=vg0
 rd.luks.options=discard
 
 # provide a compressed ram cache for swap memory pages
