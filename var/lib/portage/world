@@ -33,6 +33,7 @@ media-fonts/corefonts
 media-fonts/noto-emoji
 media-gfx/blender
 media-libs/libva-intel-media-driver
+media-libs/noise-suppression-for-voice
 media-sound/alsa-utils
 media-video/obs-studio
 media-video/vlc
