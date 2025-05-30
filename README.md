@@ -257,14 +257,15 @@ systemctl preset-all
 
 ### creating user
 ```
-emerge --ask app-admin/sudo
+emerge --ask app-admin/doas
 useradd -mG android,audio,kvm,libvirt,pipewire,plugdev,users,video,wheel <user>
 passwd <user>
-visudo
+touch /etc/doas.conf
+chmod -c 0400 /etc/doas.conf
 ```
 
 > [!CAUTION]
-> `/etc/sudoers` should always be edited with `visudo`      \
+> assuming `app-admin/sudo` is installed and used, `/etc/sudoers` should always be edited with `visudo` \
 > allow members of group wheel sudo access by uncommenting
 > ```
 > %wheel ALL=(ALL:ALL) ALL
