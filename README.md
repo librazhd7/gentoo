@@ -37,6 +37,9 @@
 | `/dev/nvme0n1p2` | 24g        | swap (19) |      | yes |       |
 | `/dev/nvme0n1p3` |            | lvm (44)  | thin | yes | xfs   |
 
+> [!NOTE]
+> gpt pmbr size mismatches will be corrected by issuing write table to disk: `fdisk /dev/nvme0n1` & `w`
+
 ### esp[^3] [^4] and luks[^5] [^6] on swap[^7]
 ```
 mkfs.vfat -F 32 /dev/nvme0n1p1
