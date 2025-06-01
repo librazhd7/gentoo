@@ -47,12 +47,10 @@ sys-apps/fwupd
 sys-apps/keyutils
 sys-apps/mlocate
 sys-apps/pciutils
-sys-apps/pv
 sys-apps/systemd
 sys-apps/xdg-desktop-portal
 sys-auth/rtkit
 sys-block/io-scheduler-udev-rules
-sys-boot/vboot-utils
 sys-firmware/intel-microcode
 sys-firmware/sof-firmware
 sys-fs/cryptsetup
@@ -91,7 +89,9 @@ x11-terms/kitty
 #kde-plasma/plasma-meta
 #media-gfx/gimp
 #media-gfx/krita
+#sys-apps/pv
 #sys-block/partitionmanager
+#sys-boot/vboot-utils
 #x11-misc/xfe
 #x11-themes/icewm-extra-themes
 #x11-wm/icewm
