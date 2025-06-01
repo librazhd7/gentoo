@@ -37,8 +37,9 @@
 | `/dev/nvme0n1p2` | 24g        | swap (19) |      | yes |       |
 | `/dev/nvme0n1p3` |            | lvm (44)  | thin | yes | xfs   |
 
-> [!NOTE]
-> gpt pmbr size mismatches will be corrected by issuing write table to disk: `fdisk /dev/nvme0n1` & `w`
+> [!TIP]
+> to list information about all available or specified block devices: `lsblk` \
+> to correct gpt pmbr size mismatches: `issue write table to disk (fdisk)`
 
 ### esp[^3] [^4] and luks[^5] [^6] on swap[^7]
 ```
@@ -51,12 +52,12 @@ swapon /dev/mapper/swap
 
 ### lvm[^8] on root
 ```
-pvcreate /dev/nvme0n1p3
-vgcreate tux /dev/nvme0n1p3
+cryptsetup luksFormat /dev/nvme0n1p3
+cryptsetup open /dev/nvme0n1p3 root
+pvcreate /dev/mapper/root
+vgcreate tux /dev/mapper/root
 lvcreate -l 100%FREE --type thin-pool --thinpool thin tux
-lvchange -ay /dev/tux/thin
-cryptsetup luksFormat /dev/tux/thin
-cryptsetup open /dev/tux/thin root
+lvchange -ay /dev/mapper/root
 mkfs.xfs /dev/mapper/root
 ```
 
@@ -82,14 +83,14 @@ mkfs.xfs /dev/mapper/root
 | `emerge --ask @preserved-rebuild`                                            | for using new libraries                                                                                 |
 
 > [!CAUTION]  
-> repository is specifically tailored towards hardware and preferences of mine \
-> you should follow the official gentoo installation handbook and adjust accordingly
+> repository is specifically tailored towards hardware and preferences of mine. \
+> you should follow the official gentoo installation handbook and adjust accordingly:
 > ```
 > links https://wiki.gentoo.org/wiki/Handbook:AMD64
 > ```
 
 > [!IMPORTANT]
-> assuming repository system-wide configurations have been applied beforehand, freely follow the guide and docs highlighted for additional information
+> assuming repository system-wide configurations have been applied beforehand, freely follow the guide and docs highlighted for additional information:
 > ```
 > git clone https://github.com/librazhd7/gentoo.git
 > ```
@@ -268,8 +269,8 @@ chmod -c 0400 /etc/doas.conf
 ```
 
 > [!CAUTION]
-> assuming `app-admin/sudo` is installed and used, `/etc/sudoers` should always be edited with `visudo` \
-> allow members of group wheel sudo access by uncommenting
+> assuming `app-admin/sudo` is installed and used, `/etc/sudoers` should always be edited with `visudo`. \
+> allow members of group wheel sudo access by uncommenting:
 > ```
 > %wheel ALL=(ALL:ALL) ALL
 > ```
