@@ -50,7 +50,7 @@ mkswap /dev/mapper/swap
 swapon /dev/mapper/swap
 ```
 
-### lvm[^8] on root
+### lvm[^8] on encrypted root
 ```
 cryptsetup luksFormat /dev/nvme0n1p3
 cryptsetup open /dev/nvme0n1p3 root
