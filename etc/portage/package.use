@@ -1,14 +1,18 @@
-# ------------------------------------------------------cpuid2cpuflags------------------------------------------------------ #
+##############################
+### --- cpuid2cpuflags --- ###
+##############################
 */* CPU_FLAGS_X86:  aes avx avx2 f16c fma3 mmx mmxext pclmul popcnt rdrand sha sse sse2 sse3 sse4_1 sse4_2 ssse3 vpclmulqdq
 */* VIDEO_CARDS:    -* intel nvidia
 */* INPUT_DEVICES:  libinput
-# -------------------------------------------------------------------------------------------------------------------------- #
 
-# -----------------------------------------------------------global----------------------------------------------------------- #
+######################
+### --- GLOBAL --- ###
+######################
 */* alsa bluetooth dbus gstreamer nvidia policykit screencast systemd udev udisks vaapi vdpau vulkan wayland X zsh-completion
-# ---------------------------------------------------------------------------------------------------------------------------- #
 
-# ------------------------------------------------------------------------local------------------------------------------------------------------------ #
+###########################
+### --- PER PACKAGE --- ###
+###########################
 app-emulation/libvirt         fuse macvtap numa pcap qemu vepa virt-network
 app-emulation/qemu            qemu_softmmu_targets_arm qemu_softmmu_targets_sparc qemu_softmmu_targets_x86_64 qemu_user_targets_x86_64 spice usbredir
 media-libs/babl               introspection
