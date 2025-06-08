@@ -8,7 +8,7 @@
 ######################
 ### --- GLOBAL --- ###
 ######################
-*/* alsa bluetooth dbus gstreamer policykit pulseaudio screencast systemd udev udisks vaapi vdpau vulkan wayland X zsh-completion
+*/* alsa bluetooth dbus dist-kernel gstreamer policykit pulseaudio screencast systemd udev udisks vaapi vdpau vulkan wayland X zsh-completion
 
 ###########################
 ### --- PER PACKAGE --- ###
