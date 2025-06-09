@@ -7,17 +7,22 @@
 */* VIDEO_CARDS: -* intel nvidia
 
 # configure portage to determine how each package will be configured locally
+app-admin/doas                persist
 app-emulation/libvirt         fuse macvtap numa pcap qemu vepa virt-network
 app-emulation/qemu            qemu_softmmu_targets_arm qemu_softmmu_targets_sparc qemu_softmmu_targets_x86_64 qemu_user_targets_x86_64 spice usbredir
+
 media-libs/babl               introspection
 media-libs/freetype           brotli
 media-libs/gegl               introspection
 media-libs/opensubdiv         tbb
+
 media-libs/opencv             features2d
 media-libs/vulkan-loader      layers
+
 media-video/ffmpeg            lame nvenc opus theora vpx
 media-video/obs-studio        lua nvenc pipewire speex v4l
 media-video/pipewire          pipewire-alsa sound-server
+
 net-dns/avahi                 python
 net-dns/dnsmasq               script
 net-fs/samba                  cups pam
@@ -25,7 +30,9 @@ net-libs/gnutls               pkcs11 tools
 net-misc/spice-gtk            usbredir
 sci-libs/fftw                 threads
 sci-physics/bullet            double-precision
+
 sys-apps/kmod                 lzma zlib
+
 sys-apps/systemd              boot cryptsetup
 sys-devel/gcc                 pgo lto
 sys-firmware/intel-microcode  initramfs
