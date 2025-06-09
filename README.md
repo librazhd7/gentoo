@@ -296,16 +296,21 @@ cryptsetup close /dev/mapper/root
 reboot
 ```
 
-### eclean[^19]
+### eclean[^19] and eclean-kernel
 ```
-emerge --ask app-portage/gentoolkit
+emerge --ask app-admin/eclean-kernel app-portage/gentoolkit
 eclean-dist -d
+eclean-kernel -n 1
 eclean-pkg
 ```
 
 > [!NOTE]
 > by default, source files are located in /var/cache/distfiles, while binary packages are located in /var/cache/binpkgs. \
 > both locations can grow quite big if not periodically cleaned.
+
+> [!CAUTION]
+> be sure to check the boot entries after issuing: `eclean-kernel -n 1`. \
+> it may be empty, and you will only be able to rewrite the boot entry through a livecd.
 
 ### nvidia, pipewire, virtualization[^20]
 
