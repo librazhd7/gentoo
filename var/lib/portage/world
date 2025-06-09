@@ -22,6 +22,7 @@ dev-java/openjdk
 dev-libs/libinput
 dev-util/android-tools
 dev-util/nvidia-cuda-toolkit
+dev-util/vulkan-tools
 dev-util/rustup
 dev-vcs/git
 dev-vcs/rcs
