@@ -304,8 +304,8 @@ eclean-pkg
 ```
 
 > [!NOTE]
-> by default, source files are located in /var/cache/distfiles, while binary packages are located in /var/cache/binpkgs \
-> both locations can grow quite big if not periodically cleaned
+> by default, source files are located in /var/cache/distfiles, while binary packages are located in /var/cache/binpkgs. \
+> both locations can grow quite big if not periodically cleaned.
 
 ### nvidia, pipewire, virtualization[^20]
 
