@@ -1,4 +1,5 @@
 app-admin/doas
+app-admin/eclean-kernel
 app-crypt/sbsigntools
 app-editors/nano
 app-editors/vim
