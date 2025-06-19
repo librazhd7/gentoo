@@ -37,4 +37,4 @@ if [ -d "$xinitdir"/xinitrc.d ] ; then
 	unset f
 fi
 
-exec dbus-launch --exit-with-session icewm-session
+#exec dbus-launch --sh-syntax --exit-with-session wmaker
