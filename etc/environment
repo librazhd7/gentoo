@@ -9,8 +9,8 @@ PATH="/bin:/usr/bin:/usr/local/bin:/opt/bin:/usr/games/bin"
 ROOTPATH="/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin"
 EDITOR="/usr/bin/vim"
 
-# use proprietary nvidia glx driver for glvnd [graphical glx applications]
-# offload applications to the nvidia gpu with dpm enabled
+# use proprietary nvidia glx driver for glvnd
+# offload applications to nvidia gpu with dpm enabled
 __GLX_VENDOR_LIBRARY_NAME="nvidia"
 __NV_PRIME_RENDER_OFFLOAD="1"
 
@@ -23,6 +23,7 @@ CLUTTER_BACKEND="wayland"
 GBM_BACKEND="nvidia-drm"
 GDK_BACKEND="wayland,x11"
 
+#
 GLFW_IM_MODULE="ibus"
 
 # use proprietary nvidia driver for va-api and vdpau
