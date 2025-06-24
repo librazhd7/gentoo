@@ -5,37 +5,40 @@
 #
 
 # https://wiki.gentoo.org/wiki/Handbook:AMD64/Working/EnvVar
-PATH=/bin:/usr/bin:/usr/local/bin:/opt/bin:/usr/games/bin
-ROOTPATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin
-EDITOR=/usr/bin/vim
+PATH="/bin:/usr/bin:/usr/local/bin:/opt/bin:/usr/games/bin"
+ROOTPATH="/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin"
+EDITOR="/usr/bin/vim"
 
 # use proprietary nvidia glx driver for glvnd [graphical glx applications]
 # offload applications to the nvidia gpu with dpm enabled
-__GLX_VENDOR_LIBRARY_NAME=nvidia
-__NV_PRIME_RENDER_OFFLOAD=1
+__GLX_VENDOR_LIBRARY_NAME="nvidia"
+__NV_PRIME_RENDER_OFFLOAD="1"
 
 #
-_JAVA_AWT_WM_NONREPARENTING=1
+_JAVA_AWT_WM_NONREPARENTING="1"
 
 # use wayland as backend for clutter and gdk [fallback to x11]
 # use nvidia-drm as backend for gbm
-CLUTTER_BACKEND=wayland
-GBM_BACKEND=nvidia-drm
-GDK_BACKEND=wayland,x11
+CLUTTER_BACKEND="wayland"
+GBM_BACKEND="nvidia-drm"
+GDK_BACKEND="wayland,x11"
+
+GLFW_IM_MODULE="ibus"
 
 # use proprietary nvidia driver for va-api and vdpau
-LIBVA_DRIVER_NAME=nvidia
-VDPAU_DRIVER=nvidia
+LIBVA_DRIVER_NAME="nvidia"
+VDPAU_DRIVER="nvidia"
 
 # use pipewire as audio driver for sdl
 # use wayland as video driver for sdl [fallback to x11]
-SDL_AUDIODRIVER=pipewire
-SDL_VIDEODRIVER=wayland,x11
+SDL_AUDIODRIVER="pipewire"
+SDL_VIDEODRIVER="wayland,x11"
 
 # use wayland as backend for qt [fallback to x11]
-QT_QPA_PLATFORM=wayland;xcb
+QT_QPA_PLATFORM="wayland;xcb"
 
 # use kde as default desktop environment
 # use swedish as default keyboard layout
-XDG_CURRENT_DESKTOP=KDE
-XKB_DEFAULT_LAYOUT=se
+XDG_CURRENT_DESKTOP="KDE"
+XDG_SESSION_TYPE="wayland"
+XKB_DEFAULT_LAYOUT="se"
