@@ -19,8 +19,10 @@ app-shells/gentoo-zsh-completions
 app-shells/zsh
 app-shells/zsh-completions
 dev-java/openjdk
-dev-libs/libinput
+#dev-libs/libinput
+dev-libs/intel-compute-runtime
 dev-util/android-tools
+dev-util/intel-ocl-sdk
 dev-util/nvidia-cuda-toolkit
 dev-util/vulkan-tools
 dev-util/rustup
@@ -36,6 +38,7 @@ media-gfx/blender
 media-libs/libva-intel-media-driver
 media-libs/noise-suppression-for-voice
 media-sound/alsa-utils
+media-video/libva-utils
 media-video/obs-studio
 media-video/vlc
 media-video/wireplumber
