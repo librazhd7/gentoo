@@ -1,40 +1,35 @@
 #!/bin/sh
 
-userresources="$HOME/.Xresources"
-usermodmap="$HOME/.Xmodmap"
-sysresources="$xinitdir/Xresources"
-sysmodmap="$xinitdir/Xmodmap"
-
 # merge in defaults and keymaps
-if [ -f "$sysresources" ]; then
+if [ -f "$xinitdir/Xresources" ]; then
   if [ -x /usr/bin/cpp ] ; then
-    "$xrdb" -merge "$sysresources"
+    "$xrdb" -merge "$xinitdir/Xresources"
   else
-    "$xrdb" -nocpp -merge "$sysresources"
+    "$xrdb" -nocpp -merge "$xinitdir/Xresources"
   fi
 fi
 
-if [ -f "$sysmodmap" ]; then
-  "$xmodmap" "$sysmodmap"
+if [ -f "$xinitdir/Xmodmap" ]; then
+  "$xmodmap" "$xinitdir/Xmodmap"
 fi
 
-if [ -f "$userresources" ]; then
+if [ -f "$HOME/.Xresources" ]; then
   if [ -x /usr/bin/cpp ] ; then
-    "$xrdb" -merge "$userresources"
+    "$xrdb" -merge "$HOME/.Xresources"
   else
-    "$xrdb" -nocpp -merge "$userresources"
+    "$xrdb" -nocpp -merge "$HOME/.Xresources"
   fi
 fi
 
-if [ -f "$usermodmap" ]; then
-  "$xmodmap" "$usermodmap"
+if [ -f "$HOME/.Xmodmap" ]; then
+  "$xmodmap" "$HOME/.Xmodmap"
 fi
 
 if [ -d "$xinitdir"/xinitrc.d ] ; then
-	for f in "$xinitdir/xinitrc.d"/?* ; do
-		[ -x "$f" ] && . "$f"
-	done
-	unset f
+  for f in "$xinitdir/xinitrc.d"/?* ; do
+    [ -x "$f" ] && . "$f"
+    done
+    unset f
 fi
 
 #xrandr --setprovideroutputsource modesetting NVIDIA-0
