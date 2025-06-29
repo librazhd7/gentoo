@@ -19,7 +19,6 @@ app-shells/gentoo-zsh-completions
 app-shells/zsh
 app-shells/zsh-completions
 dev-java/openjdk
-#dev-libs/libinput
 dev-libs/intel-compute-runtime
 dev-util/android-tools
 dev-util/intel-ocl-sdk
@@ -76,6 +75,8 @@ x11-apps/mesa-progs
 x11-base/xorg-server
 x11-drivers/nvidia-drivers
 x11-misc/prime-run
+x11-misc/wmctrl
+x11-misc/xdotool
 x11-terms/kitty
 
 #kde-apps/ark
