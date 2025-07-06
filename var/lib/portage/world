@@ -99,5 +99,4 @@ x11-terms/kitty
 #sys-block/partitionmanager
 #sys-boot/vboot-utils
 #x11-misc/xfe
-#x11-themes/icewm-extra-themes
-#x11-wm/icewm
+#x11-wm/windowmaker
