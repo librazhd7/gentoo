@@ -59,8 +59,8 @@ cryptsetup refresh --persistent --allow-discards /dev/nvme0n1p3 root
 pvcreate /dev/mapper/root
 vgcreate tux /dev/mapper/root
 lvcreate -l 100%FREE --type thin-pool --thinpool thin tux
-mkfs.xfs /dev/mapper/root
 lvchange -ay /dev/tux/thin
+mkfs.xfs /dev/mapper/tux-thin
 ```
 
 > [!TIP]
@@ -293,6 +293,7 @@ chmod -c 0400 /etc/doas.conf
 exit
 umount -l /mnt/gentoo/dev{/shm,/pts,}
 umount -R /mnt/gentoo
+lvchange -an /dev/tux/thin
 cryptsetup luksClose /dev/mapper/swap
 cryptsetup luksClose /dev/mapper/root
 reboot
