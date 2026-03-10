@@ -38,8 +38,8 @@ SDL_VIDEODRIVER="wayland,x11"
 # use wayland as backend for qt [fallback to x11]
 QT_QPA_PLATFORM="wayland;xcb"
 
-# use kde as default desktop environment
+# use icewm [x11] as default desktop environment [xwayland]
 # use swedish as default keyboard layout
-XDG_CURRENT_DESKTOP="KDE"
+XDG_CURRENT_DESKTOP="ICEWM"
 XDG_SESSION_TYPE="wayland"
 XKB_DEFAULT_LAYOUT="se"
