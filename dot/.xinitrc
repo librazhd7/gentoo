@@ -32,6 +32,6 @@ if [ -d "$xinitdir"/xinitrc.d ] ; then
     unset f
 fi
 
-#xrandr --setprovideroutputsource modesetting NVIDIA-0
-#xrandr --auto
-#exec dbus-launch --sh-syntax --exit-with-session wmaker
+xrandr --setprovideroutputsource modesetting NVIDIA-0
+xrandr --auto
+exec dbus-launch --sh-syntax --exit-with-session icewm-session
