@@ -41,6 +41,6 @@ QT_QPA_PLATFORM="wayland;xcb"
 # use icewm [x11] as default desktop environment [xwayland]
 # use swedish as default keyboard layout
 XDG_CURRENT_DESKTOP="ICEWM"
-XDG_SESSION_DESKTOP=icewm-session
+XDG_SESSION_DESKTOP="icewm-session"
 XDG_SESSION_TYPE="wayland"
 XKB_DEFAULT_LAYOUT="se"
