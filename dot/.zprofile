@@ -13,5 +13,5 @@ fi
 
 if [ -z "$DISPLAY" ] && [ "$XDG_VTNR" = 1 ]; then
   #exec startx -- vt7
-  #exec dbus-run-session icewm-session
+  #exec dbus-launch --sh-syntax --exit-with-session icewm-session
 fi
