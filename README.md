@@ -45,7 +45,7 @@
 ```
 mkfs.vfat -F 32 /dev/nvme0n1p1
 cryptsetup -c aes-xts-plain64 -s 512 -y luksFormat --type luks2 /dev/nvme0n1p2
-cryptsetup luksOpen --allow-discards /dev/nvme0n1p2 swap
+cryptsetup luksOpen /dev/nvme0n1p2 swap
 cryptsetup refresh --persistent --allow-discards /dev/nvme0n1p2 swap
 mkswap /dev/mapper/swap
 swapon /dev/mapper/swap
@@ -54,13 +54,13 @@ swapon /dev/mapper/swap
 ### lvm[^8] on encrypted root
 ```
 cryptsetup -c aes-xts-plain64 -s 512 -y luksFormat --type luks2 /dev/nvme0n1p3
-cryptsetup luksOpen --allow-discards /dev/nvme0n1p3 root
+cryptsetup luksOpen /dev/nvme0n1p3 root
 cryptsetup refresh --persistent --allow-discards /dev/nvme0n1p3 root
 pvcreate /dev/mapper/root
 vgcreate tux /dev/mapper/root
 lvcreate -l 100%FREE --type thin-pool --thinpool thin tux
-lvchange -ay /dev/mapper/root
 mkfs.xfs /dev/mapper/root
+lvchange -ay /dev/tux/thin
 ```
 
 > [!TIP]
