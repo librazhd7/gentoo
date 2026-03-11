@@ -58,9 +58,9 @@ cryptsetup luksOpen /dev/nvme0n1p3 root
 cryptsetup refresh --allow-discards root
 pvcreate /dev/mapper/root
 vgcreate tux /dev/mapper/root
-lvcreate -l 99%VG --thinpool thin --poolmetadatasize 1G tux
-lvcreate -l 12%VG -T tux/thin -n root
-lvcreate -l 87%VG -T tux/thin -n home
+lvcreate -l 99%FREE --thinpool thin --poolmetadatasize 1G tux
+lvcreate -l 12%FREE -T tux/thin -n root
+lvcreate -l 87%FREE -T tux/thin -n home
 mkfs.xfs /dev/tux/root
 mkfs.xfs /dev/tux/home
 ```
@@ -297,11 +297,13 @@ chmod -c 0400 /etc/doas.conf
 ### finishing up
 ```
 exit
-umount /mnt/gentoo/efi
-umount /mnt/gentoo/home
-umount /mnt/gentoo
 umount -l /mnt/gentoo/dev{/shm,/pts,}
-lvchange -an /dev/mapper/tux/thin
+
+lvchange -an /dev/mapper/tux-root
+lvchange -an /dev/mapper/tux-home
+lvchange -an /dev/mapper/tux-thin
+vgchange -an tux
+
 cryptsetup luksClose /dev/mapper/swap
 cryptsetup luksClose /dev/mapper/root
 reboot
