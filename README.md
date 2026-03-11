@@ -53,24 +53,44 @@
 
 ### esp[^3] [^4] and luks[^5] [^6] on swap[^7]
 ```
+# build vfat32 on our efi partition (/dev/nvme0n1p1)
 mkfs.vfat -F 32 /dev/nvme0n1p1
+
+# set up luks2 encryption on our swap partition (/dev/nvme0n1p2)
 cryptsetup luksFormat -c aes-xts-plain64 -s 512 --type luks2 /dev/nvme0n1p2
+
+# unlock luks2 encrypted swap partition and allow trim/discard
 cryptsetup luksOpen /dev/nvme0n1p2 swap
 cryptsetup refresh --allow-discards swap
+
+# label, format and activate our swap partition
 mkswap -L swap /dev/mapper/swap
 swapon /dev/mapper/swap
 ```
 
 ### lvm[^8] on encrypted root
 ```
+# set up luks2 encryption on our root partition (/dev/nvme0n1p3)
 cryptsetup luksFormat -c aes-xts-plain64 -s 512 --type luks2 /dev/nvme0n1p3
+
+# unlock luks2 encrypted root partition and allow trim/discard
 cryptsetup luksOpen /dev/nvme0n1p3 root
 cryptsetup refresh --allow-discards root
+
+# create physical volume pointed to our root partition
 pvcreate /dev/mapper/root
+
+# create volume group named 'tux' pointed to our physical volume
 vgcreate tux /dev/mapper/root
+
+# create logical volume named 'thin' pointed to our volume group with 1gb metadata size and 1% free margin for our lvm thin pool
 lvcreate -l 99%FREE --poolmetadatasize 1G --type thin-pool --thinpool thin tux
+
+# create separate logical volumes for '/' and '/home' and allocate them accordingly (quick maffs)
 lvcreate -l 12%VG -n root tux/thin
 lvcreate -l 87%VG -n home tux/thin
+
+# build xfs on our dynamically-sized logical volumes that reside in the thin pool
 mkfs.xfs /dev/tux/root
 mkfs.xfs /dev/tux/home
 ```
