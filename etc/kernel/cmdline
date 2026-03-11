@@ -1,21 +1,8 @@
-# enable efi runtime functions
-efi=runtime
-
-# ensure that the unified kernel image can find the root partition
-cryptdevice=root=PARTUUID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx:root
-rd.luks.uuid=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
-# using luks2, flags can be written into the header and used when device is opened
-#rd.luks.options=discard
-
-# provide a compressed ram cache for swap memory pages
-zswap.enabled=1
-zswap.compression=lz4
-
-# register backlight
-acpi_backlight=nvidia_wmi_ec
-
-# hide boot messages
-quiet
-
-# show splash screen
-splash
+efi=runtime                                                          # enable efi runtime functions
+cryptdevice=root=PARTUUID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx:root  # ...
+rd.luks.uuid=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx                    # ...
+rd.luks.options=discard                                              # enable discard
+zswap.enabled=1                                                      # provide compressed ram cache for swap memory pages
+zswap.compression=lz4                                                # use lz4 for fast compression
+acpi_backlight=nvidia_wmi_ec                                         # register backlight control on nvidia laptops
+quiet splash                                                         # hide boot messages and show splash screen
