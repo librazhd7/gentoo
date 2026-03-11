@@ -1,8 +1,8 @@
-efi=runtime                                                          # enable efi runtime functions
-cryptdevice=root=PARTUUID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx:root  # ...
-rd.luks.uuid=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx                    # ...
-rd.luks.options=discard                                              # enable discard
-zswap.enabled=1                                                      # provide compressed ram cache for swap memory pages
-zswap.compression=lz4                                                # use lz4 for fast compression
-acpi_backlight=nvidia_wmi_ec                                         # register backlight control on nvidia laptops
-quiet splash                                                         # hide boot messages and show splash screen
+efi=runtime
+cryptdevice=root=PARTUUID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx:root
+rd.luks.uuid=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+rd.luks.options=discard
+zswap.enabled=1
+zswap.compression=lz4
+acpi_backlight=nvidia_wmi_ec
+quiet splash
