@@ -30,6 +30,14 @@
 - [x] wayland
 - [x] zswap
 
+### system
+* msi katana 17 b12vfk
+* 12th gen intel core i5-12450h (alder lake)
+* nvidia rtx 4060 laptop gpu
+* samsung ddr5 (16gb)
+* micron 2400 mtfdkba512qfm nvme (512gb)
+* intel ax201
+
 ---
 
 ### fdisk[^1] (gpt)[^2]
