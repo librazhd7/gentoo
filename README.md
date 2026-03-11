@@ -56,8 +56,8 @@
 # build vfat32 on our efi partition (/dev/nvme0n1p1)
 mkfs.vfat -F 32 /dev/nvme0n1p1
 
-# set up luks2 encryption on our swap partition (/dev/nvme0n1p2)
-cryptsetup luksFormat -c aes-xts-plain64 -s 512 --type luks2 /dev/nvme0n1p2
+# set up luks2 encryption with argon2 persistent key on our swap partition (/dev/nvme0n1p2)
+cryptsetup luksFormat --type luks2 -c aes-xts-plain64 -s 512 --pbkdf argon2id /dev/nvme0n1p2
 
 # unlock luks2 encrypted swap partition and allow trim/discard
 cryptsetup luksOpen /dev/nvme0n1p2 swap
@@ -71,7 +71,7 @@ swapon /dev/mapper/swap
 ### lvm[^8] on encrypted root
 ```
 # set up luks2 encryption on our root partition (/dev/nvme0n1p3)
-cryptsetup luksFormat -c aes-xts-plain64 -s 512 --type luks2 /dev/nvme0n1p3
+cryptsetup luksFormat --type luks2 -c aes-xts-plain64 -s 512 /dev/nvme0n1p3
 
 # unlock luks2 encrypted root partition and allow trim/discard
 cryptsetup luksOpen /dev/nvme0n1p3 root
