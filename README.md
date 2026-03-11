@@ -8,16 +8,17 @@
 ### features
 - [x] ~amd64
 - [x] bluetooth
-- [x] bootloader
-- [x] intel microcode
-- [x] kernel
+- [x] dracut
+- [x] efi stub
+- [x] gaming (steam/wine)
+- [x] hybrid graphics (intel/nvidia)
+- [x] kernel (custom)
 - [x] luks
-- [x] lvm
-- [x] networking
-- [x] nvidia drivers
+- [x] lvm (thin)
+- [x] networking (wifi)
 - [x] pipewire
 - [x] portage optimizations
-- [x] power management
+- [ ] power management (tls/ec dump in the future)
 - [x] printing
 - [x] samba
 - [ ] secure boot
@@ -25,7 +26,8 @@
 - [x] systemd
 - [x] tmpfs
 - [ ] tpm
-- [x] virtualization
+- [x] virtualization (qemu)
+- [x] wayland
 - [x] zswap
 
 ---
