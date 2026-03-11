@@ -56,12 +56,15 @@
 # build vfat32 on our efi partition (/dev/nvme0n1p1)
 mkfs.vfat -F 32 /dev/nvme0n1p1
 
-# set up luks2 encryption with argon2 persistent key on our swap partition (/dev/nvme0n1p2)
-cryptsetup luksFormat --type luks2 -c aes-xts-plain64 -s 512 --pbkdf argon2id /dev/nvme0n1p2
+# generate gpg protected key file
+dd if=/dev/urandom bs=64 count=1 | gpg --symmetric --cipher-algo AES256 --output /tmp/swap.key.gpg
+chmod 600 /tmp/swap.key.gpg
 
-# unlock luks2 encrypted swap partition and allow trim/discard
-cryptsetup luksOpen /dev/nvme0n1p2 swap
-cryptsetup refresh --allow-discards swap
+# set up luks2 encryption w/ argon2id on our swap partition (/dev/nvme0n1p2)
+gpg --decrypt /tmp/swap.key.gpg | cryptsetup luksFormat --type luks2 -c aes-xts-plain64 -s 512 --pbkdf argon2id --key-file - /dev/nvme0n1p2
+
+# unlock luks2 encrypted swap partition
+gpg --decrypt /tmp/swap.key.gpg | cryptsetup luksOpen --key-file - /dev/nvme0n1p2 swap
 
 # label, format and activate our swap partition
 mkswap -L swap /dev/mapper/swap
@@ -70,11 +73,15 @@ swapon /dev/mapper/swap
 
 ### lvm[^8] on encrypted root
 ```
+# generate gpg protected key file
+dd if=/dev/urandom bs=64 count=1 | gpg --symmetric --cipher-algo AES256 --output /tmp/root.key.gpg
+chmod 600 /tmp/root.key.gpg
+
 # set up luks2 encryption on our root partition (/dev/nvme0n1p3)
-cryptsetup luksFormat --type luks2 -c aes-xts-plain64 -s 512 /dev/nvme0n1p3
+gpg --decrypt /tmp/root.key.gpg | cryptsetup luksFormat --type luks2 -c aes-xts-plain64 -s 512 --key-file - /dev/nvme0n1p3
 
 # unlock luks2 encrypted root partition and allow trim/discard
-cryptsetup luksOpen /dev/nvme0n1p3 root
+gpg --decrypt /tmp/root.key.gpg | cryptsetup luksOpen --key-file - /dev/nvme0n1p3 root
 cryptsetup refresh --allow-discards root
 
 # create physical volume pointed to our root partition
