@@ -54,7 +54,7 @@
 ### esp[^3] [^4] and luks[^5] [^6] on swap[^7]
 ```
 mkfs.vfat -F 32 /dev/nvme0n1p1
-cryptsetup luksFormat -c aes-xts-plain64 -s 512 /dev/nvme0n1p2
+cryptsetup luksFormat -c aes-xts-plain64 -s 512 --type luks2 /dev/nvme0n1p2
 cryptsetup luksOpen /dev/nvme0n1p2 swap
 cryptsetup refresh --allow-discards swap
 mkswap -L swap /dev/mapper/swap
@@ -63,14 +63,14 @@ swapon /dev/mapper/swap
 
 ### lvm[^8] on encrypted root
 ```
-cryptsetup luksFormat -c aes-xts-plain64 -s 512 /dev/nvme0n1p3
+cryptsetup luksFormat -c aes-xts-plain64 -s 512 --type luks2 /dev/nvme0n1p3
 cryptsetup luksOpen /dev/nvme0n1p3 root
 cryptsetup refresh --allow-discards root
 pvcreate /dev/mapper/root
 vgcreate tux /dev/mapper/root
-lvcreate -l 99%FREE --thinpool thin --poolmetadatasize 1G tux
-lvcreate -l 12%FREE -T tux/thin -n root
-lvcreate -l 87%FREE -T tux/thin -n home
+lvcreate -l 99%FREE --poolmetadatasize 1G --type thin-pool --thinpool thin tux
+lvcreate -l 12%VG -n root tux/thin
+lvcreate -l 87%VG -n home tux/thin
 mkfs.xfs /dev/tux/root
 mkfs.xfs /dev/tux/home
 ```
