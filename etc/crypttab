@@ -1,2 +1,3 @@
-swap  /dev/disk/by-partuuid/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx  none  luks,discard
-root  /dev/disk/by-partuuid/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx  none  luks,discard
+root  PARTUUID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx  none  luks,discard
+home  UUID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx      none  luks
+swap  UUID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx      none  luks,discard
