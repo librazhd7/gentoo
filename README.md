@@ -214,11 +214,11 @@ bootctl install
 ---
 
 ### systemd[^16]
-| services                           | sockets                 |
-|------------------------------------|-------------------------|
-| `acpid.service`                    | `pipewire-pulse.socket` |
-| `bluetooth.service`                | ~~`pulseaudio.socket`~~ |
-| `cups.service`                     | `virtstoraged.socket`   |
+| services                           | sockets                 | timers         |
+|------------------------------------|-------------------------|----------------|
+| `acpid.service`                    | `pipewire-pulse.socket` | `fstrim.timer` |
+| `bluetooth.service`                | ~~`pulseaudio.socket`~~ | |
+| `cups.service`                     | `virtstoraged.socket`   | |
 | `dkms.service`                     | |
 | `dnsmasq.service`                  | |
 | `getty@tty1.service`               | |
