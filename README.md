@@ -33,9 +33,9 @@
 ### fdisk[^1] (gpt)[^2]
 | device           | size       | type      | lvm | luks | fs    |
 |------------------|------------|-----------|------|-----|-------|
-| `/dev/nvme0n1p1` | 1g         | efi (1)   |      |     | fat32 |
-| `/dev/nvme0n1p2` | 24g        | swap (19) |      | yes |       |
-| `/dev/nvme0n1p3` |            | lvm (44)  | thin | yes | xfs   |
+| `/dev/nvme0n1p1` | 1gb        | efi (1)   |      |     | fat32 |
+| `/dev/nvme0n1p2` | 24gb       | swap (19) |      | yes |       |
+| `/dev/nvme0n1p3` | 487gb      | lvm (44)  | thin | yes | xfs   |
 
 > [!TIP]
 > to list information about all available or specified block devices: `lsblk` \
@@ -46,8 +46,8 @@
 mkfs.vfat -F 32 /dev/nvme0n1p1
 cryptsetup -c aes-xts-plain64 -s 512 -y luksFormat --type luks2 /dev/nvme0n1p2
 cryptsetup luksOpen /dev/nvme0n1p2 swap
-cryptsetup refresh --persistent --allow-discards /dev/nvme0n1p2 swap
-mkswap /dev/mapper/swap
+cryptsetup refresh --allow-discards swap
+mkswap -L swap /dev/mapper/swap
 swapon /dev/mapper/swap
 ```
 
@@ -55,12 +55,14 @@ swapon /dev/mapper/swap
 ```
 cryptsetup -c aes-xts-plain64 -s 512 -y luksFormat --type luks2 /dev/nvme0n1p3
 cryptsetup luksOpen /dev/nvme0n1p3 root
-cryptsetup refresh --persistent --allow-discards /dev/nvme0n1p3 root
+cryptsetup refresh --allow-discards root
 pvcreate /dev/mapper/root
 vgcreate tux /dev/mapper/root
-lvcreate -l 100%FREE --type thin-pool --thinpool thin tux
-lvchange -ay /dev/tux/thin
-mkfs.xfs /dev/mapper/tux-thin
+lvcreate -l 99%FREE --type thin-pool --poolmetadatasize 1G --name thin tux
+lvcreate -l 12%VG -T tux/thin -n root
+lvcreate -l 87%VG -T tux/thin -n home
+mkfs.xfs /dev/tux/root
+mkfs.xfs /dev/tux/home
 ```
 
 > [!TIP]
@@ -105,7 +107,11 @@ mkfs.xfs /dev/mapper/tux-thin
 ### mounting devices
 ```
 mkdir -p /mnt/gentoo
-mount /dev/mapper/root /mnt/gentoo
+mount /dev/tux/root /mnt/gentoo
+
+mkdir -p /mnt/gentoo/home
+mount /dev/tux/home /mnt/gentoo/home
+
 mkdir -p /mnt/gentoo/efi
 mount /dev/nvme0n1p1 /mnt/gentoo/efi
 ```
@@ -291,9 +297,11 @@ chmod -c 0400 /etc/doas.conf
 ### finishing up
 ```
 exit
+umount /mnt/gentoo/efi
+umount /mnt/gentoo/home
+umount /mnt/gentoo
 umount -l /mnt/gentoo/dev{/shm,/pts,}
-umount -R /mnt/gentoo
-lvchange -an /dev/tux/thin
+lvchange -an /dev/mapper/tux/thin
 cryptsetup luksClose /dev/mapper/swap
 cryptsetup luksClose /dev/mapper/root
 reboot
