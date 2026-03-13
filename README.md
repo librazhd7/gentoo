@@ -58,7 +58,7 @@ mkfs.vfat -F 32 /dev/nvme0n1p1
 
 #
 cryptsetup luksFormat --type luks2 --cipher aes-xts-plain64 --key-size 512 --pbkdf argon2id /dev/nvme0n1p2
-cryptsetup luksOpen dev/nvme0n1p2 root
+cryptsetup luksOpen /dev/nvme0n1p2 root
 cryptsetup refresh --allow-discards root
 
 # 
@@ -81,7 +81,7 @@ lvextend --poolmetadatasize +1G tux/thin
 lvcreate -V292.749G -T tux/thin -n root
 
 # build xfs on our dynamically-sized logical volume
-mkfs.xfs /dev/mapper/tux-thin
+mkfs.xfs /dev/mapper/tux-root
 ```
 
 > [!TIP]
