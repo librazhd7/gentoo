@@ -1,3 +1,2 @@
-root  PARTUUID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx  none            luks,discard
-home  UUID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx      none            luks
-swap  UUID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx      /root/swap.key  luks,swap
+root  PARTUUID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx  none  luks,discard
+swap  UUID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx      none  luks,swap
