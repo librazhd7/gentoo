@@ -56,50 +56,30 @@
 # build vfat32 on our efi partition (/dev/nvme0n1p1)
 mkfs.vfat -F 32 /dev/nvme0n1p1
 
-# generate gpg protected key file
-dd if=/dev/urandom bs=64 count=1 | gpg --symmetric --cipher-algo AES256 --output /tmp/swap.key.gpg
-chmod 600 /tmp/swap.key.gpg
-
-# set up luks2 encryption w/ argon2id on our swap partition (/dev/nvme0n1p2)
-gpg --decrypt /tmp/swap.key.gpg | cryptsetup luksFormat --type luks2 -c aes-xts-plain64 -s 512 --pbkdf argon2id --key-file - /dev/nvme0n1p2
-
-# unlock luks2 encrypted swap partition
-gpg --decrypt /tmp/swap.key.gpg | cryptsetup luksOpen --key-file - /dev/nvme0n1p2 swap
-
-# label, format and activate our swap partition
-mkswap -L swap /dev/mapper/swap
-swapon /dev/mapper/swap
-```
-
-### lvm[^8] on encrypted root
-```
-# generate gpg protected key file
-dd if=/dev/urandom bs=64 count=1 | gpg --symmetric --cipher-algo AES256 --output /tmp/root.key.gpg
-chmod 600 /tmp/root.key.gpg
-
-# set up luks2 encryption on our root partition (/dev/nvme0n1p3)
-gpg --decrypt /tmp/root.key.gpg | cryptsetup luksFormat --type luks2 -c aes-xts-plain64 -s 512 --key-file - /dev/nvme0n1p3
-
-# unlock luks2 encrypted root partition and allow trim/discard
-gpg --decrypt /tmp/root.key.gpg | cryptsetup luksOpen --key-file - /dev/nvme0n1p3 root
+#
+cryptsetup luksFormat --type luks2 --cipher aes-xts-plain64 --key-size 512 --pbkdf argon2id /dev/nvme0n1p2
+cryptsetup luksOpen dev/nvme0n1p2 root
 cryptsetup refresh --allow-discards root
 
-# create physical volume pointed to our root partition
+# 
 pvcreate /dev/mapper/root
-
-# create volume group named 'tux' pointed to our physical volume
 vgcreate tux /dev/mapper/root
 
+# 
+lvcreate -L 12G tux -n swap
+mkswap /dev/tux/swap
+swapon /dev/tux/swap
+```
+
+### lvm[^8]
+```
 # create logical volume named 'thin' pointed to our volume group with 1gb metadata size and 1% free margin for our lvm thin pool
-lvcreate -l 99%FREE --poolmetadatasize 1G --type thin-pool --thinpool thin tux
+lvcreate -L 452.124G -T tux/thin
+lvcreate -V292.749 -T tux/thin -n root
+lvextend --poolmetadatasize +1G tux/thin
 
-# create separate logical volumes for '/' and '/home' and allocate them accordingly (quick maffs)
-lvcreate -l 12%VG -n root tux/thin
-lvcreate -l 87%VG -n home tux/thin
-
-# build xfs on our dynamically-sized logical volumes that reside in the thin pool
+# build xfs on our dynamically-sized logical volume
 mkfs.xfs /dev/tux/root
-mkfs.xfs /dev/tux/home
 ```
 
 > [!TIP]
