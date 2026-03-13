@@ -45,7 +45,7 @@
 |------------------|------------|-----------|------|-----|-------|
 | `/dev/nvme0n1p1` | 1gb        | efi (1)   |      |     | fat32 |
 | `/dev/nvme0n1p2` | 24gb       | swap (19) |      | yes |       |
-| `/dev/nvme0n1p3` | 487gb      | lvm (44)  | thin | yes | xfs   |
+| `/dev/nvme0n1p2` | 475.92gb   | lvm (44)  | thin | yes | xfs   |
 
 > [!TIP]
 > to list information about all available or specified block devices: `lsblk` \
@@ -67,19 +67,21 @@ vgcreate tux /dev/mapper/root
 
 # 
 lvcreate -L 12G tux -n swap
-mkswap /dev/tux/swap
-swapon /dev/tux/swap
+mkswap /dev/mapper/tux-swap
+swapon /dev/mapper/tux-swap
 ```
 
 ### lvm[^8]
 ```
-# create logical volume named 'thin' pointed to our volume group with 1gb metadata size and 1% free margin for our lvm thin pool
+#
 lvcreate -L 452.124G -T tux/thin
-lvcreate -V292.749 -T tux/thin -n root
 lvextend --poolmetadatasize +1G tux/thin
 
+#
+lvcreate -V292.749G -T tux/thin -n root
+
 # build xfs on our dynamically-sized logical volume
-mkfs.xfs /dev/tux/root
+mkfs.xfs /dev/mapper/tux-thin
 ```
 
 > [!TIP]
