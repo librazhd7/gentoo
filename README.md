@@ -40,7 +40,7 @@
 
 ---
 
-### fdisk[^1] (gpt)[^2]
+### fdisk[^1] (gpt)[^2] (redesign needed)
 | device           | size       | type      | lvm | luks | fs    |
 |------------------|------------|-----------|------|-----|-------|
 | `/dev/nvme0n1p1` | 1gb        | efi (1)   |      |     | fat32 |
@@ -85,9 +85,11 @@ mkfs.xfs /dev/mapper/tux-thin
 ```
 
 > [!TIP]
-> to list all active volume groups: `vgdisplay` \
-> if volume groups are missing: `vgscan`        \
-> to list all logical volumes: `lvdisplay`      \
+> to list all active physical volumes: `pvdisplay` \
+> if physical volumes are missing: `pvscan`          \
+> to list all active volume groups: `vgdisplay`    \
+> if volume groups are missing: `vgscan`           \
+> to list all logical volumes: `lvdisplay`         \
 > if logical volumes are missing: `lvscan`
 
 ---
@@ -126,10 +128,7 @@ mkfs.xfs /dev/mapper/tux-thin
 ### mounting devices
 ```
 mkdir -p /mnt/gentoo
-mount /dev/tux/root /mnt/gentoo
-
-mkdir -p /mnt/gentoo/home
-mount /dev/tux/home /mnt/gentoo/home
+mount /dev/mapper/tux-root /mnt/gentoo
 
 mkdir -p /mnt/gentoo/efi
 mount /dev/nvme0n1p1 /mnt/gentoo/efi
@@ -149,7 +148,7 @@ ping -c 3 1.1.1.1
 ### stage3
 ```
 cd /mnt/gentoo
-wget https://ftp.lysator.liu.se/gentoo/releases/amd64/autobuilds/current-stage3-amd64-desktop-systemd/current-stage3-amd64-desktop-systemd-xxxxxxxxxxxxxxxx.tar.xz
+wget https://ftp.lysator.liu.se/gentoo/releases/amd64/autobuilds/current-stage3-amd64-desktop-systemd/stage3-amd64-desktop-systemd-xxxxxxxxxxxxxxxx.tar.xz
 tar xpvf stage3-*.tar.xz --xattrs-include='*.*' --numeric-owner -C /mnt/gentoo
 cp --dereference /etc/resolv.conf /mnt/gentoo/etc/
 ```
@@ -190,18 +189,18 @@ export PS1="(chroot) ${PS1}"
 
 ### installing base system
 ```
-emerge --sync
-getuto
 eselect profile list
 eselect locale list
+env-update && source /etc/profile
+emerge --sync
+getuto
 emerge --ask --verbose --update --deep --changed-use --with-bdeps=y @world
 emerge --ask --depclean
-env-update && source /etc/profile
 ```
 
 > [!TIP]
-> for detecting cpu: `resolve-march-native`                                   \
-> for detecting cpu features: `cpuid2cpuflags`                                \
+> for detecting cpu: `app-misc/resolve-march-native`                                   \
+> for detecting cpu features: `app-portage/cpuid2cpuflags`                                \
 > to generate all locales specified in the /etc/locale.gen file: `locale-gen` \
 > to select the hostname for the system: `echo tux > /etc/hostname`           \
 > to select the timezone for the system: `ln -sf ../usr/share/zoneinfo/Europe/Stockholm /etc/localtime`
@@ -319,11 +318,10 @@ exit
 umount -l /mnt/gentoo/dev{/shm,/pts,}
 
 lvchange -an /dev/mapper/tux-root
-lvchange -an /dev/mapper/tux-home
 lvchange -an /dev/mapper/tux-thin
+lvchange -an /dev/mapper/tux-swap
 vgchange -an tux
 
-cryptsetup luksClose /dev/mapper/swap
 cryptsetup luksClose /dev/mapper/root
 reboot
 ```
