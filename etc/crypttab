@@ -1,2 +1,1 @@
 root  PARTUUID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx  none  luks,discard
-swap  UUID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx      none  luks,swap
