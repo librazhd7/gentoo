@@ -13,7 +13,7 @@
 #       documentation for details on setting a label. To obtain the UUID, use
 #       the blkid(8) command.
 
-PARTUUID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx  /efi              vfat    defaults,noatime,uid=0,gid=0,umask=0077,x-systemd.automount,x-systemd.idle-timeout=600  0       2
-/dev/mapper/tux-root                           /                 xfs     defaults,noatime                                                                        0       1
-/dev/mapper/tux-swap                           none              swap    sw                                                                                      0       0
-tmpfs                                          /var/tmp/portage  tmpfs   size=50%,uid=portage,gid=portage,mode=775                                               0       0
+PARTUUID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx  /efi              vfat    defaults,lazytime,uid=0,gid=0,umask=0077,x-systemd.automount,x-systemd.idle-timeout=600  0       2
+PARTUUID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx  none              swap    sw                                                                                       0       0
+PARTUUID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx  /                 xfs     defaults,lazytime                                                                        0       1
+tmpfs                                          /var/tmp/portage  tmpfs   size=50%,uid=portage,gid=portage,mode=775                                                0       0
