@@ -40,16 +40,16 @@
 
 ---
 
-### fdisk[^1] (gpt)[^2] (redesign needed)
-| device           | size       | type      | lvm | luks | fs    |
-|------------------|------------|-----------|------|-----|-------|
-| `/dev/nvme0n1p1` | 1gb        | efi (1)   |      |     | fat32 |
-| `/dev/nvme0n1p2` | 475.92gb   | lvm (44)  | thin | yes | xfs   |
+### fdisk[^1] (gpt)[^2]
+| device           | alloc      | type      | fs    |
+|------------------|------------|-----------|-------|
+| `/dev/nvme0n1p1` | 1gb        | efi (1)   | fat32 |
+| `/dev/nvme0n1p2` | 475.92gb   | lvm (44)  | xfs   |
 
 > [!TIP]
 > to locate/print block device attributes: `blkid`                            \
 > to list information about all available or specified block devices: `lsblk` \
-> to correct gpt pmbr size mismatches: `issue write table to disk (fdisk)`
+> to correct gpt pmbr size mismatches, issue write to disk
 
 ### esp[^3] [^4] and lvm[^8] with swap[^7]
 ```
@@ -70,14 +70,6 @@ swapon /dev/mapper/tux-swap
 mkfs.xfs /dev/mapper/tux-root
 ```
 
-> [!TIP]
-> to list all active physical volumes: `pvdisplay` \
-> if physical volumes are missing: `pvscan`        \
-> to list all active volume groups: `vgdisplay`    \
-> if volume groups are missing: `vgscan`           \
-> to list all logical volumes: `lvdisplay`         \
-> if logical volumes are missing: `lvscan`
-
 > [!NOTE]
 > for disk encryption with `luks2` by using `dm-crypt` see below:
 > ```
@@ -85,6 +77,14 @@ mkfs.xfs /dev/mapper/tux-root
 > cryptsetup luksOpen /dev/nvme0n1p2 root
 > cryptsetup refresh --allow-discards root
 > ```
+
+> [!TIP]
+> to list all active physical volumes: `pvdisplay` \
+> if physical volumes are missing: `pvscan`        \
+> to list all active volume groups: `vgdisplay`    \
+> if volume groups are missing: `vgscan`           \
+> to list all logical volumes: `lvdisplay`         \
+> if logical volumes are missing: `lvscan`
 
 ---
 
@@ -102,19 +102,17 @@ mkfs.xfs /dev/mapper/tux-root
 | `emerge --ask @preserved-rebuild`                                            | for using new libraries                                                                                 |
 
 > [!CAUTION]  
-> repository is specifically tailored towards hardware and preferences of mine. \
-> you should follow the official gentoo installation handbook and adjust accordingly:
-> ```
-> links https://wiki.gentoo.org/wiki/Handbook:AMD64
-> ```
-
-> [!IMPORTANT]
-> assuming repository system-wide configurations have been applied beforehand, freely follow the guide and docs highlighted for additional information:
+> repository files and design choices are strictly made with hardware and preference(s) of mine in mind.      \
+> if you're intrigued by the setup and hardware is appropriate freely follow the guide.
 > ```
 > git clone https://github.com/librazhd7/gentoo.git
-> ```
-> ```
 > wget https://github.com/librazhd7/gentoo/archive/refs/heads/main.zip
+> ```
+> 
+> you should spend time reading docs and follow the official gentoo installation handbook for best practices, \
+> to fully grasp the underlying concepts used throughout the guide:
+> ```
+> links https://wiki.gentoo.org/wiki/Handbook:AMD64
 > ```
 
 ---
@@ -130,14 +128,14 @@ mount /dev/nvme0n1p1 /mnt/gentoo/efi
 
 ### configuring network
 ```
-ifconfig -a
+ifconfig -a/ip link show
 net-setup enp3s0/wlo1
 ping -c 3 1.1.1.1
 ```
 
 > [!TIP]
 > for automatic ip, network mask, routes, dns and ntp servers: `dhcpcd enp3s0/wlo1` \
-> for network card activation: `ifconfig -v wlo1 up`
+> for network card activation: `ifconfig -v wlo1 up` / `ip link set wlo1 up`
 
 ### stage3
 ```
@@ -183,20 +181,20 @@ export PS1="(chroot) ${PS1}"
 
 ### installing base system
 ```
+emerge --sync
+getuto
 eselect profile list
 eselect locale list
 env-update && source /etc/profile
-emerge --sync
-getuto
 emerge --ask --verbose --update --deep --changed-use --with-bdeps=y @world
 emerge --ask --depclean
 ```
 
 > [!TIP]
-> for detecting cpu: `app-misc/resolve-march-native`                          \
-> for detecting cpu features: `app-portage/cpuid2cpuflags`                    \
-> to generate all locales specified in the /etc/locale.gen file: `locale-gen` \
-> to select the hostname for the system: `echo tux > /etc/hostname`           \
+> for detecting cpu: `app-misc/resolve-march-native`                                                    \
+> for detecting cpu features: `app-portage/cpuid2cpuflags`                                              \
+> to generate all locales specified in the /etc/locale.gen file: `locale-gen`                           \
+> to select the hostname for the system: `echo tux > /etc/hostname`                                     \
 > to select the timezone for the system: `ln -sf ../usr/share/zoneinfo/Europe/Stockholm /etc/localtime`
 
 ### installing firmware[^11] [^12] [^13], bootloader[^14] and kernel[^15]
@@ -295,13 +293,8 @@ chmod -c 0400 /etc/doas.conf
 > %wheel ALL=(ALL:ALL) ALL
 > ```
 
-> [!NOTE]
-> adding pre-existing user to a group: `usermod -aG` \
-> find out more here: https://man7.org/linux/man-pages/man8/usermod.8.html
-
 > [!TIP]
-> to prevent possible threat actors from logging in as root,                   \
-> deleting the password and/or disabling root login can help improve security. \
+> to add pre-existing user to a group: `usermod -aG <user>`        \
 > to delete the root password and disable login: `passwd -dl root`
 
 ---
@@ -311,15 +304,12 @@ chmod -c 0400 /etc/doas.conf
 exit
 umount -l /mnt/gentoo/dev{/shm,/pts,}
 umount -R /mnt/gentoo 
-
-lvchange -an /dev/mapper/tux-root
-lvchange -an /dev/mapper/tux-thin
-lvchange -an /dev/mapper/tux-swap
-vgchange -an tux
-
-cryptsetup luksClose /dev/mapper/root
 reboot
 ```
+
+> [!TIP]
+> to activate/disable volume group: `vgchange -ay <vg_name>` / `vgchange -an <vg_name>`   \
+> to activate/disable logical volume: `lvchange -ay <lv_name>` / `lvchange -an <lv_name>`
 
 ### eclean[^19] and eclean-kernel
 ```
@@ -329,12 +319,11 @@ eclean-kernel -n 1
 eclean-pkg
 ```
 
-> [!NOTE]
+> [!CAUTION]
 > by default, source files are located in /var/cache/distfiles, while binary packages are located in /var/cache/binpkgs. \
 > both locations can grow quite big if not periodically cleaned.
-
-> [!CAUTION]
-> be sure to check the boot entries after issuing: `eclean-kernel -n 1`. \
+> 
+> be sure to check the boot entries after issuing: `eclean-kernel -n 1`.                                                 \
 > it may be empty, and you will only be able to rewrite the boot entry through a livecd.
 
 ### nvidia, pipewire, virtualization[^20]
