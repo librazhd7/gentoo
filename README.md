@@ -9,25 +9,27 @@
 - [x] ~amd64
 - [x] bluetooth
 - [x] dracut
-- [x] efi stub
-- [x] gaming (steam/wine)
-- [x] hybrid graphics (intel/nvidia)
-- [x] kernel (custom)
-- [x] luks
+- [x] fstrim
+- [x] gaming (gamescope/steam/wine)
+- [x] hybrid graphics (optimus)
+- [x] kernel
+- [x] luks2
 - [x] lvm (thin)
-- [x] networking (wifi)
+- [x] networking
 - [x] pipewire
 - [x] portage optimizations
-- [ ] power management (tls/ec dump in the future)
+- [x] power management
 - [x] printing
+- [x] qemu
 - [x] samba
 - [ ] secure boot
 - [x] ssh
 - [x] systemd
 - [x] tmpfs
-- [ ] tpm
-- [x] virtualization (qemu)
+- [ ] tpm2
+- [x] uki
 - [x] wayland
+- [x] zsh
 - [x] zswap
 
 ### system
@@ -44,53 +46,56 @@
 | device           | size       | type      | lvm | luks | fs    |
 |------------------|------------|-----------|------|-----|-------|
 | `/dev/nvme0n1p1` | 1gb        | efi (1)   |      |     | fat32 |
-| `/dev/nvme0n1p2` | 24gb       | swap (19) |      | yes |       |
 | `/dev/nvme0n1p2` | 475.92gb   | lvm (44)  | thin | yes | xfs   |
 
 > [!TIP]
+> to locate/print block device attributes: `blkid`                            \
 > to list information about all available or specified block devices: `lsblk` \
 > to correct gpt pmbr size mismatches: `issue write table to disk (fdisk)`
 
-### esp[^3] [^4] and luks[^5] [^6] on swap[^7]
+### esp[^3] [^4] and lvm[^8] with swap[^7]
 ```
-# build vfat32 on our efi partition (/dev/nvme0n1p1)
+#
 mkfs.vfat -F 32 /dev/nvme0n1p1
 
 #
-cryptsetup luksFormat --type luks2 --cipher aes-xts-plain64 --key-size 512 --pbkdf argon2id /dev/nvme0n1p2
-cryptsetup luksOpen /dev/nvme0n1p2 root
-cryptsetup refresh --allow-discards root
+pvcreate /dev/nvme0n1p2
+vgcreate tux /dev/nvme0n1p2
 
-# 
-pvcreate /dev/mapper/root
-vgcreate tux /dev/mapper/root
+#
+lvcreate --type thin-pool --extents 95%FREE tux
+lvcreate --virtualsize 300G --thinpool thin tux
 
-# 
 lvcreate -L 12G tux -n swap
 mkswap /dev/mapper/tux-swap
 swapon /dev/mapper/tux-swap
-```
 
-### lvm[^8]
-```
 #
-lvcreate -L 452.124G -T tux/thin
-lvextend --poolmetadatasize +1G tux/thin
+lvcreate -l 95%FREE --thinpool --type thin-pool tux/thin --poolmetadatasize +2G
+lvextend --poolmetadatasize +2G tux/thin
 
 #
 lvcreate -V292.749G -T tux/thin -n root
 
-# build xfs on our dynamically-sized logical volume
+#
 mkfs.xfs /dev/mapper/tux-root
 ```
 
 > [!TIP]
 > to list all active physical volumes: `pvdisplay` \
-> if physical volumes are missing: `pvscan`          \
+> if physical volumes are missing: `pvscan`        \
 > to list all active volume groups: `vgdisplay`    \
 > if volume groups are missing: `vgscan`           \
 > to list all logical volumes: `lvdisplay`         \
 > if logical volumes are missing: `lvscan`
+
+> [!NOTE]
+> for disk encryption with `luks2` by using `dm-crypt` see below:
+> ```
+> cryptsetup luksFormat --type luks2 --cipher aes-xts-plain64 --key-size 512 --pbkdf argon2id /dev/nvme0n1p2
+> cryptsetup luksOpen /dev/nvme0n1p2 root
+> cryptsetup refresh --allow-discards root
+> ```
 
 ---
 
@@ -348,8 +353,7 @@ eclean-pkg
 
 ### to do
 - proper referencing to docs but also files in the repository, make an index to navigate the readme too
-- script to automatically apply system-wide configurations
-- luks =>> properly configured w/ best practices (etc/crypttab & /etc/dracut.conf.d/)
+- script for installing and configuring gentoo automatically
 - fdisk =>> add /boot partition for grub support?
 - gentoo =>> minimal packages by use flags
 - gentoo-sources =>> ditch gentoo-kernel-bin (partially tested, needs fine-tuning)
