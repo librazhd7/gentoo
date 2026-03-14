@@ -15,5 +15,5 @@
 
 PARTUUID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx  /efi              vfat    defaults,lazytime,uid=0,gid=0,umask=0077,x-systemd.automount,x-systemd.idle-timeout=600  0       2
 PARTUUID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx  none              swap    sw                                                                                       0       0
-PARTUUID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx  /                 xfs     defaults,lazytime                                                                        0       1
+PARTUUID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx  /                 xfs     defaults,lazytime,inode64                                                                0       1
 tmpfs                                          /var/tmp/portage  tmpfs   size=50%,uid=portage,gid=portage,mode=775                                                0       0
