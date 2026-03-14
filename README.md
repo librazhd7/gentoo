@@ -13,8 +13,6 @@
 - [x] gaming (gamescope/steam/wine)
 - [x] hybrid graphics (optimus)
 - [x] kernel
-- [x] luks2
-- [x] lvm (thin)
 - [x] networking
 - [x] pipewire
 - [x] portage optimizations
@@ -195,8 +193,8 @@ emerge --ask --depclean
 ```
 
 > [!TIP]
-> for detecting cpu: `app-misc/resolve-march-native`                                   \
-> for detecting cpu features: `app-portage/cpuid2cpuflags`                                \
+> for detecting cpu: `app-misc/resolve-march-native`                          \
+> for detecting cpu features: `app-portage/cpuid2cpuflags`                    \
 > to generate all locales specified in the /etc/locale.gen file: `locale-gen` \
 > to select the hostname for the system: `echo tux > /etc/hostname`           \
 > to select the timezone for the system: `ln -sf ../usr/share/zoneinfo/Europe/Stockholm /etc/localtime`
@@ -312,6 +310,7 @@ chmod -c 0400 /etc/doas.conf
 ```
 exit
 umount -l /mnt/gentoo/dev{/shm,/pts,}
+umount -R /mnt/gentoo 
 
 lvchange -an /dev/mapper/tux-root
 lvchange -an /dev/mapper/tux-thin
