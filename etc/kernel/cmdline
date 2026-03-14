@@ -1,7 +1,8 @@
 efi=runtime
-cryptdevice=PARTUUID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx:root
-rd.luks.uuid=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
-rd.luks.options=discard
+root=UUID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+#cryptdevice=UUID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx:root
+#rd.luks.uuid=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+#rd.luks.options=discard
 zswap.enabled=1
 zswap.compressor=lz4
 zswap.max_pool_percent=20
