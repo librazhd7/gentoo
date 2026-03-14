@@ -61,12 +61,14 @@ pvcreate /dev/nvme0n1p2
 vgcreate tux /dev/nvme0n1p2
 
 #
-lvcreate --type thin-pool --poolmetadatasize 2G -L 452.127G
-lvcreate -V292.749G --thinpool root
 lvcreate -L 12G tux -n swap
-
 mkswap /dev/mapper/tux-swap
 swapon /dev/mapper/tux-swap
+
+#
+lvcreate --type thin-pool --poolmetadatasize 2G -l 95%FREE -n thin tux
+lvcreate -V300G --thinpool thin -n root
+
 mkfs.xfs /dev/mapper/tux-root
 ```
 
