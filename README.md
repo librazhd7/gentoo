@@ -211,6 +211,7 @@ make nconfig
 make && make modules_install
 make install
 bootctl install
+dracut -H --force
 ```
 
 ---
