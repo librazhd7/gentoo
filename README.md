@@ -9,10 +9,10 @@
 - [x] ~amd64
 - [x] bluetooth
 - [x] dracut
-- [x] fstrim
 - [x] gaming (gamescope/steam/wine)
 - [x] hybrid graphics (optimus)
 - [x] kernel
+- [x] lvm thin provisioning (2:1)
 - [x] networking
 - [x] pipewire
 - [x] portage optimizations
@@ -49,7 +49,7 @@
 > [!TIP]
 > to locate/print block device attributes: `blkid`                            \
 > to list information about all available or specified block devices: `lsblk` \
-> to correct gpt pmbr size mismatches, issue write to disk
+> correct gpt pmbr size mismatches by issuing writes to disk
 
 ### esp[^3] [^4] and lvm[^8] with swap[^7]
 ```
@@ -111,7 +111,7 @@ mkfs.xfs /dev/mapper/tux-root
 > wget https://github.com/librazhd7/gentoo/archive/refs/heads/main.zip
 > ```
 > 
-> you should spend time reading docs and follow the official gentoo installation handbook for best practices, \
+> you should spend time reading docs and the official gentoo installation handbook for best practices  \
 > to fully grasp the underlying concepts used throughout the guide:
 > ```
 > links https://wiki.gentoo.org/wiki/Handbook:AMD64
@@ -130,7 +130,7 @@ mount /dev/nvme0n1p1 /mnt/gentoo/efi
 
 ### configuring network
 ```
-ifconfig -a/ip link show
+ifconfig -a
 net-setup enp3s0/wlo1
 ping -c 3 1.1.1.1
 ```
