@@ -65,9 +65,9 @@ lvcreate -L 12G tux -n swap
 mkswap /dev/mapper/tux-swap
 swapon /dev/mapper/tux-swap
 
-#
+# using 2:1 overprovisioning ratio of 95% reserved thin pool with 2gb metadata rounded up
 lvcreate --type thin-pool --poolmetadatasize 2G -l 95%FREE -n thin tux
-lvcreate -V300G --thinpool thin -n root
+lvcreate -V880 --thinpool tux/thin -n root
 
 mkfs.xfs /dev/mapper/tux-root
 ```
