@@ -68,7 +68,6 @@ swapon /dev/mapper/tux-swap
 # using 2:1 overprovisioning ratio of 95% reserved thin pool with 2gb metadata rounded up
 lvcreate --type thin-pool --poolmetadatasize 2G -l 95%FREE -n thin tux
 lvcreate -V880 --thinpool tux/thin -n root
-
 mkfs.xfs /dev/mapper/tux-root
 ```
 
@@ -130,8 +129,8 @@ mount /dev/nvme0n1p1 /mnt/gentoo/efi
 
 ### configuring network
 ```
-ifconfig -a
-net-setup enp3s0/wlo1
+ip link show
+net-setup wlo1
 ping -c 3 1.1.1.1
 ```
 
@@ -168,7 +167,7 @@ export PS1="(chroot) ${PS1}"
 ```
 
 > [!NOTE]
-> using `arch-chroot` simplifies the mounting process of necessary filesystems when using the official gentoo installation media:
+> using `arch-chroot /mnt/gentoo` simplifies the mounting process of necessary filesystems when using the official gentoo installation media:
 > ```
 > dd if=install-amd64-minimal-xxxxxxxxxxxxxxxx.iso of=/dev/sda bs=4096 status=progress && sync
 > ```
@@ -205,13 +204,12 @@ emerge --ask sys-kernel/linux-firmware sys-kernel/linux-headers sys-firmware/int
 emerge --ask app-crypt/sbsigntools sys-apps/fwupd sys-apps/pciutils sys-apps/systemd sys-kernel/dkms sys-kernel/gentoo-sources sys-kernel/installkernel
 emerge --ask sys-block/io-scheduler-udev-rules sys-fs/cryptsetup sys-fs/dosfstools sys-fs/e2fsprogs sys-fs/lvm2 sys-fs/ntfs3g sys-fs/xfsprogs
 eselect kernel list
+ls -l /usr/src/linux
 cd /usr/src/linux
 make localmodconfig
-make nconfig
 make && make modules_install
 make install
 bootctl install
-dracut -H --force
 ```
 
 ---
