@@ -20,6 +20,7 @@ app-shells/zsh-completions
 dev-java/openjdk
 dev-libs/intel-compute-runtime
 dev-util/android-tools
+dev-util/geany
 dev-util/intel-ocl-sdk
 dev-util/nvidia-cuda-toolkit
 dev-util/vulkan-tools
