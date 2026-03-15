@@ -13,6 +13,7 @@ fi
 
 if [ -z "$DISPLAY" ] && [ "$XDG_VTNR" = 1 ]; then
   #exec startx -- vt7
+  export DISPLAY=:1
   weston &
   Xwayland :1 -rootless -terminate &
   exec dbus-launch --sh-syntax --exit-with-session icewm-session
