@@ -1,1 +1,1 @@
-root  PARTUUID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx  none  luks,discard
+#root  PARTUUID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx  none  luks,discard
