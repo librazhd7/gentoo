@@ -12,9 +12,9 @@ fi
 #fi
 
 if [ -z "$DISPLAY" ] && [ "$XDG_VTNR" = 1 ]; then
-  #exec startx -- vt7
-  weston &
-  Xwayland :1 -rootless -terminate &
-  export DISPLAY=:1
-  exec dbus-launch --sh-syntax --exit-with-session icewm-session
+  exec startx
+  #weston &
+  #Xwayland :0 -rootless -terminate &
+  #export DISPLAY=:0
+  #exec dbus-launch --sh-syntax --exit-with-session icewm-session
 fi
