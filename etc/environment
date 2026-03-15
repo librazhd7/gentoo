@@ -4,31 +4,34 @@
 # Syntax: simple "KEY=VAL" pairs on separate lines
 #
 
-# https://wiki.gentoo.org/wiki/Handbook:AMD64/Working/EnvVar
-PATH="/bin:/usr/bin:/usr/local/bin:/opt/bin:/usr/games/bin"
-ROOTPATH="/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin"
-EDITOR="/usr/bin/vim"
+PATH=/bin:/usr/bin:/usr/local/bin:/opt/bin:/usr/games/bin
+ROOTPATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin
+MANPATH=/usr/share/man:/usr/local/share/man
+INFODIR=/usr/share/info:/usr/local/share/info
+PAGER=/usr/bin/less
+EDITOR=/usr/bin/vim
 
-__GLX_VENDOR_LIBRARY_NAME="nvidia"
-__NV_PRIME_RENDER_OFFLOAD="1"
+__GL_THREADED_OPTIMIZATIONS=1
+__GLX_VENDOR_LIBRARY_NAME=nvidia
+__NV_PRIME_RENDER_OFFLOAD=1
 
-_JAVA_AWT_WM_NONREPARENTING="1"
+_JAVA_AWT_WM_NONREPARENTING=1
 
-#CLUTTER_BACKEND="wayland"
-#GBM_BACKEND="nvidia-drm"
-GDK_BACKEND="x11,wayland"
+#CLUTTER_BACKEND=wayland
+#GBM_BACKEND=nvidia-drm
+GDK_BACKEND=x11,wayland
 
-GLFW_IM_MODULE="ibus"
+GLFW_IM_MODULE=ibus
 
-LIBVA_DRIVER_NAME="nvidia"
-VDPAU_DRIVER="nvidia"
+LIBVA_DRIVER_NAME=nvidia
+VDPAU_DRIVER=nvidia
 
-SDL_AUDIODRIVER="pipewire"
-SDL_VIDEODRIVER="x11,wayland"
+SDL_AUDIODRIVER=pipewire
+SDL_VIDEODRIVER=x11,wayland
 
-QT_QPA_PLATFORM="xcb;wayland"
+QT_QPA_PLATFORM=xcb;wayland
 
-XDG_CURRENT_DESKTOP="ICEWM"
-XDG_SESSION_DESKTOP="icewm-session"
-XDG_SESSION_TYPE="x11"
-XKB_DEFAULT_LAYOUT="se"
+XDG_CURRENT_DESKTOP=ICEWM
+XDG_SESSION_DESKTOP=icewm-session
+XDG_SESSION_TYPE=x11
+XKB_DEFAULT_LAYOUT=se
