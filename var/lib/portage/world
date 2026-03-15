@@ -1,6 +1,6 @@
 app-admin/doas
 app-admin/eclean-kernel
-app-crypt/sbsigntools
+#app-crypt/sbsigntools
 app-editors/nano
 app-editors/vim
 app-emulation/libvirt
@@ -34,7 +34,9 @@ games-arcade/supertux
 games-util/steam-launcher
 gui-wm/gamescope
 media-fonts/corefonts
+media-fonts/noto
 media-fonts/noto-emoji
+media-fonts/terminus-font
 media-gfx/blender
 media-gfx/gimp
 media-libs/libva-intel-media-driver
@@ -61,7 +63,7 @@ sys-auth/rtkit
 sys-block/io-scheduler-udev-rules
 sys-firmware/intel-microcode
 sys-firmware/sof-firmware
-sys-fs/cryptsetup
+#sys-fs/cryptsetup
 sys-fs/dosfstools
 sys-fs/lvm2
 sys-fs/ntfs3g
