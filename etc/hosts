@@ -14,5 +14,8 @@
 #
 
 # IPv4 and IPv6 localhost aliases
-127.0.0.1  localhost tux
-::1        localhost tux
+127.0.0.1  localhost
+::1        localhost
+
+127.0.0.1  tux
+::1        tux
