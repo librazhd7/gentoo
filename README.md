@@ -184,27 +184,26 @@ export PS1="(chroot) ${PS1}"
 ```
 emerge --sync
 getuto
-eselect profile list
-eselect locale list
 env-update && source /etc/profile
 emerge --ask --verbose --update --deep --changed-use --with-bdeps=y @world
 emerge --ask --depclean
 ```
 
 > [!TIP]
-> for detecting cpu: `app-misc/resolve-march-native`                                                    \
-> for detecting cpu features: `app-portage/cpuid2cpuflags`                                              \
-> to generate all locales specified in the /etc/locale.gen file: `locale-gen`                           \
-> to select the hostname for the system: `echo tux > /etc/hostname`                                     \
-> to select the timezone for the system: `ln -sf ../usr/share/zoneinfo/Europe/Stockholm /etc/localtime`
+> for detecting cpu: `app-misc/resolve-march-native`                                                \
+> for detecting cpu features: `app-portage/cpuid2cpuflags`                                          \
+> to select hostname for the system: `echo tux > /etc/hostname`                                     \
+> to select timezone for the system: `ln -sf ../usr/share/zoneinfo/Europe/Stockholm /etc/localtime` \
+> to select profile for the system: `eselect profile list` / `eselect profile set <index>`          \
+> to select locale for the system: `eselect locale list` / `eselect locale set <index>`             \
+> to generate all locales specified in the /etc/locale.gen file: `locale-gen`                       \
+
 
 ### installing firmware[^11] [^12] [^13], bootloader[^14] and kernel[^15]
 ```
 emerge --ask sys-kernel/linux-firmware sys-kernel/linux-headers sys-firmware/intel-microcode sys-firmware/sof-firmware
 emerge --ask app-crypt/sbsigntools sys-apps/fwupd sys-apps/pciutils sys-apps/systemd sys-kernel/dkms sys-kernel/gentoo-sources sys-kernel/installkernel
 emerge --ask sys-block/io-scheduler-udev-rules sys-fs/cryptsetup sys-fs/dosfstools sys-fs/e2fsprogs sys-fs/lvm2 sys-fs/ntfs3g sys-fs/xfsprogs
-eselect kernel list
-ls -l /usr/src/linux
 cd /usr/src/linux
 make localmodconfig
 make && make modules_install
@@ -212,34 +211,52 @@ make install
 bootctl install
 ```
 
+> [!NOTE]
+> `modprobed-db` is useful for building a minimal kernel with `make localmodconfig` \
+> `modprobed-db` works best by using the distribution kernel for about a month and have the utility run in the background so it can have time to learn what modules the system needs:
+> ```
+> emerge --ask sys-kernel/gentoo-kernel-bin
+> emerge --config sys-kernel/gentoo-kernel-bin
+> emerge --ask sys-kernel/modprobed-db
+>
+> modprobed-db store
+> modprobed-db recall
+> ```
+
+> [!TIP]
+> for selecting kernel for the system and symlinking: cpu: `eselect kernel list` / `eselect kernel set <index>` \
+> to show the symlink of given directory: `ls -l /usr/src/linux`                                                \
+> to manually configure the kernel: `make nconfig`
+
 ---
 
 ### systemd[^16]
-| services                           | sockets                 | timers         |
-|------------------------------------|-------------------------|----------------|
-| `acpid.service`                    | `pipewire-pulse.socket` | `fstrim.timer` |
-| `bluetooth.service`                | ~~`pulseaudio.socket`~~ | |
-| `cups.service`                     | `virtstoraged.socket`   | |
-| `dkms.service`                     | |
-| `dnsmasq.service`                  | |
-| `getty@tty1.service`               | |
-| `libvirtd.service`                 | |
-| `lvm2-monitor.service`             | |
-| `NetworkManager.service`           | |
-| `nmbd.service`                     | |
-| ~~`pulseaudio.service`~~           | |
-| `smbd.service`                     | |
-| `sshd.service`                     | |
-| `systemd-boot-update.service`      | |
-| ~~`systemd-modules-load.service`~~ | |
-| `systemd-networkd.service`         | |
-| `systemd-timesyncd.service`        | |
-| `thermald.service`                 | |
-| `tlp.service`                      | |
-| `virtnetworkd.service`             | |
-| `virtqemud.service`                | |
-| `virtlogd.service`                 | |
-| `wireplumber.service`              | |
+| services                               | sockets                     | timers             |
+|----------------------------------------|-----------------------------|--------------------|
+| `acpid.service (#)`                    | `pipewire-pulse.socket ($)` | `fstrim.timer (#)` |
+| `bluetooth.service (#)`                | ~~`pulseaudio.socket ($)`~~ | |
+| `cups.service (#)`                     | `virtstoraged.socket (#)`   | |
+| `dkms.service (#)`                     | |
+| `dnsmasq.service (#)`                  | |
+| `getty@tty1.service (#)`               | |
+| `libvirtd.service (#)`                 | |
+| `lvm2-monitor.service (#)`             | |
+| `modprobed-db.service ($)`             | |
+| `NetworkManager.service (#)`           | |
+| `nmbd.service (#)`                     | |
+| ~~`pulseaudio.service ($)`~~           | |
+| `smbd.service (#)`                     | |
+| `sshd.service (#)`                     | |
+| `systemd-boot-update.service (#)`      | |
+| ~~`systemd-modules-load.service (#)`~~ | |
+| `systemd-networkd.service (#)`         | |
+| `systemd-timesyncd.service (#)`        | |
+| `thermald.service (#)`                 | |
+| `tlp.service (#)`                      | |
+| `virtnetworkd.service (#)`             | |
+| `virtqemud.service (#)`                | |
+| `virtlogd.service (#)`                 | |
+| `wireplumber.service ($)`              | |
 
 ### configuring systemd
 ```
@@ -251,7 +268,7 @@ systemctl preset-all
 
 > [!TIP]
 > to enable unit to start automatically at boot: `systemctl enable .service/.socket` \
-> to start unit immediately: `systemctl start .service/.socket`                      \
+> to start unit immediately: `systemctl start .service/.socket/.timer`               \
 > to select the hostname for the system: `hostnamectl hostname tux`                  \
 > to select the timezone for the system: `timedatectl set-timezone Europe/Stockholm`
 
