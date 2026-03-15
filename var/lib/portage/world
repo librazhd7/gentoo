@@ -42,6 +42,7 @@ media-gfx/gimp
 media-libs/libva-intel-media-driver
 media-libs/noise-suppression-for-voice
 media-libs/nvidia-vaapi-driver
+media-libs/openal
 media-plugins/alsa-plugins
 media-sound/alsa-utils
 media-video/libva-utils
