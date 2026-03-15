@@ -8,6 +8,7 @@ app-emulation/qemu
 app-emulation/wine-staging
 app-emulation/winetricks
 app-eselect/eselect-repository
+app-i18n/ibus
 app-misc/fastfetch
 app-misc/resolve-march-native
 app-office/libreoffice-bin
