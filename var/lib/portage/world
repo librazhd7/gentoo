@@ -19,6 +19,7 @@ app-shells/gentoo-zsh-completions
 app-shells/zsh
 app-shells/zsh-completions
 dev-java/openjdk-jdk-bin
+dev-lang/rust-bin
 #dev-libs/intel-compute-runtime
 dev-util/android-tools
 dev-util/geany
@@ -88,6 +89,7 @@ x11-misc/xfe
 x11-terms/kitty
 x11-wm/icewm
 
+rustup-init-gentoo --symlink
 #kde-apps/ark
 #kde-apps/dolphin
 #kde-apps/gwenview
