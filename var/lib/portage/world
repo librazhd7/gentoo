@@ -3,7 +3,6 @@ app-admin/eclean-kernel
 app-crypt/sbsigntools
 app-editors/nano
 app-editors/vim
-app-editors/vscode
 app-emulation/libvirt
 app-emulation/qemu
 app-emulation/wine-staging
@@ -34,6 +33,7 @@ gui-wm/gamescope
 media-fonts/corefonts
 media-fonts/noto-emoji
 media-gfx/blender
+media-gfx/gimp
 media-libs/libva-intel-media-driver
 media-libs/noise-suppression-for-voice
 media-libs/nvidia-vaapi-driver
@@ -72,12 +72,16 @@ sys-power/thermald
 sys-power/tlp
 www-client/google-chrome
 x11-apps/mesa-progs
+x11-apps/xrandr
 x11-base/xorg-server
+x11-base/xwayland
 x11-drivers/nvidia-drivers
 x11-misc/prime-run
 x11-misc/wmctrl
 x11-misc/xdotool
+x11-misc/xfe
 x11-terms/kitty
+x11-wm/icewm
 
 #kde-apps/ark
 #kde-apps/dolphin
@@ -93,10 +97,7 @@ x11-terms/kitty
 #kde-apps/kwalletmanager
 #kde-plasma/discover
 #kde-plasma/plasma-meta
-#media-gfx/gimp
 #media-gfx/krita
 #sys-apps/pv
 #sys-block/partitionmanager
 #sys-boot/vboot-utils
-#x11-misc/xfe
-#x11-wm/windowmaker
