@@ -1,0 +1,6 @@
+prog "web" web-browser.png google-chrome-stable
+prog "fm" file-manager.png xfe
+prog "term" terminal.png kitty
+prog "notepad" text-editor.png xfw
+prog "ide" text-editor.png geany
+prog "run" gtk-execute.png xde-run
