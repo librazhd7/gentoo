@@ -23,11 +23,17 @@ menu multimedia folder {
   prog vlc /usr/share/icons/hicolor/256x256/apps/vlc.png vlc
 }
 
+menu wine folder {
+  prog hoyoplay - wine ".wine/drive_c/Program Files/HoYoPlay/launcher.exe"
+  separator
+  prog winetricks /usr/share/icons/hicolor/scalable/apps/winetricks.svg winetricks
+}
+
 menu system folder {
   prog kitty /usr/share/icons/hicolor/scalable/apps/kitty.svg kitty
   prog mcontrolcenter /usr/share/icons/hicolor/scalable/apps/mcontrolcenter.svg mcontrolcenter
-  prog nvidia-settings - nvidia-settings
-  prog winetricks /usr/share/icons/hicolor/scalable/apps/winetricks.svg winetricks
+  prog nvidia-xserver - nvidia-settings
+  separator
   prog xfe /usr/share/icons/hicolor/scalable/apps/xfe.svg xfe
   prog xfi /usr/share/icons/hicolor/scalable/apps/xfi.svg xfi
   prog xfp /usr/share/icons/hicolor/scalable/apps/xfp.svg xfp
