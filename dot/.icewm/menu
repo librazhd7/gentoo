@@ -28,6 +28,7 @@ menu multimedia folder {
 
 menu wine folder {
   prog hoyoplay - wine ".wine/drive_c/Program Files/HoYoPlay/launcher.exe"
+  prog ubisoft - wine ".wine/drive_c/Program Files (x86)/Ubisoft/Ubisoft Game Launcher/UbisoftConnect.exe"
   separator
   prog winetricks /usr/share/icons/hicolor/scalable/apps/winetricks.svg winetricks
 }
@@ -42,6 +43,5 @@ menu system folder {
   prog xfp /usr/share/icons/hicolor/scalable/apps/xfp.svg xfp
   prog xfw /usr/share/icons/hicolor/scalable/apps/xfw.svg xfw
 }
-
 separator
 menuprog "all apps" folder icewm-menu-fdo
