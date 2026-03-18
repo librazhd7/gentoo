@@ -38,6 +38,7 @@ media-fonts/noto
 media-fonts/noto-cjk
 media-fonts/noto-emoji
 media-gfx/blender
+media-gfx/feh
 media-gfx/freecad
 media-gfx/gimp
 media-libs/libva-intel-media-driver
@@ -59,6 +60,7 @@ sys-apps/fwupd
 sys-apps/keyutils
 sys-apps/mlocate
 sys-apps/pciutils
+sys-apps/pv
 sys-apps/systemd
 sys-apps/xdg-desktop-portal
 sys-auth/rtkit
@@ -109,6 +111,5 @@ rustup-init-gentoo --symlink
 #kde-plasma/discover
 #kde-plasma/plasma-meta
 #media-gfx/krita
-#sys-apps/pv
 #sys-block/partitionmanager
 #sys-boot/vboot-utils
