@@ -2,6 +2,7 @@ prog gentoo-wiki $HOME/.icewm/assets/gentoo-signet.svg google-chrome-stable "htt
 separator
 
 menu www folder {
+  prog daedalus - ~/.daedalus/mainnet/bin/daedalus
   prog chrome /usr/share/icons/hicolor/256x256/apps/google-chrome.png google-chrome-stable
 }
 
@@ -46,5 +47,6 @@ menu system folder {
   prog xfp /usr/share/icons/hicolor/scalable/apps/xfp.svg xfp
   prog xfw /usr/share/icons/hicolor/scalable/apps/xfw.svg xfw
 }
+
 separator
 menuprog "all apps" folder icewm-menu-fdo
