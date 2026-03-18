@@ -11,6 +11,7 @@ menu development folder {
 
 menu editing folder {
   prog blender /usr/share/icons/hicolor/scalable/apps/blender-5.0.svg blender-5.0
+  prog freecad /usr/share/icons/hicolor/64x64/apps/org.freecad.FreeCAD.png FreeCAD
   prog gimp /usr/share/icons/hicolor/scalable/apps/gimp.svg gimp
   prog libreoffice /usr/share/icons/hicolor/scalable/apps/libreoffice25.8-base.svg libreoffice-bin
 }
@@ -28,6 +29,7 @@ menu multimedia folder {
 
 menu wine folder {
   prog hoyoplay - wine ".wine/drive_c/Program Files/HoYoPlay/launcher.exe"
+  prog r*-launcher - wine ".wine/drive_c/Program Files/Rockstar Games/Launcher/Launcher.exe" 
   prog ubisoft - wine ".wine/drive_c/Program Files (x86)/Ubisoft/Ubisoft Game Launcher/UbisoftConnect.exe"
   separator
   prog winetricks /usr/share/icons/hicolor/scalable/apps/winetricks.svg winetricks
