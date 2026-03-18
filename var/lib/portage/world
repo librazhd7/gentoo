@@ -35,9 +35,10 @@ games-util/steam-launcher
 gui-wm/gamescope
 media-fonts/corefonts
 media-fonts/noto
+media-fonts/noto-cjk
 media-fonts/noto-emoji
-media-fonts/terminus-font
 media-gfx/blender
+media-gfx/freecad
 media-gfx/gimp
 media-libs/libva-intel-media-driver
 media-libs/noise-suppression-for-voice
