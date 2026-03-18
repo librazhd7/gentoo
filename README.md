@@ -312,7 +312,7 @@ chmod -c 0400 /etc/doas.conf
 > ```
 
 > [!TIP]
-> to add pre-existing user to a group: `usermod -aG <user>`        \
+> to add pre-existing user to a group: `usermod -aG <group> <user>` \
 > to delete the root password and disable login: `passwd -dl root`
 
 ---
