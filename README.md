@@ -27,6 +27,7 @@
 - [ ] tpm2
 - [x] uki
 - [x] wayland
+- [x] xorg
 - [x] zsh
 - [x] zswap
 
