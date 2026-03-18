@@ -28,10 +28,10 @@ menu multimedia folder {
 }
 
 menu wine folder {
-  prog gta-sa - wine "~/.wine/drive_c/Program Files (x86)/Rockstar Games/GTA San Andreas/gta_sa.exe"
-  prog hoyoplay - wine "~/.wine/drive_c/Program Files/HoYoPlay/launcher.exe"
-  prog rockstar-games-launcher - wine "~/.wine/drive_c/Program Files/Rockstar Games/Launcher/Launcher.exe" 
-  prog ubisoft-connect - wine "~/.wine/drive_c/Program Files (x86)/Ubisoft/Ubisoft Game Launcher/UbisoftConnect.exe"
+  prog gta-sa - wine ".wine/drive_c/Program Files (x86)/Rockstar Games/GTA San Andreas/gta_sa.exe"
+  prog hoyoplay - wine ".wine/drive_c/Program Files/HoYoPlay/launcher.exe"
+  prog rockstar-games-launcher - wine ".wine/drive_c/Program Files/Rockstar Games/Launcher/Launcher.exe" 
+  prog ubisoft-connect - wine ".wine/drive_c/Program Files (x86)/Ubisoft/Ubisoft Game Launcher/UbisoftConnect.exe"
   separator
   prog winetricks /usr/share/icons/hicolor/scalable/apps/winetricks.svg winetricks
 }
@@ -46,6 +46,5 @@ menu system folder {
   prog xfp /usr/share/icons/hicolor/scalable/apps/xfp.svg xfp
   prog xfw /usr/share/icons/hicolor/scalable/apps/xfw.svg xfw
 }
-
 separator
 menuprog "all apps" folder icewm-menu-fdo
