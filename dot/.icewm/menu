@@ -29,6 +29,7 @@ menu multimedia folder {
 }
 
 menu wine folder {
+  prog battle-net - wine ".wine/drive_c/Program Files (x86)/Battle.net/Battle.net.exe"
   prog gta-sa - wine ".wine/drive_c/Program Files (x86)/Rockstar Games/GTA San Andreas/gta_sa.exe"
   prog hoyoplay - wine ".wine/drive_c/Program Files/HoYoPlay/launcher.exe"
   prog rockstar-games-launcher - wine ".wine/drive_c/Program Files/Rockstar Games/Launcher/Launcher.exe" 
