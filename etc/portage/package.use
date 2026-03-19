@@ -18,8 +18,8 @@ media-libs/freetype           brotli
 media-libs/gegl               introspection
 media-libs/opensubdiv         tbb
 media-libs/opencv             features2d
-media-libs/vulkan-layers      abi_x86_32
-media-libs/vulkan-loader      abi_x86_32 layers
+media-libs/vulkan-layers      abi_x86_32 abi_x86_64
+media-libs/vulkan-loader      abi_x86_32 abi_x86_64 layers
 media-video/ffmpeg            lame nvenc opus theora vpx
 media-video/obs-studio        lua nvenc pipewire speex v4l
 media-video/pipewire          abi_x86_32 abi_x86_64 pipewire-alsa sound-server
@@ -40,12 +40,12 @@ sys-kernel/installkernel      dracut systemd systemd-boot uki
 sys-kernel/linux-firmware     initramfs
 sys-libs/glibc                hash-sysv-compat stack-realign
 x11-base/xorg-server          glamor suid
-x11-drivers/nvidia-drivers    abi_x86_32 kernel-open tools
+x11-drivers/nvidia-drivers    abi_x86_32 abi_x86_64 kernel-open tools
 
 # freecad
 net-libs/ngtcp gnutls
-app-arch/brotli abi_x86_32
-dev-libs/json-c abi_x86_32
+app-arch/brotli abi_x86_32 abi_x86_64
+dev-libs/json-c abi_x86_32 abi_x86_64
 sci-libs/opencascade json
 dev-python/pyside uitools
 
