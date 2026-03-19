@@ -31,7 +31,7 @@ net-misc/spice-gtk            usbredir
 sci-libs/fftw                 threads
 sci-physics/bullet            double-precision
 sys-apps/kmod                 lzma zlib
-sys-apps/systemd              abi_x86_32 boot
+sys-apps/systemd              abi_x86_32 abi_x86_64 boot
 sys-devel/gcc                 pgo lto
 sys-firmware/intel-microcode  initramfs
 sys-fs/lvm2                   lvm thin
