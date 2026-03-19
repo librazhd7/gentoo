@@ -42,6 +42,13 @@ sys-libs/glibc                hash-sysv-compat stack-realign
 x11-base/xorg-server          glamor suid
 x11-drivers/nvidia-drivers    abi_x86_32 kernel-open tools
 
+# freecad
+net-libs/ngtcp gnutls
+app-arch/brotli abi_x86_32
+dev-libs/json-c abi_x86_32
+sci-libs/opencascade json
+dev-python/pyside uitools
+
 # steam
 app-accessibility/at-spi2-core    abi_x86_32
 app-arch/bzip2                    abi_x86_32
@@ -113,7 +120,7 @@ media-libs/libwebp                abi_x86_32
 media-libs/mesa                   abi_x86_32
 media-libs/openal                 abi_x86_32
 media-libs/opus                   abi_x86_32
-media-libs/tiff                   abi_x86_32
+media-libs/tiff                   abi_x86_32 lzma zstd
 media-sound/lame                  abi_x86_32
 media-sound/mpg123-base           abi_x86_32
 net-dns/c-ares                    abi_x86_32
