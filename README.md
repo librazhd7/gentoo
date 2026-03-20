@@ -207,10 +207,16 @@ emerge --ask --depclean
 
 ### installing firmware[^11] [^12] [^13], bootloader[^14] and kernel[^15]
 ```
+mkdir -p /etc/cmdline.d
+ln -s /etc/kernel/cmdline /etc/cmdline.d/00-installkernel.conf
+
 emerge --ask sys-kernel/linux-firmware sys-kernel/linux-headers sys-firmware/intel-microcode sys-firmware/sof-firmware
 emerge --ask app-crypt/sbsigntools sys-apps/fwupd sys-apps/pciutils sys-apps/systemd sys-kernel/dkms sys-kernel/gentoo-sources sys-kernel/installkernel
 emerge --ask sys-block/io-scheduler-udev-rules sys-fs/cryptsetup sys-fs/dosfstools sys-fs/e2fsprogs sys-fs/lvm2 sys-fs/ntfs3g sys-fs/xfsprogs
+
+ln -sf /usr/src/linux-<version>-gentoo /usr/src/linux
 cd /usr/src/linux
+
 make localmodconfig
 make && make modules_install
 emerge --ask @module-rebuild
@@ -233,7 +239,7 @@ bootctl install
 
 > [!TIP]
 > for selecting kernel for the system and symlinking: cpu: `eselect kernel list` / `eselect kernel set <index>` \
-> to show the symlink of given directory: `ls -l /usr/src/linux`                                                \
+> to show symlink(s) of given directory: `ls -l <dir>`                                                \
 > to manually configure the kernel: `make nconfig`                                                              \
 > to manually configure the kernel using ncurses: `make menuconfig`                                             \
 > to regenerate initramfs images with kernel versions found on system: `dracut -f --regenerate-all`
