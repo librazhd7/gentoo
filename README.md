@@ -222,6 +222,7 @@ bootctl install
 >
 > modprobed-db store
 > modprobed-db recall
+> make LSMOD=$HOME/.config/modprobed.db localmodconfig
 > ```
 
 > [!TIP]
