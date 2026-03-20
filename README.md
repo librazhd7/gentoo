@@ -228,7 +228,8 @@ bootctl install
 > [!TIP]
 > for selecting kernel for the system and symlinking: cpu: `eselect kernel list` / `eselect kernel set <index>` \
 > to show the symlink of given directory: `ls -l /usr/src/linux`                                                \
-> to manually configure the kernel: `make nconfig`
+> to manually configure the kernel: `make nconfig`                                                              \
+> to regenerate initramfs images with kernel versions found on system: `dracut -f --regenerate-all`
 
 ---
 
