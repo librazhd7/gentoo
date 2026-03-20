@@ -129,8 +129,8 @@ mkfs.xfs /dev/mapper/tux-root
 mkdir -p /mnt/gentoo
 mount /dev/mapper/tux-root /mnt/gentoo
 
-mkdir -p /mnt/gentoo/efi
-mount /dev/nvme0n1p1 /mnt/gentoo/efi
+mkdir -p /mnt/gentoo/boot
+mount /dev/nvme0n1p1 /mnt/gentoo/boot
 ```
 
 ### configuring network
