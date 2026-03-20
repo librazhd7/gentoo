@@ -1,5 +1,10 @@
 # ![](https://assets.gentoo.org/tyrian/v1/site-logo.svg)
 
+### index
+- [why](#why)
+- [features](#features)
+- [system](#system)
+
 ### why
 * keep track of all changes made to my system and resources used along the way
 * keep an online/offline copy of the repository on standby as reference
