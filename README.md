@@ -197,7 +197,7 @@ emerge --ask --depclean
 > to select timezone for the system: `ln -sf ../usr/share/zoneinfo/Europe/Stockholm /etc/localtime` \
 > to select profile for the system: `eselect profile list` / `eselect profile set <index>`          \
 > to select locale for the system: `eselect locale list` / `eselect locale set <index>`             \
-> to generate all locales specified in the /etc/locale.gen file: `locale-gen`                       \
+> to generate all locales specified in the /etc/locale.gen file: `locale-gen`
 
 
 ### installing firmware[^11] [^12] [^13], bootloader[^14] and kernel[^15]
@@ -208,6 +208,7 @@ emerge --ask sys-block/io-scheduler-udev-rules sys-fs/cryptsetup sys-fs/dosfstoo
 cd /usr/src/linux
 make localmodconfig
 make && make modules_install
+emerge --ask @module-rebuild
 make install
 bootctl install
 ```
@@ -229,6 +230,7 @@ bootctl install
 > for selecting kernel for the system and symlinking: cpu: `eselect kernel list` / `eselect kernel set <index>` \
 > to show the symlink of given directory: `ls -l /usr/src/linux`                                                \
 > to manually configure the kernel: `make nconfig`                                                              \
+> to manually configure the kernel using ncurses: `make menuconfig`                                             \
 > to regenerate initramfs images with kernel versions found on system: `dracut -f --regenerate-all`
 
 ---
