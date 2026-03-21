@@ -26,7 +26,7 @@ media-libs/vulkan-loader      layers
 media-plugins/alsa-plugins    ffmpeg
 media-video/pipewire          pipewire-alsa
 sys-boot/limine               -* uefi-x86-64
-sys-devel/gcc                 pgo lto
+sys-devel/gcc                 lto
 sys-firmware/intel-microcode  initramfs
 sys-fs/lvm2                   lvm thin
 sys-kernel/gentoo-sources     symlink
