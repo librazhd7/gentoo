@@ -71,7 +71,7 @@ sys-fs/lvm2
 sys-fs/ntfs3g
 sys-fs/xfsprogs
 sys-kernel/dkms
-sys-kernel/gentoo-kernel-bin
+sys-kernel/gentoo-kernel
 sys-kernel/installkernel
 sys-kernel/linux-firmware
 sys-kernel/linux-headers
