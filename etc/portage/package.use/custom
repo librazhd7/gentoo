@@ -31,5 +31,5 @@ sys-kernel/gentoo-sources     symlink
 sys-kernel/installkernel      dracut systemd uki
 sys-kernel/linux-firmware     initramfs
 sys-libs/glibc                hash-sysv-compat stack-realign
-x11-base/xorg-server          glamor suid
+x11-base/xorg-server          glamor
 x11-drivers/nvidia-drivers    kernel-open tools
