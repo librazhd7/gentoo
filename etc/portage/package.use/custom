@@ -11,7 +11,8 @@
 
 # user
 app-emulation/libvirt         fuse macvtap numa pcap vepa virt-network qemu
-app-emulation/qemu            QEMU_SOFTMMU_TARGETS: x86_64 QEMU_USER_TARGETS: x86_64
+media-video/obs-studio        lua pulseaudio speex v4l
+app-emulation/qemu            QEMU_USER_TARGETS: x86_64 QEMU_SOFTMMU_TARGETS: x86_64
 app-emulation/wine-staging    wow64
 
 # system
