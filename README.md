@@ -46,11 +46,11 @@
 
 ---
 
-### fdisk[^1] (gpt)[^2]
+### fdisk[^1] (gpt)[^2] (outdated)
 | device           | alloc      | type      | fs    |
 |------------------|------------|-----------|-------|
-| `/dev/nvme0n1p1` | 1gb        | efi (1)   | fat32 |
-| `/dev/nvme0n1p2` | 475.92gb   | lvm (44)  | xfs   |
+| `/dev/nvme0n1p1` | 2gb        | efi (1)   | fat32 |
+| `/dev/nvme0n1p2` | 474.92gb   | lvm (44)  | xfs   |
 
 > [!TIP]
 > to locate/print block device attributes: `blkid`                            \
@@ -212,7 +212,7 @@ ln -s /etc/kernel/cmdline /etc/cmdline.d/00-installkernel.conf
 
 emerge --ask sys-kernel/linux-firmware sys-kernel/linux-headers sys-firmware/intel-microcode sys-firmware/sof-firmware
 emerge --ask app-crypt/sbsigntools sys-apps/fwupd sys-apps/pciutils sys-apps/systemd sys-kernel/dkms sys-kernel/gentoo-sources sys-kernel/installkernel
-emerge --ask sys-block/io-scheduler-udev-rules sys-fs/cryptsetup sys-fs/dosfstools sys-fs/e2fsprogs sys-fs/lvm2 sys-fs/ntfs3g sys-fs/xfsprogs
+emerge --ask sys-block/io-scheduler-udev-rules sys-fs/dosfstools sys-fs/e2fsprogs sys-fs/lvm2 sys-fs/ntfs3g sys-fs/xfsprogs
 
 ln -sf /usr/src/linux-<version>-gentoo /usr/src/linux
 cd /usr/src/linux
@@ -225,8 +225,8 @@ bootctl install
 ```
 
 > [!NOTE]
-> `modprobed-db` is useful for building a minimal kernel with `make localmodconfig` \
-> `modprobed-db` works best by using the distribution kernel for about a month and have the utility run in the background so it can have time to learn what modules the system needs:
+> `modprobed-db` is useful for building a minimal kernel with `make localmodconfig` and, \
+> works best by using the distribution kernel for about a month and have the utility run in the background so it can have time to learn what modules the system needs:
 > ```
 > emerge --ask sys-kernel/gentoo-kernel-bin
 > emerge --config sys-kernel/gentoo-kernel-bin
@@ -238,10 +238,10 @@ bootctl install
 > ```
 
 > [!TIP]
-> for selecting kernel for the system and symlinking: cpu: `eselect kernel list` / `eselect kernel set <index>` \
-> to show symlink(s) of given directory: `ls -l <dir>`                                                \
-> to manually configure the kernel: `make nconfig`                                                              \
-> to manually configure the kernel using ncurses: `make menuconfig`                                             \
+> for selecting kernel and symlinking: cpu: `eselect kernel list` / `eselect kernel set <index>`    \
+> to show symlink(s) of given directory: `ls -l <dir>`                                              \
+> to manually configure the kernel: `make nconfig`                                                  \
+> to manually configure the kernel using ncurses: `make menuconfig`                                 \
 > to regenerate initramfs images with kernel versions found on system: `dracut -f --regenerate-all`
 
 ---
@@ -253,7 +253,7 @@ bootctl install
 | `bluetooth.service (#)`                | ~~`pulseaudio.socket ($)`~~ | |
 | `cups.service (#)`                     | `virtstoraged.socket (#)`   | |
 | `dkms.service (#)`                     | |
-| `dnsmasq.service (#)`                  | |
+| ~~`dnsmasq.service (#)`~~              | |
 | `getty@tty1.service (#)`               | |
 | `libvirtd.service (#)`                 | |
 | `lvm2-monitor.service (#)`             | |
@@ -263,7 +263,7 @@ bootctl install
 | ~~`pulseaudio.service ($)`~~           | |
 | `smbd.service (#)`                     | |
 | `sshd.service (#)`                     | |
-| `systemd-boot-update.service (#)`      | |
+| ~~`systemd-boot-update.service (#)`~~  | |
 | ~~`systemd-modules-load.service (#)`~~ | |
 | `systemd-networkd.service (#)`         | |
 | `systemd-timesyncd.service (#)`        | |
