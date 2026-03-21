@@ -25,6 +25,7 @@ app-admin/doas                persist
 media-libs/vulkan-loader      layers
 media-plugins/alsa-plugins    ffmpeg
 media-video/pipewire          pipewire-alsa
+sys-apps/systemd              boot
 sys-devel/gcc                 lto
 sys-firmware/intel-microcode  initramfs
 sys-fs/lvm2                   lvm thin
