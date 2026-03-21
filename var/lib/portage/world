@@ -1,6 +1,6 @@
 app-admin/doas
 app-admin/eclean-kernel
-#app-crypt/sbsigntools
+app-crypt/sbsigntools
 app-editors/nano
 app-editors/vim
 app-emulation/libvirt
@@ -74,7 +74,7 @@ sys-fs/ntfs3g
 sys-fs/xfsprogs
 sys-kernel/dkms
 sys-kernel/gentoo-kernel-bin
-sys-kernel/gentoo-sources
+#sys-kernel/gentoo-sources
 sys-kernel/installkernel
 sys-kernel/linux-firmware
 sys-kernel/linux-headers
@@ -95,7 +95,7 @@ x11-misc/xfe
 x11-terms/kitty
 x11-wm/icewm
 
-rustup-init-gentoo --symlink
+#rustup-init-gentoo --symlink
 #kde-apps/ark
 #kde-apps/dolphin
 #kde-apps/gwenview
