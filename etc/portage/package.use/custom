@@ -22,7 +22,8 @@ net-print/hplip               hpcups scanner snmp
 # system
 app-admin/doas                persist
 media-libs/vulkan-loader      layers
-media-video/pipewire          pipewire-alsa sound-server
+media-plugins/alsa-plugins    ffmpeg
+media-video/pipewire          pipewire-alsa
 sys-boot/limine               -* uefi-x86-64
 sys-devel/gcc                 pgo lto
 sys-firmware/intel-microcode  initramfs
