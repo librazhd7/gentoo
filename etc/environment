@@ -24,7 +24,7 @@ GDK_BACKEND=x11,wayland
 
 GLFW_IM_MODULE=ibus
 
-LIBVA_DRIVER_NAME=nvidia
+LIBVA_DRIVER_NAME=nvidia #ihd
 VDPAU_DRIVER=nvidia
 
 SDL_AUDIODRIVER=pipewire
