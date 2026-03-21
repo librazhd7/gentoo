@@ -19,7 +19,6 @@ app-shells/zsh
 app-shells/zsh-completions
 dev-java/openjdk-bin
 dev-lang/rust-bin
-dev-libs/level-zero
 dev-libs/intel-compute-runtime
 dev-util/android-tools
 dev-util/geany
