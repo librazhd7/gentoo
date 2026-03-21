@@ -14,6 +14,10 @@ app-emulation/libvirt         fuse macvtap numa pcap vepa virt-network qemu
 media-video/obs-studio        lua pulseaudio speex v4l
 app-emulation/qemu            QEMU_USER_TARGETS: x86_64 QEMU_SOFTMMU_TARGETS: x86_64
 app-emulation/wine-staging    wow64
+media-gfx/sane-backends       hp
+net-fs/samba                  cups
+net-print/cups                usb zeroconf
+net-print/hplip               hpcups scanner snmp
 
 # system
 app-admin/doas                persist
