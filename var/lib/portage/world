@@ -18,7 +18,6 @@ app-shells/gentoo-zsh-completions
 app-shells/zsh
 app-shells/zsh-completions
 dev-java/openjdk-bin
-dev-lang/rust-bin
 dev-libs/intel-compute-runtime
 dev-util/android-tools
 dev-util/geany
@@ -47,6 +46,7 @@ media-plugins/alsa-plugins
 media-sound/alsa-utils
 media-video/libva-utils
 media-video/obs-studio
+media-video/pipewire
 media-video/vlc
 media-video/wireplumber
 net-fs/samba
