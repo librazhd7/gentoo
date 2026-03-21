@@ -25,13 +25,12 @@ app-admin/doas                persist
 media-libs/vulkan-loader      layers
 media-plugins/alsa-plugins    ffmpeg
 media-video/pipewire          pipewire-alsa
-sys-boot/limine               -* uefi-x86-64
 sys-devel/gcc                 lto
 sys-firmware/intel-microcode  initramfs
 sys-fs/lvm2                   lvm thin
 sys-kernel/gentoo-sources     symlink
-sys-kernel/installkernel      dracut systemd uki
+sys-kernel/installkernel      dracut uki
 sys-kernel/linux-firmware     initramfs
 sys-libs/glibc                hash-sysv-compat stack-realign
-x11-base/xorg-server          glamor minimal
+x11-base/xorg-server          glamor
 x11-drivers/nvidia-drivers    kernel-open tools
