@@ -7,9 +7,9 @@ if [ -z "$XDG_RUNTIME_DIR" ]; then
   fi
 fi
 
-if [ ${LOGNAME} ]; then
-  export XDG_CACHE_HOME="/run/user/${UID}/cache"
-fi
+#if [ ${LOGNAME} ]; then
+#  export XDG_CACHE_HOME="/run/user/${UID}/cache"
+#fi
 
 if [ -z "$DISPLAY" ] && [ "$XDG_VTNR" = 1 ]; then
   exec startx
