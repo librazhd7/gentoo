@@ -1,4 +1,5 @@
 prog gentoo-wiki $HOME/.icewm/assets/gentoo-signet.svg google-chrome-stable "https://wiki.gentoo.org/wiki/"
+prog gentoo-forums $HOME/.icewm/assets/gentoo-signet.svg google-chrome-stable "https://forums.gentoo.org/index.php"
 separator
 
 menu www folder {
