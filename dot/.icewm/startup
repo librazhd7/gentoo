@@ -3,3 +3,4 @@
 xcompmgr -c &
 nm-applet &
 blueman-applet &
+idesk &
