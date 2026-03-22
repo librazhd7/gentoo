@@ -3,6 +3,8 @@ TaskBarShowMailboxStatus=0
 TaskBarShowCPUStatus=0
 TaskBarShowMEMStatus=0
 TaskBarShowNetStatus=0
+TaskBarShowShowDesktopButton=0
+TaskBarShowWindowListMenu=0
 TaskBarWorkspacesLimit="2"
 TaskBarUseMouseWheel=1
 
@@ -14,7 +16,7 @@ TimeFormat="TZ=Europe/Stockholm %T"
 #TimeFormatAlt=""
 #DateFormat="%c"
 
-#ShowSettingsMenu=1
+#ShowSettingsMenu=0
 ShowWindowList=0
 
 WorkspaceNames=" 1 ", " 2 "
