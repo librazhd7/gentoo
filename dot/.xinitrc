@@ -32,6 +32,13 @@ if [ -d "$xinitdir"/xinitrc.d ] ; then
     unset f
 fi
 
+if [[ -z "${DBUS_SESSION_BUS_ADDRESS}" ]];
+then
+    eval $(dbus-launch --sh-syntax --exit-with-session)
+fi
+
+export $(gnome-keyring-daemon --start --components=pkcs11,secrets,ssh,gpg)
+
 xrandr --setprovideroutputsource modesetting NVIDIA-0
 xrandr --auto
-exec dbus-launch --sh-syntax --exit-with-session icewm-session
+icewm-session
