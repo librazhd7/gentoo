@@ -241,11 +241,12 @@ cp -v /usr/share/limine/BOOTX64.EFI /boot/EFI/BOOT/
 > ```
 
 > [!TIP]
-> for selecting kernel and symlinking: cpu: `eselect kernel list` / `eselect kernel set <index>`    \
+> for selecting kernel and symlinking: `eselect kernel list` / `eselect kernel set <index>`         \
 > to show symlink(s) of given directory: `ls -l <dir>`                                              \
 > to manually configure the kernel: `make nconfig`                                                  \
 > to manually configure the kernel using ncurses: `make menuconfig`                                 \
-> to regenerate initramfs images with kernel versions found on system: `dracut -f --regenerate-all`
+> to regenerate initramfs images with kernel versions found on system: `dracut -f --regenerate-all` \
+> to regenerate initramfs image with current kernel version: `dracut -f --kver $(uname -r)`
 
 ---
 
@@ -268,7 +269,7 @@ cp -v /usr/share/limine/BOOTX64.EFI /boot/EFI/BOOT/
 | `sshd.service (#)`                     | |
 | ~~`systemd-boot-update.service (#)`~~  | |
 | ~~`systemd-modules-load.service (#)`~~ | |
-| `systemd-networkd.service (#)`         | |
+| ~~`systemd-networkd.service (#)`~~     | |
 | `systemd-timesyncd.service (#)`        | |
 | `thermald.service (#)`                 | |
 | `tlp.service (#)`                      | |
