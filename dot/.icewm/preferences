@@ -1,0 +1,23 @@
+TaskBarShowMailboxStatus=0
+#TaskBarShowWorkspaces=0
+TaskBarShowCPUStatus=0
+TaskBarShowMEMStatus=0
+TaskBarShowNetStatus=0
+TaskBarWorkspacesLimit="2"
+TaskBarUseMouseWheel=1
+
+PagerShowPreview=0
+#PagerShowWindowIcons=0
+#PagerShowLabels=0
+
+TimeFormat="TZ=Europe/Stockholm %T"
+#TimeFormatAlt=""
+#DateFormat="%c"
+
+#ShowSettingsMenu=1
+ShowWindowList=0
+
+WorkspaceNames=" 1 ", " 2 "
+
+TaskBarClockLeds=1
+#TrayDrawBevel=1
