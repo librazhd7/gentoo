@@ -36,7 +36,6 @@ media-fonts/noto
 media-fonts/noto-cjk
 media-fonts/noto-emoji
 media-gfx/blender
-media-gfx/feh
 media-gfx/freecad
 media-gfx/gimp
 media-libs/libva-intel-media-driver
@@ -88,6 +87,7 @@ x11-apps/xrandr
 x11-base/xorg-server
 x11-base/xwayland
 x11-drivers/nvidia-drivers
+x11-misc/idesk
 x11-misc/prime-run
 x11-misc/wmctrl
 x11-misc/xcompmgr
