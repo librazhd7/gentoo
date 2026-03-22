@@ -15,7 +15,10 @@ menu editing folder {
   prog blender /usr/share/icons/hicolor/scalable/apps/blender-5.0.svg blender-5.0
   prog freecad /usr/share/icons/hicolor/64x64/apps/org.freecad.FreeCAD.png FreeCAD
   prog gimp /usr/share/icons/hicolor/scalable/apps/gimp.svg gimp
-  prog libreoffice /usr/share/icons/hicolor/scalable/apps/libreoffice25.8-base.svg libreoffice-bin
+  separator
+  menu libreoffice-suite folder {
+    prog libreoffice /usr/share/icons/hicolor/scalable/apps/libreoffice25.8-base.svg libreoffice-bin
+  }
 }
 
 menu gaming folder {
@@ -43,7 +46,7 @@ menu wine folder {
 menu system folder {
   prog kitty /usr/share/icons/hicolor/scalable/apps/kitty.svg kitty
   prog mcontrolcenter /usr/share/icons/hicolor/scalable/apps/mcontrolcenter.svg mcontrolcenter
-  prog nvidia-xserver - nvidia-settings
+  prog nvidia-xserver - nvidia-settings --load-config-only
   separator
   prog xfe /usr/share/icons/hicolor/scalable/apps/xfe.svg xfe
   prog xfi /usr/share/icons/hicolor/scalable/apps/xfi.svg xfi
