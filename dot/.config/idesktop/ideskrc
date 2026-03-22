@@ -8,27 +8,27 @@ table Config
   BackColorTip: #FFFFFF
   PaddingX: 10
   PaddingY: 10
-  Transparency: 75
+  Transparency: 100
   HighContrast: true
   Locked: false
-  Shadow: false
+  Shadow: true
   ShadowColor: #0006FA
-  ShadowX: 2
-  ShadowY: 2
-  SnapShadow: true
+  ShadowX: 1
+  ShadowY: 1
+  SnapShadow: false
   IconSnap: true
   SnapWidth: 10
   SnapHeight: 10
   SnapOrigin: BottomRight
   SnapShadowTrans: 300
-  CaptionOnHover: true
+  CaptionOnHover: false
   Bold: true
   ToolTip.FontSize: 11
   ToolTip.FontName: gothic
   ToolTip.ForeColor: #0000FF
   ToolTip.BackColor: #FFFFFF
-  ToolTip.CaptionOnHover: true
-  ToolTip.CaptionPlacement: Right
+  ToolTip.CaptionOnHover: false
+  ToolTip.CaptionPlacement: bottom
   #Background.Delay: 0
   #Background.Source:
   #Background.File:
