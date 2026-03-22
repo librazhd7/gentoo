@@ -30,12 +30,13 @@ menu multimedia folder {
 }
 
 menu wine folder {
-  prog battle-net - wine ".wine/drive_c/Program Files (x86)/Battle.net/Battle.net.exe"
+  prog battle-net $HOME/.local/share/icons/hicolor/256x256/apps/FC6C_Battle.net.0.png wine ".wine/drive_c/Program Files (x86)/Battle.net/Battle.net.exe"
   prog gta-sa - wine ".wine/drive_c/Program Files (x86)/Rockstar Games/GTA San Andreas/gta_sa.exe"
-  prog hoyoplay - wine ".wine/drive_c/Program Files/HoYoPlay/launcher.exe"
-  prog rockstar-games-launcher - wine ".wine/drive_c/Program Files/Rockstar Games/Launcher/Launcher.exe" 
-  prog ubisoft-connect - wine ".wine/drive_c/Program Files (x86)/Ubisoft/Ubisoft Game Launcher/UbisoftConnect.exe"
+  prog hoyoplay $HOME/.local/share/icons/hicolor/256x256/apps/B0B4_launcher.0.png wine ".wine/drive_c/Program Files/HoYoPlay/launcher.exe"
+  prog rockstar-games-launcher $HOME/.local/share/icons/hicolor/256x256/apps/BA95_Launcher.0.png wine ".wine/drive_c/Program Files/Rockstar Games/Launcher/Launcher.exe" 
+  prog ubisoft-connect $HOME/.local/share/icons/hicolor/256x256/apps/F24A_UbisoftConnect.0.png wine ".wine/drive_c/Program Files (x86)/Ubisoft/Ubisoft Game Launcher/UbisoftConnect.exe"
   separator
+  prog winecfg /usr/share/icons/hicolor/scalable/apps/wine-winecfg.svg winecfg
   prog winetricks /usr/share/icons/hicolor/scalable/apps/winetricks.svg winetricks
 }
 
