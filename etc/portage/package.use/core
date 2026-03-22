@@ -20,11 +20,26 @@ net-fs/samba                  cups
 net-print/cups                usb zeroconf
 net-print/hplip               hpcups scanner snmp
 
+# deps
+dev-python/pyside uitools
+media-libs/freetype brotli
+media-libs/opensubdiv tbb
+media-libs/tiff zstd lzma
+media-video/ffmpeg opus vpx lame theora
+net-dns/avahi python
+net-dns/dnsmasq script
+net-libs/gnutls tools pkcs11
+media-libs/libheif gui tools
+net-libs/ngtcp2 gnutls
+sci-physics/bullet double-precision
+sci-libs/opencascade json
+sci-libs/fftw threads
+
 # system
 app-admin/doas                persist
 media-libs/vulkan-loader      layers
 media-plugins/alsa-plugins    ffmpeg
-media-video/pipewire          pipewire-alsa
+media-video/pipewire          pipewire-alsa sound-server
 sys-apps/systemd              boot
 sys-devel/gcc                 lto
 sys-firmware/intel-microcode  initramfs
