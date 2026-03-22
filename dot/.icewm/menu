@@ -1,58 +1,60 @@
-prog gentoo-wiki $HOME/.icewm/assets/gentoo-signet.svg google-chrome-stable "https://wiki.gentoo.org/wiki/"
-prog gentoo-forums $HOME/.icewm/assets/gentoo-signet.svg google-chrome-stable "https://forums.gentoo.org/index.php"
+prog "gentoo-wiki" $HOME/.icewm/assets/gentoo-signet.svg google-chrome-stable "https://wiki.gentoo.org/wiki/"
+prog "gentoo-forums" $HOME/.icewm/assets/gentoo-signet.svg google-chrome-stable "https://forums.gentoo.org/index.php"
 separator
 
-menu www folder {
-  prog daedalus - ~/.daedalus/mainnet/bin/daedalus
-  prog chrome /usr/share/icons/hicolor/256x256/apps/google-chrome.png google-chrome-stable
+menu "WWW" folder {
+  prog "Daedalus" - ~/.daedalus/mainnet/bin/daedalus
+  prog "Google Chrome" /usr/share/icons/hicolor/256x256/apps/google-chrome.png google-chrome-stable
 }
 
-menu development folder {
-  prog geany /usr/share/icons/hicolor/scalable/apps/geany.svg geany
+menu "Development" folder {
+  prog Geany /usr/share/icons/hicolor/scalable/apps/geany.svg geany
 }
 
-menu editing folder {
-  prog blender /usr/share/icons/hicolor/scalable/apps/blender-5.0.svg blender-5.0
-  prog freecad /usr/share/icons/hicolor/64x64/apps/org.freecad.FreeCAD.png FreeCAD
-  prog gimp /usr/share/icons/hicolor/scalable/apps/gimp.svg gimp
+menu "Editing" folder {
+  prog "Blender" /usr/share/icons/hicolor/scalable/apps/blender-5.0.svg blender-5.0
+  prog "FreeCAD" /usr/share/icons/hicolor/64x64/apps/org.freecad.FreeCAD.png FreeCAD
+  prog "GIMP" /usr/share/icons/hicolor/scalable/apps/gimp.svg gimp
   separator
-  menu libreoffice-suite folder {
-    prog libreoffice /usr/share/icons/hicolor/scalable/apps/libreoffice25.8-base.svg libreoffice-bin
+  menu "LibreOffice Suite" folder {
+    prog "LibreOffice" /usr/share/icons/hicolor/scalable/apps/libreoffice25.8-base.svg libreoffice-bin
   }
 }
 
-menu gaming folder {
-  prog minecraft /usr/share/icons/hicolor/scalable/apps/minecraft-launcher.svg minecraft-launcher
-  prog steam /usr/share/icons/hicolor/256x256/apps/steam.png steam
-  prog supertux2 /usr/share/icons/hicolor/scalable/apps/supertux2.svg supertux2
+menu "Gaming" folder {
+  prog "Minecraft" /usr/share/icons/hicolor/scalable/apps/minecraft-launcher.svg minecraft-launcher
+  prog "Steam" /usr/share/icons/hicolor/256x256/apps/steam.png steam
+  prog "SuperTux 2" /usr/share/icons/hicolor/scalable/apps/supertux2.svg supertux2
 }
 
-menu multimedia folder {
-  prog obs /usr/share/icons/hicolor/512x512/apps/com.obsproject.Studio.png obs
-  prog vlc /usr/share/icons/hicolor/256x256/apps/vlc.png vlc
+menu "Multimedia" folder {
+  prog "OBS Studio" /usr/share/icons/hicolor/512x512/apps/com.obsproject.Studio.png obs
+  prog "VLC Media Player" /usr/share/icons/hicolor/256x256/apps/vlc.png vlc
 }
 
-menu wine folder {
-  prog battle-net $HOME/.local/share/icons/hicolor/256x256/apps/FC6C_Battle.net.0.png wine ".wine/drive_c/Program Files (x86)/Battle.net/Battle.net.exe"
-  prog gta-sa - wine ".wine/drive_c/Program Files (x86)/Rockstar Games/GTA San Andreas/gta_sa.exe"
-  prog hoyoplay $HOME/.local/share/icons/hicolor/256x256/apps/B0B4_launcher.0.png wine ".wine/drive_c/Program Files/HoYoPlay/launcher.exe"
-  prog rockstar-games-launcher $HOME/.local/share/icons/hicolor/256x256/apps/BA95_Launcher.0.png wine ".wine/drive_c/Program Files/Rockstar Games/Launcher/Launcher.exe" 
-  prog ubisoft-connect $HOME/.local/share/icons/hicolor/256x256/apps/F24A_UbisoftConnect.0.png wine ".wine/drive_c/Program Files (x86)/Ubisoft/Ubisoft Game Launcher/UbisoftConnect.exe"
+menu "Wine" folder {
+  prog "Battle.net" $HOME/.local/share/icons/hicolor/256x256/apps/FC6C_Battle.net.0.png wine ".wine/drive_c/Program Files (x86)/Battle.net/Battle.net.exe"
+  prog "gta-sa" - wine ".wine/drive_c/Program Files (x86)/Rockstar Games/GTA San Andreas/gta_sa.exe"
+  prog "HoYoPlay" $HOME/.local/share/icons/hicolor/256x256/apps/B0B4_launcher.0.png wine ".wine/drive_c/Program Files/HoYoPlay/launcher.exe"
+  prog "Rockstar Games Launcher" $HOME/.local/share/icons/hicolor/256x256/apps/BA95_Launcher.0.png wine ".wine/drive_c/Program Files/Rockstar Games/Launcher/Launcher.exe" 
+  prog "Ubisoft Connect" $HOME/.local/share/icons/hicolor/256x256/apps/F24A_UbisoftConnect.0.png wine ".wine/drive_c/Program Files (x86)/Ubisoft/Ubisoft Game Launcher/UbisoftConnect.exe"
   separator
-  prog winecfg /usr/share/icons/hicolor/scalable/apps/wine-winecfg.svg winecfg
-  prog winetricks /usr/share/icons/hicolor/scalable/apps/winetricks.svg winetricks
+  prog "winecfg" /usr/share/icons/hicolor/scalable/apps/wine-winecfg.svg winecfg
+  prog "winetricks" /usr/share/icons/hicolor/scalable/apps/winetricks.svg winetricks
 }
 
-menu system folder {
-  prog kitty /usr/share/icons/hicolor/scalable/apps/kitty.svg kitty
-  prog mcontrolcenter /usr/share/icons/hicolor/scalable/apps/mcontrolcenter.svg mcontrolcenter
-  prog nvidia-xserver - nvidia-settings --load-config-only
+menu "System" folder {
+  menu "Utility" folder {
+  prog "kitty" /usr/share/icons/hicolor/scalable/apps/kitty.svg kitty
+  prog "MControlCenter" /usr/share/icons/hicolor/scalable/apps/mcontrolcenter.svg mcontrolcenter
+  prog "NVIDIA Control Panel" - nvidia-settings --load-config-only
+  }
   separator
-  prog xfe /usr/share/icons/hicolor/scalable/apps/xfe.svg xfe
-  prog xfi /usr/share/icons/hicolor/scalable/apps/xfi.svg xfi
-  prog xfp /usr/share/icons/hicolor/scalable/apps/xfp.svg xfp
-  prog xfw /usr/share/icons/hicolor/scalable/apps/xfw.svg xfw
+  prog "Xfe" /usr/share/icons/hicolor/scalable/apps/xfe.svg xfe
+  prog "Xfi" /usr/share/icons/hicolor/scalable/apps/xfi.svg xfi
+  prog "Xfp" /usr/share/icons/hicolor/scalable/apps/xfp.svg xfp
+  prog "Xfw" /usr/share/icons/hicolor/scalable/apps/xfw.svg xfw
 }
 
 separator
-menuprog "all apps" folder icewm-menu-fdo
+menuprog "Miscellaneous" folder icewm-menu-fdo
