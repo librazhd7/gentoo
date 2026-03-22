@@ -4,3 +4,4 @@ xcompmgr -c &
 nm-applet &
 blueman-applet &
 idesk &
+icewmbg -a 1 -i $HOME/.icewm/assets/.png
