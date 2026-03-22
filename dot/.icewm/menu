@@ -3,7 +3,7 @@ prog "gentoo-forums" $HOME/.icewm/assets/gentoo-signet.svg google-chrome-stable 
 separator
 
 menu "WWW" folder {
-  prog "Daedalus" - ~/.daedalus/mainnet/bin/daedalus
+  prog "Daedalus mainnet" $HOME/.daedalus/mainnet/share/icon_large.png ~/.daedalus/mainnet/bin/daedalus
   prog "Google Chrome" /usr/share/icons/hicolor/256x256/apps/google-chrome.png google-chrome-stable
 }
 
@@ -14,10 +14,17 @@ menu "Development" folder {
 menu "Editing" folder {
   prog "Blender" /usr/share/icons/hicolor/scalable/apps/blender-5.0.svg blender-5.0
   prog "FreeCAD" /usr/share/icons/hicolor/64x64/apps/org.freecad.FreeCAD.png FreeCAD
-  prog "GIMP" /usr/share/icons/hicolor/scalable/apps/gimp.svg gimp
+  prog "GNU Image Manipulation Program" /usr/share/icons/hicolor/scalable/apps/gimp.svg gimp
   separator
   menu "LibreOffice Suite" folder {
-    prog "LibreOffice" /usr/share/icons/hicolor/scalable/apps/libreoffice25.8-base.svg libreoffice-bin
+    prog "LibreOffice" /usr/share/icons/hicolor/scalable/apps/libreoffice25.8-basic.svg libreoffice-bin
+    prog "LibreOffice Base" /usr/share/icons/hicolor/scalable/apps/libreoffice25.8-base.svg libreoffice-bin --base
+    prog "LibreOffice Calc" /usr/share/icons/hicolor/scalable/apps/libreoffice25.8-calc.svg libreoffice-bin --calc
+    prog "LibreOffice Chart" /usr/share/icons/hicolor/scalable/apps/libreoffice25.8-chart.svg libreoffice-bin --chart
+    prog "LibreOffice Draw" /usr/share/icons/hicolor/scalable/apps/libreoffice25.8-draw.svg libreoffice-bin --draw
+    prog "LibreOffice Impress" /usr/share/icons/hicolor/scalable/apps/libreoffice25.8-impress.svg libreoffice-bin --impress
+    prog "LibreOffice Math" /usr/share/icons/hicolor/scalable/apps/libreoffice25.8-math.svg libreoffice-bin --math
+    prog "LibreOffice Writer" /usr/share/icons/hicolor/scalable/apps/libreoffice25.8-writer.svg libreoffice-bin --writer
   }
 }
 
@@ -29,12 +36,12 @@ menu "Gaming" folder {
 
 menu "Multimedia" folder {
   prog "OBS Studio" /usr/share/icons/hicolor/512x512/apps/com.obsproject.Studio.png obs
-  prog "VLC Media Player" /usr/share/icons/hicolor/256x256/apps/vlc.png vlc
+  prog "VLC media player" /usr/share/icons/hicolor/256x256/apps/vlc.png vlc
 }
 
 menu "Wine" folder {
   prog "Battle.net" $HOME/.local/share/icons/hicolor/256x256/apps/FC6C_Battle.net.0.png wine ".wine/drive_c/Program Files (x86)/Battle.net/Battle.net.exe"
-  prog "gta-sa" - wine ".wine/drive_c/Program Files (x86)/Rockstar Games/GTA San Andreas/gta_sa.exe"
+  prog "GTA San Andreas" - wine ".wine/drive_c/Program Files (x86)/Rockstar Games/GTA San Andreas/gta_sa.exe"
   prog "HoYoPlay" $HOME/.local/share/icons/hicolor/256x256/apps/B0B4_launcher.0.png wine ".wine/drive_c/Program Files/HoYoPlay/launcher.exe"
   prog "Rockstar Games Launcher" $HOME/.local/share/icons/hicolor/256x256/apps/BA95_Launcher.0.png wine ".wine/drive_c/Program Files/Rockstar Games/Launcher/Launcher.exe" 
   prog "Ubisoft Connect" $HOME/.local/share/icons/hicolor/256x256/apps/F24A_UbisoftConnect.0.png wine ".wine/drive_c/Program Files (x86)/Ubisoft/Ubisoft Game Launcher/UbisoftConnect.exe"
@@ -45,6 +52,7 @@ menu "Wine" folder {
 
 menu "System" folder {
   menu "Utility" folder {
+  prog "Blueman" /usr/share/icons/hicolor/scalable/apps/blueman.svg blueman-manager
   prog "kitty" /usr/share/icons/hicolor/scalable/apps/kitty.svg kitty
   prog "MControlCenter" /usr/share/icons/hicolor/scalable/apps/mcontrolcenter.svg mcontrolcenter
   prog "NVIDIA Control Panel" - nvidia-settings --load-config-only
@@ -56,5 +64,5 @@ menu "System" folder {
   prog "Xfw" /usr/share/icons/hicolor/scalable/apps/xfw.svg xfw
 }
 
-separator
-menuprog "Miscellaneous" folder icewm-menu-fdo
+#separator
+#menuprog "Miscellaneous" folder icewm-menu-fdo
