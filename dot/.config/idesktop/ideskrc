@@ -9,13 +9,13 @@ table Config
   PaddingX: 10
   PaddingY: 10
   Transparency: 100
-  HighContrast: true
+  HighContrast: false
   Locked: false
-  Shadow: true
+  Shadow: false
   ShadowColor: #0006FA
   ShadowX: 1
   ShadowY: 1
-  SnapShadow: false
+  SnapShadow: true
   IconSnap: true
   SnapWidth: 10
   SnapHeight: 10
@@ -27,13 +27,8 @@ table Config
   ToolTip.FontName: gothic
   ToolTip.ForeColor: #0000FF
   ToolTip.BackColor: #FFFFFF
-  ToolTip.CaptionOnHover: false
+  ToolTip.CaptionOnHover: true
   ToolTip.CaptionPlacement: bottom
-  #Background.Delay: 0
-  #Background.Source:
-  #Background.File:
-  #Background.Mode: Mirror
-  #Background.Color: #C2CCFF
 end
 
 table Actions
