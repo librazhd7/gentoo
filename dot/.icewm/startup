@@ -1,4 +1,5 @@
 #!/bin/bash
 
+xcompmgr -c &
 nm-applet &
 blueman-applet &
