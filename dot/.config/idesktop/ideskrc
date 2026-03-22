@@ -29,11 +29,11 @@ table Config
   ToolTip.BackColor: #FFFFFF
   ToolTip.CaptionOnHover: true
   ToolTip.CaptionPlacement: Right
-  Background.Delay: 0
+  #Background.Delay: 0
   #Background.Source:
   #Background.File:
-  Background.Mode: Mirror
-  Background.Color: #C2CCFF
+  #Background.Mode: Mirror
+  #Background.Color: #C2CCFF
 end
 
 table Actions
@@ -43,15 +43,4 @@ table Actions
   EndDrag: left singleClk
   Execute[0]: left doubleClk
   Execute[1]: right doubleClk
-end
-
-table Icon
-  Caption:
-  CaptionTip:
-  Command:
-  Icon:
-  Width: 600
-  Height: 700
-  X: 680
-  Y: 174
 end
