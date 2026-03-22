@@ -73,7 +73,7 @@ swapon /dev/mapper/tux-swap
 
 # using 2:1 overprovisioning ratio of 95% reserved thin pool with 2gb metadata rounded up
 lvcreate --type thin-pool --poolmetadatasize 2G -l 95%FREE -n thin tux
-lvcreate -V880G --thinpool tux/thin -n root
+lvcreate -V870G --thinpool tux/thin -n root
 mkfs.xfs /dev/mapper/tux-root
 ```
 
@@ -221,11 +221,14 @@ make localmodconfig
 make && make modules_install
 emerge --ask @module-rebuild
 make install
-bootctl install
+
+mkdir -p /boot/EFI/BOOT
+cp -v /usr/share/limine/BOOTX64.EFI /boot/EFI/BOOT/
+~~bootctl install~~ (systemd-boot)
 ```
 
 > [!NOTE]
-> `modprobed-db` is useful for building a minimal kernel with `make localmodconfig` and, \
+> `modprobed-db` is useful for building a minimal kernel with `make localmodconfig` and \
 > works best by using the distribution kernel for about a month and have the utility run in the background so it can have time to learn what modules the system needs:
 > ```
 > emerge --ask sys-kernel/gentoo-kernel-bin
