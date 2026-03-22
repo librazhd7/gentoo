@@ -1,5 +1,5 @@
-prog "web" /usr/share/icons/hicolor/256x256/apps/google-chrome.png google-chrome-stable
-prog "fm" /usr/share/icons/hicolor/scalable/apps/xfe.svg xfe
-prog "term" /usr/share/icons/hicolor/scalable/apps/kitty.svg kitty
-prog "notepad" /usr/share/icons/hicolor/scalable/apps/xfw.svg xfw
-prog "ide" /usr/share/icons/hicolor/scalable/apps/geany.svg geany
+prog "Web Browser" /usr/share/icons/hicolor/256x256/apps/google-chrome.png google-chrome-stable
+prog "File Manager" /usr/share/icons/hicolor/scalable/apps/xfe.svg xfe
+prog "Terminal" /usr/share/icons/hicolor/scalable/apps/kitty.svg kitty
+prog "Notepad" /usr/share/icons/hicolor/scalable/apps/xfw.svg xfw
+prog "IDE" /usr/share/icons/hicolor/scalable/apps/geany.svg geany
