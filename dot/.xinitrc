@@ -34,5 +34,5 @@ fi
 
 xrandr --setprovideroutputsource modesetting NVIDIA-0
 xrandr --auto
-picom --daemon --backend glx
+#picom --daemon --backend glx
 exec dbus-run-session -- icewm-session
