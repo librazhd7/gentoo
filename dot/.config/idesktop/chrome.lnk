@@ -1,10 +1,9 @@
 table Icon
-  Caption: chrome
-  CaptionTip: chrome browser
+  Caption: Google Chrome
   Command: google-chrome-stable
   Icon: /usr/share/icons/hicolor/256x256/apps/google-chrome.png
-  Width: 600
-  Height: 700
-  X: 680
-  Y: 174
+  Width: 32
+  Height: 32
+  X: 32
+  Y: 32
 end
