@@ -52,6 +52,7 @@ media-video/wireplumber
 net-fs/samba
 net-misc/networkmanager
 net-print/hplip
+net-wireless/blueman
 net-wireless/bluez
 sys-apps/ethtool
 sys-apps/fwupd
