@@ -364,16 +364,25 @@ eclean-pkg
 > be sure to check the boot entries after issuing: `eclean-kernel -n 1`.                                                 \
 > it may be empty, and you will only be able to rewrite the boot entry through a livecd.
 
-### nvidia, pipewire, virtualization[^20]
+### rustup, zsh, nvidia, pipewire, virtualization[^20]
+```
+emerge --ask app-shells/zsh app-shells/zsh-completions app-shells/gentoo-zsh-completions
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
+emerge --ask media-video/pipewire sys-auth/rtkit x11-drivers/nvidia-drivers
+emerge --ask dev-util/rustup
+rustup-init-gentoo --symlink
+
+emerge --ask app-emulation/libvirt app-emulation/qemu app-emulation/wine-staging app-emulation/winetricks
+winecfg
+winetricks dxvk vkd3d
+```
 ---
 
 ### to do
 - proper referencing to docs but also files in the repository, make an index to navigate the readme too
 - script for installing and configuring gentoo automatically
-- fdisk =>> add /boot partition for grub support?
 - gentoo =>> minimal packages by use flags
-- gentoo-sources =>> ditch gentoo-kernel-bin (partially tested, needs fine-tuning)
 
 ### docs
 - [__acpi__][url-acpi]
