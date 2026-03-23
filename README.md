@@ -286,6 +286,18 @@ systemctl preset-all --preset-mode=enable-only
 systemctl preset-all
 ```
 
+> [!NOTE]
+> when using `systemd` the `/tmp` directory is mounted by default as `tmpfs` and
+> in order to disable this behavior and take back control of the directory by using `/etc/fstab` issue the following command:
+> ```
+> systemctl mask tmp.mount
+> ```
+> in the unlikely event that the entire `/var/tmp/` directory is already mounted as `tmpfs`, edit `/etc/fstab` accordingly:
+> ```
+> tmpfs /var/tmp          tmpfs  rw,nosuid,nodev,size=50%,mode=1777                                           0      0
+> tmpfs /var/tmp/portage  tmpfs  rw,nosuid,nodev,size=50%,mode=775,uid=portage,gid=portage,x-mount.mkdir=775  0      0
+> ```
+
 > [!TIP]
 > to enable unit to start automatically at boot: `systemctl enable .service/.socket` \
 > to start unit immediately: `systemctl start .service/.socket/.timer`               \
