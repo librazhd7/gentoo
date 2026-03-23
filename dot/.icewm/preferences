@@ -1,3 +1,5 @@
+RequestFocusOnAppRaise=0
+
 TaskBarShowMailboxStatus=0
 #TaskBarShowWorkspaces=0
 TaskBarShowCPUStatus=0
