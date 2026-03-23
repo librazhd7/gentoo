@@ -28,7 +28,8 @@ dev-vcs/git
 dev-vcs/rcs
 games-action/minecraft-launcher
 games-arcade/supertux
-games-util/steam-launcher
+games-util/game-device-udev-rules
+#games-util/steam-launcher
 gnome-extra/nm-applet
 gui-wm/gamescope
 media-fonts/corefonts
