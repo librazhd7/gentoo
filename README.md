@@ -294,8 +294,9 @@ systemctl preset-all
 > ```
 > in the unlikely event that the entire `/var/tmp/` directory is already mounted as `tmpfs`, edit `/etc/fstab` accordingly:
 > ```
-> tmpfs /var/tmp          tmpfs  rw,nosuid,nodev,size=50%,mode=1777                                           0      0
-> tmpfs /var/tmp/portage  tmpfs  rw,nosuid,nodev,size=50%,mode=775,uid=portage,gid=portage,x-mount.mkdir=775  0      0
+> echo "tmpfs /var/tmp          tmpfs  rw,nosuid,nodev,size=50%,mode=1777                                           0       0" >> /etc/fstab
+> echo "tmpfs /var/tmp/portage  tmpfs  rw,nosuid,nodev,size=50%,mode=775,uid=portage,gid=portage,x-mount.mkdir=775  0       0" >> /etc/fstab
+> mount /var/tmp/portage
 > ```
 
 > [!TIP]
