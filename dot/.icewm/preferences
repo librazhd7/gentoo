@@ -26,3 +26,5 @@ WorkspaceNames=" 1 ", " 2 "
 
 TaskBarClockLeds=1
 #TrayDrawBevel=1
+
+ToolTipIcon=0
