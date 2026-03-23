@@ -5,6 +5,7 @@ TaskBarShowMEMStatus=0
 TaskBarShowNetStatus=0
 TaskBarShowShowDesktopButton=0
 TaskBarShowWindowListMenu=0
+TaskBarTaskGrouping=0
 TaskBarWorkspacesLimit="2"
 TaskBarUseMouseWheel=1
 
