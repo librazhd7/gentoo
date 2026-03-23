@@ -62,6 +62,7 @@ sys-apps/plocate
 sys-apps/pv
 sys-apps/systemd
 sys-apps/xdg-desktop-portal
+sys-apps/xdg-desktop-portal-gtk
 sys-auth/rtkit
 sys-block/io-scheduler-udev-rules
 sys-boot/limine
