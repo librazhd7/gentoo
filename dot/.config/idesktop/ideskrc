@@ -1,14 +1,14 @@
 table Config
-  FontName: helvetica
-  FontSize: 12
+  FontName: noto-sans
+  FontSize: 10
   FontColor: #FFFFFA
-  FontNameTip: helvetica
-  FontSizeTip: 9
+  FontNameTip: noto-sans
+  FontSizeTip: 10
   ForeColorTip: #0000FF
   BackColorTip: #FFFFFF
   PaddingX: 10
   PaddingY: 10
-  Transparency: 100
+  Transparency: 0
   HighContrast: false
   Locked: false
   Shadow: false
@@ -23,8 +23,8 @@ table Config
   SnapShadowTrans: 300
   CaptionOnHover: false
   Bold: true
-  ToolTip.FontSize: 11
-  ToolTip.FontName: gothic
+  ToolTip.FontSize: 10
+  ToolTip.FontName: noto-sans
   ToolTip.ForeColor: #0000FF
   ToolTip.BackColor: #FFFFFF
   ToolTip.CaptionOnHover: true
