@@ -42,28 +42,35 @@ menu "Multimedia" folder {
 }
 
 menu "Wine" folder {
-  prog "Battle.net" $HOME/.local/share/icons/hicolor/256x256/apps/FC6C_Battle.net.0.png wine "$HOME/.wine/drive_c/Program Files (x86)/Battle.net/Battle.net.exe"
-  prog "GTA San Andreas" - wine "$HOME/.wine/drive_c/Program Files (x86)/Rockstar Games/GTA San Andreas/gta_sa.exe"
-  prog "HoYoPlay" $HOME/.local/share/icons/hicolor/256x256/apps/B0B4_launcher.0.png wine "$HOME/.wine/drive_c/Program Files/HoYoPlay/launcher.exe"
-  prog "Rockstar Games Launcher" $HOME/.local/share/icons/hicolor/256x256/apps/BA95_Launcher.0.png wine "$HOME/.wine/drive_c/Program Files/Rockstar Games/Launcher/Launcher.exe" 
-  prog "Ubisoft Connect" $HOME/.local/share/icons/hicolor/256x256/apps/F24A_UbisoftConnect.0.png wine "$HOME/.wine/drive_c/Program Files (x86)/Ubisoft/Ubisoft Game Launcher/UbisoftConnect.exe"
-  separator
   prog "winecfg" /usr/share/icons/hicolor/scalable/apps/wine-winecfg.svg winecfg
   prog "winetricks" /usr/share/icons/hicolor/scalable/apps/winetricks.svg winetricks
+  separator
+  menu "Installed apps" folder {
+    prog "Battle.net" $HOME/.local/share/icons/hicolor/256x256/apps/FC6C_Battle.net.0.png wine "$HOME/.wine/drive_c/Program Files (x86)/Battle.net/Battle.net.exe"
+    prog "GTA San Andreas" - wine "$HOME/.wine/drive_c/Program Files (x86)/Rockstar Games/GTA San Andreas/gta_sa.exe"
+    prog "HoYoPlay" $HOME/.local/share/icons/hicolor/256x256/apps/B0B4_launcher.0.png wine "$HOME/.wine/drive_c/Program Files/HoYoPlay/launcher.exe"
+    prog "Rockstar Games Launcher" $HOME/.local/share/icons/hicolor/256x256/apps/BA95_Launcher.0.png wine "$HOME/.wine/drive_c/Program Files/Rockstar Games/Launcher/Launcher.exe" 
+    prog "Ubisoft Connect" $HOME/.local/share/icons/hicolor/256x256/apps/F24A_UbisoftConnect.0.png wine "$HOME/.wine/drive_c/Program Files (x86)/Ubisoft/Ubisoft Game Launcher/UbisoftConnect.exe"
+  }
+  menu "Utility" folder {
+    prog "regedit" - wine regedit
+    prog "taskmgr" - wine taskmgr
+    prog "uninstaller" /usr/share/icons/icons/hicolor/scalabe/apps/wine-uninstaller.svg wine uninstaller
+  }
 }
 
 menu "System" folder {
-  menu "Utility" folder {
-  prog "Blueman" /usr/share/icons/hicolor/scalable/apps/blueman.svg blueman-manager
-  prog "kitty" /usr/share/icons/hicolor/scalable/apps/kitty.svg kitty
-  prog "MControlCenter" /usr/share/icons/hicolor/scalable/apps/mcontrolcenter.svg mcontrolcenter
-  prog "NVIDIA Control Panel" - nvidia-settings --load-config-only
-  }
-  separator
   prog "Xfe" /usr/share/icons/hicolor/scalable/apps/xfe.svg xfe
   prog "Xfi" /usr/share/icons/hicolor/scalable/apps/xfi.svg xfi
   prog "Xfp" /usr/share/icons/hicolor/scalable/apps/xfp.svg xfp
   prog "Xfw" /usr/share/icons/hicolor/scalable/apps/xfw.svg xfw
+  separator
+  menu "Utility" folder {
+    prog "Blueman" /usr/share/icons/hicolor/scalable/apps/blueman.svg blueman-manager
+    prog "kitty" /usr/share/icons/hicolor/scalable/apps/kitty.svg kitty
+    prog "MControlCenter" /usr/share/icons/hicolor/scalable/apps/mcontrolcenter.svg mcontrolcenter
+    prog "NVIDIA Control Panel" - nvidia-settings --load-config-only
+  }
 }
 
 #separator
