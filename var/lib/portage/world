@@ -18,7 +18,6 @@ app-portage/gentoolkit
 app-shells/gentoo-zsh-completions
 app-shells/zsh
 app-shells/zsh-completions
-dev-cpp/glibmm
 dev-java/openjdk-bin
 dev-libs/intel-compute-runtime
 dev-util/android-tools
