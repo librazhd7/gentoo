@@ -258,6 +258,7 @@ cp -v /usr/share/limine/BOOTX64.EFI /boot/EFI/BOOT/
 | `cups.service (#)`                     | `virtstoraged.socket (#)`   | |
 | `dkms.service (#)`                     | |
 | ~~`dnsmasq.service (#)`~~              | |
+| `gammastep.service`                    | |
 | `getty@tty1.service (#)`               | |
 | `libvirtd.service (#)`                 | |
 | `lvm2-monitor.service (#)`             | |
