@@ -28,6 +28,7 @@ dev-vcs/git
 dev-vcs/rcs
 games-action/minecraft-launcher
 games-arcade/supertux
+games-emulation/ppsspp
 games-util/game-device-udev-rules
 #games-util/steam-launcher
 gnome-extra/nm-applet
