@@ -30,6 +30,7 @@ menu "Editing" folder {
 
 menu "Gaming" folder {
   prog "Minecraft" /usr/share/icons/hicolor/scalable/apps/minecraft-launcher.svg minecraft-launcher
+  prog "PPSSPP" /usr/share/icons/hicolor/scalable/apps/ppsspp.svg PPSSPPSDL
   prog "Steam" /usr/share/icons/hicolor/256x256/apps/steam.png steam
   prog "SuperTux 2" /usr/share/icons/hicolor/scalable/apps/supertux2.svg supertux2
 }
