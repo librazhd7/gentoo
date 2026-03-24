@@ -16,7 +16,7 @@ menu "Editing" folder {
   prog "FreeCAD" /usr/share/icons/hicolor/64x64/apps/org.freecad.FreeCAD.png FreeCAD
   prog "GNU Image Manipulation Program" /usr/share/icons/hicolor/scalable/apps/gimp.svg gimp
   separator
-  menu "LibreOffice Suite" folder {
+  menu "LibreOffice suite" folder {
     prog "LibreOffice" /usr/share/icons/hicolor/scalable/apps/libreoffice25.8-basic.svg libreoffice-bin
     prog "LibreOffice Base" /usr/share/icons/hicolor/scalable/apps/libreoffice25.8-base.svg libreoffice-bin --base
     prog "LibreOffice Calc" /usr/share/icons/hicolor/scalable/apps/libreoffice25.8-calc.svg libreoffice-bin --calc
@@ -30,7 +30,8 @@ menu "Editing" folder {
 
 menu "Gaming" folder {
   prog "Minecraft" /usr/share/icons/hicolor/scalable/apps/minecraft-launcher.svg minecraft-launcher
-  prog "PCSX2" /usr/share/icons/hicolor/scalable/apps/ppsspp.svg pcsx2-qt
+  prog "puNES" /usr/share/icons/hicolor/512x512/apps/io.github.punesemu.puNES.png punes
+  prog "PCSX2" - pcsx2-qt
   prog "PPSSPP" /usr/share/icons/hicolor/scalable/apps/ppsspp.svg PPSSPPSDL
   prog "Steam" /usr/share/icons/hicolor/256x256/apps/steam.png steam
   prog "SuperTux 2" /usr/share/icons/hicolor/scalable/apps/supertux2.svg supertux2
@@ -49,7 +50,8 @@ menu "Wine" folder {
     prog "Battle.net" $HOME/.local/share/icons/hicolor/256x256/apps/FC6C_Battle.net.0.png wine "$HOME/.wine/drive_c/Program Files (x86)/Battle.net/Battle.net.exe"
     prog "GTA San Andreas" - wine "$HOME/.wine/drive_c/Program Files (x86)/Rockstar Games/GTA San Andreas/gta_sa.exe"
     prog "HoYoPlay" $HOME/.local/share/icons/hicolor/256x256/apps/B0B4_launcher.0.png wine "$HOME/.wine/drive_c/Program Files/HoYoPlay/launcher.exe"
-    prog "Rockstar Games Launcher" $HOME/.local/share/icons/hicolor/256x256/apps/BA95_Launcher.0.png wine "$HOME/.wine/drive_c/Program Files/Rockstar Games/Launcher/Launcher.exe" 
+    prog "Rockstar Games Launcher" $HOME/.local/share/icons/hicolor/256x256/apps/BA95_Launcher.0.png wine "$HOME/.wine/drive_c/Program Files/Rockstar Games/Launcher/Launcher.exe"
+    prog "Snes9x" - wine snes9x-x64.exe
     prog "Ubisoft Connect" $HOME/.local/share/icons/hicolor/256x256/apps/F24A_UbisoftConnect.0.png wine "$HOME/.wine/drive_c/Program Files (x86)/Ubisoft/Ubisoft Game Launcher/UbisoftConnect.exe"
   }
   menu "Utility" folder {
