@@ -4,6 +4,7 @@ app-crypt/sbsigntools
 app-editors/nano
 app-editors/vim
 app-emulation/libvirt
+app-emulation/punes
 app-emulation/qemu
 app-emulation/wine-staging
 app-emulation/winetricks
@@ -17,6 +18,7 @@ app-portage/gentoolkit
 app-shells/gentoo-zsh-completions
 app-shells/zsh
 app-shells/zsh-completions
+dev-cpp/glibmm
 dev-java/openjdk-bin
 dev-libs/intel-compute-runtime
 dev-util/android-tools
@@ -28,6 +30,7 @@ dev-vcs/git
 dev-vcs/rcs
 games-action/minecraft-launcher
 games-arcade/supertux
+games-emulation/pcsx2
 games-emulation/ppsspp
 games-util/game-device-udev-rules
 #games-util/steam-launcher
@@ -71,6 +74,7 @@ sys-boot/limine
 sys-firmware/intel-microcode
 sys-firmware/sof-firmware
 sys-fs/dosfstools
+sys-fs/fuse:0
 sys-fs/lvm2
 sys-fs/ntfs3g
 sys-fs/xfsprogs
