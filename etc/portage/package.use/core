@@ -14,11 +14,11 @@
 # user packages - personal apps
 #================================================================================================
 app-emulation/libvirt         fuse macvtap numa pcap vepa virt-network qemu
-media-video/obs-studio        lua pulseaudio speex v4l
 app-emulation/qemu            QEMU_USER_TARGETS: x86_64 QEMU_SOFTMMU_TARGETS: x86_64
 app-emulation/wine-staging    gecko truetype wow64
 media-gfx/blender             jemalloc opensubdiv openvdb openvdb-compression
 media-gfx/sane-backends       hp
+media-video/obs-studio        lua pulseaudio speex v4l
 net-fs/samba                  cups
 net-print/cups                usb zeroconf
 net-print/hplip               hpcups scanner snmp
@@ -26,19 +26,21 @@ net-print/hplip               hpcups scanner snmp
 #================================================================================================
 # user-deps packages
 #================================================================================================
+dev-libs/libdbusmenu gtk3
 dev-python/pyside uitools
 media-libs/freetype brotli
 media-libs/opensubdiv tbb
 media-libs/tiff zstd lzma
 media-video/ffmpeg opus vpx lame theora
+media-libs/libheif gui tools
 net-dns/avahi python
 net-dns/dnsmasq script
 net-libs/gnutls tools pkcs11
-media-libs/libheif gui tools
 net-libs/ngtcp2 gnutls
-sci-physics/bullet double-precision
 sci-libs/opencascade json
 sci-libs/fftw threads
+sys-libs/zlib minizip
+sci-physics/bullet double-precision
 
 #================================================================================================
 # system packages
