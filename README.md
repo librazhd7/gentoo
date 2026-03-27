@@ -389,7 +389,7 @@ rustup-init-gentoo --symlink
 
 emerge --ask app-emulation/libvirt app-emulation/qemu app-emulation/wine-staging app-emulation/winetricks
 winecfg
-winetricks dxvk vkd3d
+winetricks dxvk vkd3d mfc42
 ```
 ---
 
